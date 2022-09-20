@@ -61,7 +61,7 @@ body {
 
 /*add product form starts*/
 .nav-item1{
-    display: none;
+    display: block;
 }
 
 .add-product-form {
@@ -210,6 +210,9 @@ body {
 /* status section ends*/
 
 /* ads and coupons section starts */
+.nav-item4{
+    display: none;
+}
 .coupons-ads-form{
     display: flex;
     flex-direction: column;

@@ -15,16 +15,16 @@
         <div class="navbar">
             <h1>E-Commerce Website</h1>
             <ul class="links">
-                <li class="link"> <a href="create-product.html">Create Product</a> </li>
-                <li class="link"> <a href="view-products.html">View Products</a> </li>
-                <li class="link"> <a href="status.html">Status</a></li>
-                <li class="link"> <a href="coupons-ads.html"> Coupons | Ads</a> </li>
+                <li class="link" id="create-p-btn"> <a href="create-product.html">Create Product</a> </li>
+                <li class="link" id="show-p-btn"> <a href="view-products.html">View Products</a> </li>
+                <li class="link" id="status-btn"> <a href="status.html">Status</a></li>
+                <li class="link" id="coupons-ads-btn"> <a href="coupons-ads.html"> Coupons | Ads</a> </li>
             </ul>
         </div>
         <!-- navbar div ends -->
 
         <!-- add product form starts -->
-        <div class="nav-item1">
+        <div class="nav-item1" id="nav-item1">
             <div class="add-product-form">
                 <div class="inputs-container">
                     <h2>Add Your Product</h2>
@@ -48,7 +48,7 @@
         <!-- add product form ends -->
 
         <!-- view products section starts -->
-        <div class="nav-item2">
+        <div class="nav-item2" id="nav-item2" >
             <div class="view-products-form">
                 <h2>All your products are here</h2>
                 <div class="products-table">
@@ -80,7 +80,7 @@
         <!-- view products section ends -->
 
         <!-- status section starts -->
-        <div class="nav-item3">
+        <div class="nav-item3" id="nav-item3">
             <div class="status-form">
                 <div class="revenue-form">
                     <input type="date" name="" id="" class="product-input">
@@ -118,7 +118,7 @@
         <!-- status section ends -->
 
         <!-- ads and coupons section starts -->
-        <div class="nav-item4">
+        <div class="nav-item4" id="nav-item4">
             <div class="coupons-ads-form">
                 <div class="coupons-form">
                     <h2>Coupons</h2>
@@ -143,5 +143,6 @@
 
 
     <!-- </section> -->
+    <script src="script/create-product.js"></script>
 </body>
 </html>
