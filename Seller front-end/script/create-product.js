@@ -7,4 +7,44 @@ const navItem4 = document.querySelector("#nav-item4");
 const createProductButton=document.querySelector("#create-p-btn");
 const showProductsButton=document.querySelector("#show-p-btn");
 const statusButton=document.querySelector("#status-btn");
-const CouponsAdsButton = document.querySelector("#coupons-ads-btn");
+const couponsAdsButton = document.querySelector("#coupons-ads-btn");
+
+//load create product page 
+const CreateProductPage = () => {
+    navItem1.style.display = "block";
+    navItem2.style.display = "none";
+    navItem3.style.display = "none";
+    navItem4.style.display = "none";
+}
+
+//load view product page
+const showProductsPage = () => {
+    navItem1.style.display = "none" ;
+    navItem2.style.display = "block";
+    navItem3.style.display = "none";
+    navItem4.style.display = "none";
+}
+
+//load status page
+const statusPage = () => {
+    navItem1.style.display = "none" ;
+    navItem2.style.display = "none";
+    navItem3.style.display = "block";
+    navItem4.style.display = "none";
+}
+
+//load coupons and ads page
+const couponsAdsPage = () => {
+    navItem1.style.display = "none" ;
+    navItem2.style.display = "none";
+    navItem3.style.display = "none";
+    navItem4.style.display = "block";
+    
+}
+//eventListeners
+createProductButton.onclick = () => CreateProductPage();
+showProductsButton.onclick = () => showProductsPage();
+statusButton.onclick = () => statusPage();
+couponsAdsButton.onclick = () => couponsAdsPage();
+//  homeNav.onclick=()=>showHome();
+
