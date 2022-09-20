@@ -177,7 +177,7 @@ body {
 
 /* status section starts*/
 .nav-item3 {
-    display: block;
+    display: none;
 }
 
 .status-form {
@@ -208,3 +208,38 @@ body {
     margin-top: 1rem;
 }
 /* status section ends*/
+
+/* ads and coupons section starts */
+.coupons-ads-form{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-left: 20vw;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+.coupons-form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+
+}
+
+.coupons-form button {
+    margin-bottom: 1rem;
+    padding: .5rem;
+    border: .3px #A0DB8E solid;
+    background: white;
+    border-radius: .4rem;
+    width: 8vw;
+}
+
+.coupons-form button:hover {
+    background: rgb(228, 228, 228);
+    cursor: pointer;
+}
+
+/* ads and coupons section ends */
