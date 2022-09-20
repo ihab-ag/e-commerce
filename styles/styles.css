@@ -55,5 +55,12 @@ body {
 .main-container {
     width: 100%;
     height: calc(100% - 100px); /*100px refers to header container*/
+    background-color: var(--admin-bg-color);
+    display: flex;
+}
+
+.main-container .navbar {
+    max-width: 235px;
+
 }
 /* end styling main */
