@@ -11,6 +11,7 @@
     justify-content: space-between;
 }
 
+/* Header section */
 .header{
     background-color: #a0db8e;
     margin-top: 0;
@@ -117,3 +118,14 @@
     font-size: 30px;
     margin-left:35px;
 }
+
+/* AD section */
+.ad-img{
+    object-fit: none;
+    width: 2000px;
+    height: 150px;
+    margin-left: 32px;
+    margin-top: 30px;
+}
+
+
