@@ -11,6 +11,14 @@
     justify-content: space-between;
 }
 
+.column{
+    flex-direction: column;
+}
+
+.row{
+    flex-direction: row;
+}
+
 /* Header section */
 .header{
     background-color: #a0db8e;
@@ -128,3 +136,43 @@
     margin-top: 30px;
 }
 
+.item1-img{
+    height: 140px;
+    width: 230px;
+    object-fit: cover;
+}
+
+.green-icons{
+    height: 22px; 
+    width: 22px;
+    margin-right: 5px;
+}
+
+.items-title{
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-size: 25px;
+}
+
+.item1-img{
+    border-radius: 10px;
+}
+
+.left{
+    margin-left: 50px;
+}
+
+.item-name{
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.top{
+    margin-top: 15px;
+}
+
+.price{
+    color: #a0db8e;
+    font-weight: bold;
+}
