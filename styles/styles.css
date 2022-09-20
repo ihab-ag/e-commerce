@@ -165,6 +165,7 @@ body {
 
 .main-content-wrapper {
     background-color: white;
+    padding: 0 10px;
 }
 
 /* in case we want to add button other than +Add */
