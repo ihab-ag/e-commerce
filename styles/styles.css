@@ -84,6 +84,11 @@ body {
     background-color: var(--admin-bg-color);
     border-radius: 5px;
 }
+
+/* will be used in js on navbar */
+.navbar.navbar-toggle {
+    z-index: 9999 !important;
+}
 /* end utilities */
 
 
@@ -198,17 +203,34 @@ body {
     background-color: #f2f2f2;
 }
 
+.table-wrapper table tr th {
+    background-color: #32C99C;
+    color: white;
+    padding: 5px 0;
+    font-size: 20px;
+}
+
 .table-wrapper table tr td{
     padding: 5px;
     font-size: 20px;
 }
 
-.table-wrapper table tr th {
-    background-color: #32C99C;
-    color: white;
-    padding: 5px 0;
+.table-wrapper table tr td .btn-wrapper > button {
+    height: 30px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+}
 
-    font-size: 20px;
+.table-wrapper table tr td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.table-wrapper table tr td input {
+    min-width: 100px;
+    max-width: 150px;
+    text-overflow: ellipsis;
 }
 
 .table-wrapper table tr td input:disabled {
@@ -219,12 +241,53 @@ body {
 }
 
 
-
 /* end styling main */
 
 
 
 /* media queries */
+@media only screen and (max-width: 1000px) {
+    
+    .table-wrapper table tr th {
+        font-size: 16px;
+    }
+    
+    .table-wrapper table tr td{
+        font-size: 16px;
+    }
+    
+    .table-wrapper table tr td .btn-wrapper > button {
+        height: 30px;
+        font-size: 12px;
+    }
+    
+    .table-wrapper table tr td {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    
+    .table-wrapper table tr td input {
+        max-width: 100px;
+    }
+    
+    .table-wrapper table tr td input:disabled {
+        border: none;
+        background-color: transparent;
+        color: black;
+        font-size: 16px;
+    }
+    
+    
+    /* end styling main */
+    
+}
+
+@media only screen and (min-width: 700px) {
+    .hamburger-menu {
+        display: flex;
+    }
+}
+
 @media only screen and (max-width: 480px) {
     /* start styling header */
     .header-container {
@@ -253,10 +316,7 @@ body {
     .main-container .navbar {
         z-index: -1;/* it will be -1 when toggled*/
     }
-    /* will be used in js on navbar */
-    .navbar.navbar-toggle {
-        z-index: 9999 !important;
-    }
+    
     .main-sub-container {
         margin-left: 10px;
     }
