@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    text-decoration: none;
 }
 
 /* start utilities */
@@ -9,4 +12,26 @@
     --admin-main-color: #1b4659;
     --admin-bg-color: #ecf0f5;
 }
+
+body {
+    background-color: var(--admin-bg-color);
+}
 /* end utilities */
+
+/* start styling header */
+
+.header-title-container {
+    width: 100%;
+    height: 100px;
+    background-color: var(--admin-main-color);
+}
+
+.header-title-container .header-title {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 30px 0 30px 30px;
+
+}
+
+/* end styling header */
