@@ -15,8 +15,18 @@
 
 .navbar .links{
     list-style: none;
-    margin-top: 4rem;
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
-    align-content: center;
+    justify-content: space-between;
+    height: 40vh;
+}
+
+.navbar .links .link{
+    background-color: aliceblue;
+    border-radius: 1rem;
+    width:15vw;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
 }
