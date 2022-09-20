@@ -180,7 +180,10 @@ body {
         z-index: -1;/* it will be -1 when toggled*/
         transition: all ease-in-out 300ms;
     }
-
+    /* will be used in js on navbar */
+    .navbar-toggle {
+        z-index: 9999 !important;
+    }
     .main-sub-container {
         margin-left: 10px;
     }
