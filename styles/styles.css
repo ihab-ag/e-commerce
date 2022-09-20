@@ -190,16 +190,6 @@ body {
     border-collapse: collapse;
 }
 
-.table-wrapper table tr td{
-    padding: 10px;
-}
-
-.table-wrapper table tr th {
-    background-color: #32C99C;
-    color: white;
-    padding: 20px 0;
-}
-
 .table-wrapper table tr:nth-child(odd) {
     background-color: white;
 }
@@ -208,8 +198,25 @@ body {
     background-color: #f2f2f2;
 }
 
+.table-wrapper table tr td{
+    padding: 5px;
+    font-size: 20px;
+}
 
+.table-wrapper table tr th {
+    background-color: #32C99C;
+    color: white;
+    padding: 5px 0;
 
+    font-size: 20px;
+}
+
+.table-wrapper table tr td input:disabled {
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 20px;
+}
 
 
 
