@@ -120,3 +120,14 @@ body {
 .nav-item2{
     display: block;
 }
+
+.view-products-form{
+    box-sizing: border-box;
+    margin-left: 20vw;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
