@@ -126,3 +126,19 @@ body {
 }
 
 /* end styling main */
+
+
+
+/* media queries */
+@media only screen and (max-width: 480px) {
+    /* start styling header */
+    .header-title-container {
+        height: 80px;
+    }
+
+    .header-title-container .header-title {
+        font-size: 24px;
+
+    }
+    /* end styling header */
+}
