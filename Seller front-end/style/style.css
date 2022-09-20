@@ -60,7 +60,9 @@ body {
 /*navbar setion ends*/
 
 /*add product form starts*/
-
+.nav-item1{
+    display: none;
+}
 .add-product-form {
     box-sizing: border-box;
     margin-left: 20vw;
@@ -115,4 +117,6 @@ body {
 }
 
 /* view product */
-
+.nav-item2{
+    display: block;
+}
