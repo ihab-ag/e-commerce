@@ -115,6 +115,7 @@ body {
     border: .3px #A0DB8E solid;
     width: 20vw;
     border-radius: .5rem;
+    margin-right: 2rem;
 }
 
 /* view product */
@@ -187,4 +188,17 @@ body {
     display: flex;
     flex-direction: column;
     padding: 2rem;
+}
+
+.status-form .revenue-form button{
+    margin-bottom: 1rem;
+    padding: .5rem;
+    border: .3px #A0DB8E solid;
+    background: white;
+    border-radius: .4rem;
+}
+
+.status-form .revenue-form button:hover {
+    background: rgb(228, 228, 228);
+    cursor: pointer;
 }
