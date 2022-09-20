@@ -15,6 +15,7 @@ const CreateProductPage = () => {
     navItem2.style.display = "none";
     navItem3.style.display = "none";
     navItem4.style.display = "none";
+    createProductButton.style.backgroundColor='rgb(' + 219 + ',' + 219 + ',' + 219 + ')';
 }
 
 //load view product page
@@ -23,6 +24,7 @@ const showProductsPage = () => {
     navItem2.style.display = "block";
     navItem3.style.display = "none";
     navItem4.style.display = "none";
+    // showProductsButton.style.backgroundColor='rgb(' + 219 + ',' + 219 + ',' + 219 + ')';
 }
 
 //load status page
@@ -39,7 +41,7 @@ const couponsAdsPage = () => {
     navItem2.style.display = "none";
     navItem3.style.display = "none";
     navItem4.style.display = "block";
-    
+
 }
 //eventListeners
 createProductButton.onclick = () => CreateProductPage();

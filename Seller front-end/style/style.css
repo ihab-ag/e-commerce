@@ -53,9 +53,9 @@ body {
     transition: .3s;
 }
 
-.navbar .links .link:first-child {
+/* .navbar .links .link:first-child {
     background-color: rgb(219, 219, 219);
-}
+} */
 
 /*navbar setion ends*/
 
