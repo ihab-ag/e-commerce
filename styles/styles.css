@@ -16,6 +16,17 @@
 body {
     background-color: var(--admin-bg-color);
 }
+
+.btn {
+    height: 40px;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.btn-logout {
+    color: var(--admin-main-color);
+    background-color: var(--admin-bg-color);
+}
 /* end utilities */
 
 /* start styling header */
@@ -35,3 +46,7 @@ body {
 }
 
 /* end styling header */
+
+/* start styling main */
+
+/* end styling main */
