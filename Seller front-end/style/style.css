@@ -135,5 +135,26 @@ body {
     display:flex;
     justify-content: space-between;
     margin-top: 2rem;
+    border-bottom: .5px solid black;
+}
+
+.products-table .id{
+    width: 6vw;
+}
+
+.products-table .p-name{
+    width: 15vw;
+}
+
+.products-table .p-description{
+    width: 20vw;
+}
+
+.products-table .p-image{
+    width: 20vw;
+}
+
+.products-table .p-edit-remove{
+    width: 14vw;
 }
 
