@@ -1,0 +1,115 @@
+/* create product page*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* add product section */
+body {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: row;
+}
+
+/* navbar */
+.navbar {
+    width: 20vw;
+    height: 100%;
+    position: fixed;
+    background-color: #A0DB8E;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.navbar .links {
+    list-style: none;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40vh;
+}
+
+.navbar .links .link {
+    background-color: aliceblue;
+    border-radius: 1rem;
+    width: 14vw;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.navbar .links .link a {
+    text-decoration: none;
+    color: black
+}
+
+.navbar .links .link:hover {
+    background-color: rgb(219, 219, 219);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.navbar .links .link:first-child {
+    background-color: rgb(219, 219, 219);
+}
+
+/*navbar setion ends*/
+
+/*add product form starts*/
+
+.add-product-form {
+    box-sizing: border-box;
+    margin-left: 20vw;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: bisque; */
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.inputs-container {
+    width: 80vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.inputs-container h2 {
+    margin-bottom: 1rem;
+}
+
+.inputs-container .add-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.inputs-container .add-form button {
+    margin-bottom: 1rem;
+    padding: .5rem;
+    border: .3px #A0DB8E solid;
+    background: white;
+    border-radius: .4rem;
+}
+
+.inputs-container .add-form button:hover {
+    background: rgb(228, 228, 228);
+    cursor: pointer;
+}
+
+.product-input {
+    margin-bottom: 1rem;
+    padding: .5rem;
+    border: .3px #A0DB8E solid;
+    width: 20vw;
+    border-radius: .5rem;
+}
