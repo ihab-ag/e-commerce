@@ -1,0 +1,12 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* start utilities */
+:root {
+    --admin-main-color: #1b4659;
+    --admin-bg-color: #ecf0f5;
+}
+/* end utilities */
