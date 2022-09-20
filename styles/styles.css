@@ -83,7 +83,7 @@ body {
 .header-title-container {
     width: 100%;
     display: block;
-    margin: auto;
+    margin: auto 0;
 }
 
 .header-title-container .header-title {
@@ -153,17 +153,36 @@ body {
 /* media queries */
 @media only screen and (max-width: 480px) {
     /* start styling header */
-    .header-title-container {
+    .header-container {
         height: 80px;
+        padding-left: 10px;
     }
 
     .header-title-container .header-title {
         font-size: 24px;
-
+        text-align: center;
     }
 
     .hamburger-menu {
-        display: block !important;
+        display: flex;
     }
     /* end styling header */
+
+
+
+    /* start styling main */
+    .main-container {
+        width: 100%;
+        height: calc(100% - 80px); /*80px refers to new width of header container*/
+    }
+
+    .main-container .navbar {
+        z-index: -1;/* it will be -1 when toggled*/
+        transition: all ease-in-out 300ms;
+    }
+
+    .main-sub-container {
+        margin-left: 10px;
+    }
+    /* end styling main */
 }
