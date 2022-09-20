@@ -139,19 +139,23 @@ body {
 }
 
 .products-table .id{
-    width: 6vw;
+    width: 5vw;
+    margin-right: 2vw;
 }
 
 .products-table .p-name{
-    width: 15vw;
+    width: 12vw;
+    margin-right: 2vw;
 }
 
 .products-table .p-description{
-    width: 20vw;
+    width: 19vw;
+    margin-right: 2vw;
 }
 
 .products-table .p-image{
-    width: 20vw;
+    width: 19vw;
+    margin-right: 2vw;
 }
 
 .products-table .p-edit-remove{
