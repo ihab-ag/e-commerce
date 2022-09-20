@@ -19,6 +19,14 @@ body {
     background-color: var(--admin-bg-color);
 }
 
+.view-none {
+    display: none;
+}
+
+.view-hidden {
+    display: hidden;
+}
+
 .btn {
     height: 40px;
     border-radius: 5px;
@@ -71,12 +79,17 @@ body {
     height: calc(100% - 100px); /*100px refers to header container*/
     background-color: var(--admin-bg-color);
     display: flex;
+    position: relative;
 }
 
 .main-container .navbar {
     width: 150px;
+    height: 100%;
     background-color: var(--admin-main-color);
-
+    position: absolute;/* for toggle purposes*/
+    top: 0;
+    left: 0;
+    z-index: 9999;/* it will be -1 when toggled*/
 }
 
 .navbar .navbar-links {
@@ -98,6 +111,10 @@ body {
     color: white;
     background-color: #79949f;
     
+}
+
+.navbar .navbar-links > li:active {
+    color: #ccc;
 }
 
 /* end styling main */
