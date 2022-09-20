@@ -13,6 +13,7 @@
 :root {
     --admin-main-color: #1b4659;
     --admin-bg-color: #ecf0f5;
+    --navbar-width: 150px;
 }
 
 body {
@@ -83,7 +84,7 @@ body {
 }
 
 .main-container .navbar {
-    width: 150px;
+    width: var(--navbar-width);
     height: 100%;
     background-color: var(--admin-main-color);
     position: absolute;/* for toggle purposes*/
@@ -115,6 +116,13 @@ body {
 
 .navbar .navbar-links > li:active {
     color: #ccc;
+}
+
+
+
+.main-sub-container {
+    margin-left: calc(var(--navbar-width) + 10px);
+    padding-top: 10px;
 }
 
 /* end styling main */
