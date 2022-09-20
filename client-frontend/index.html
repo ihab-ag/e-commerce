@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bulba Shop</title>
+        <link rel="stylesheet" href="./styles/style.css">
+        <script src="./scripts/script.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="icon" href="./images/logo.png" type="image/png" />
+    </head>
+    <body>
+        <section class="flex space-between header">
+            <div>
+                <h1 class="nav-title">Bulba Shop</h1>
+            </div>
+            <div class="search-bar">
+                <div class="search">
+                    <i class="fa fa-search search-icon"></i>
+                    <input class="search-input" type="search" name="search" placeholder="Search" >
+                </div>
+            </div>
+            <div class="flex">
+                <div>   
+                    <img class="whitecart" src="images/whitecart.png" alt="icon">
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()">Account
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="myDropdown">
+                      <a href="#">Favourites</a>
+                      <a href="#">Wishlist</a>
+                      <a href="#">Vouchers</a>
+                      <a href="#">Edit</a>
+                      <a href="#">Logout</a>
+                    </div>
+                </div> 
+            </div>
+        </section>
+    </body>
+</html>
