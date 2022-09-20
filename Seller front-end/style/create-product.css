@@ -30,3 +30,21 @@
     margin-bottom: 2rem;
     font-size: 1.1rem;
 }
+
+.navbar .links .link a{
+    text-decoration: none;
+    color:black
+}
+.navbar .links .link:hover{
+    background-color:rgb(205, 212, 218) ;
+    cursor: pointer;
+}
+
+.navbar .links .link:first-child {
+    background-color: rgb(205, 212, 218);
+    border-radius: 1rem;
+    width: 15vw;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
