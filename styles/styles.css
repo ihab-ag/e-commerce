@@ -257,14 +257,12 @@ body {
     }
     
     .table-wrapper table tr td {
-
         text-overflow: ellipsis;
     }
     
     .table-wrapper table tr td input {
         max-width: 100px;
     }
-    
     .table-wrapper table tr td input:disabled {
         font-size: 16px;
     }
@@ -315,10 +313,6 @@ body {
     }
 
     .table-wrapper table tr th {
-        /* width: 100%; */
-    }
-
-    .table-wrapper table tr th {
         font-size: 14px;
     }
     
@@ -332,7 +326,6 @@ body {
     }
     
     .table-wrapper table tr td {
-
         text-overflow: ellipsis;
         width: 50px !important;
     }
@@ -381,10 +374,10 @@ body {
     .navbar.navbar-toggle {
         z-index: 9999 !important;
     }
+
     .main-sub-container {
         margin-left: 0px;
     }
-
 
     .table-wrapper table tr th {
         font-size: 14px;
@@ -400,7 +393,6 @@ body {
     }
     
     .table-wrapper table tr td {
-
         text-overflow: ellipsis;
         width: 50px !important;
         min-width: none;
