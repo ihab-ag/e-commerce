@@ -217,8 +217,11 @@ body {
     font-size: 20px;
 }
 
+ /* in case we want to add button other than +Add */
 .main-action-btn-wrapper {
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .main-action-btn-wrapper > button {
@@ -226,16 +229,22 @@ body {
     font-size: 14px;
 }
 
+.main-action-btn-wrapper > input {
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #666a84;
+}
+
+.main-action-btn-wrapper > input:focus {
+    border: 1px solid #32C99C;
+}
+
 .main-content-wrapper {
     background-color: white;
     padding: 10px;
 }
 
- /* in case we want to add button other than +Add */
-/* .main-action-btn-wrapper {
-    display: flex;
-    justify-content: space-between;
-} */
+
 
 .main-title {
     text-align: center;
