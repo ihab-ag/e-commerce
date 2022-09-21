@@ -8,6 +8,20 @@ const createProductButton=document.querySelector("#create-p-btn");
 const showProductsButton=document.querySelector("#show-p-btn");
 const statusButton=document.querySelector("#status-btn");
 const couponsAdsButton = document.querySelector("#coupons-ads-btn");
+//submit category variable
+const addProductForm = document.getElementsByClassName("add-category-form")[0];
+const addProductButton = document.querySelector("#submit-cat");
+const productCategories = document.querySelector("#cars");
+const productCategoryName = document.querySelector("#product-cat-name").value;
+//add new product 
+addProductButton.onclick = (e) => {
+    e.preventDefault();
+    const productCategoryName = document.querySelector("#product-cat-name").value;
+    let newCategory = document.createElement("option");
+    productCategories.appendChild(newCategory);
+    newCategory.innerHTML = `${productCategoryName}`;
+    newCategory.value=`${productCategoryName}`;
+}
 
 //load create product page 
 const CreateProductPage = () => {
