@@ -9,12 +9,19 @@ const showProductsButton=document.querySelector("#show-p-btn");
 const statusButton=document.querySelector("#status-btn");
 const couponsAdsButton = document.querySelector("#coupons-ads-btn");
 //submit category variable
-const addProductForm = document.getElementsByClassName("add-category-form")[0];
-const addProductButton = document.querySelector("#submit-cat");
+const addCategoryForm = document.getElementsByClassName("add-category-form")[0];
+const addCategoryButton = document.querySelector("#submit-cat");
 const productCategories = document.querySelector("#cars");
 const productCategoryName = document.querySelector("#product-cat-name").value;
+const addNewCategory = document.querySelector("#add-new-catg");
+console.log(addNewCategory);
 //add new product 
-addProductButton.onclick = (e) => {
+addNewCategory.onclick = () => {
+    addCategoryForm.classList.toggle("add-category-form-block");
+};
+
+//submit new product 
+addCategoryButton.onclick = (e) => {
     e.preventDefault();
     const productCategoryName = document.querySelector("#product-cat-name").value;
     let newCategory = document.createElement("option");

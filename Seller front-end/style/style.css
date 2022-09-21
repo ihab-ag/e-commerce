@@ -92,6 +92,10 @@ body {
     margin-bottom: 1rem;
 }
 .add-category-form{
+    display: none;
+}
+
+.add-category-form-block{
     display: block;
 }
 
@@ -115,6 +119,10 @@ body {
     align-items: flex-start;
 }
 
+.inputs-container .add-form label {
+    font-size: .7rem;
+    color: #81af73;
+}
 .inputs-container .add-form button {
     margin-bottom: 1rem;
     padding: .5rem;

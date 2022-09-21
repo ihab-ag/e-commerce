@@ -33,21 +33,25 @@
                         <option value="saab">Saab</option>
                         <option value="mercedes">Mercedes</option>
                         <option value="audi">Audi</option>
-                        <option value="audi" id="add-new-catg">Add New Category</option>
+                        
                     </select>
-                    <form class="add-category-form">
+                    <button id="add-new-catg" class="product-input">Add New Category</button> 
+                    <form class="add-category-form" >
                         <input type="text" class="product-input" id="product-cat-name" placeholder="Add your category" style="width:10vw" class="product-input">
-                         <button style="width:5vw" class="product-input" id="submit-cat">Submit</button>
+                        <button style="width:5vw" class="product-input" id="submit-cat">Submit</button>
                     </form>
                     
                 </div>
                 <div class="inputs-container">
                     <h2>Add Your Product</h2>
                     <form class="add-form" action="" method="post">
-                        
-                        <input type="text" class="product-input" placeholder="Product Code">
+                        <label for="product-name">Product Name</label>
                         <input type="text" class="product-input" placeholder="Product Name">
+                        <label for="product-name">Product Price </label>
+                        <input type="number" class="product-input" placeholder="Product Price in $">
+                        <label for="product-name">Product Image</label>
                         <input type="file" name="asdasdasd" id="" style="margin-bottom:1rem" accept="image/*">
+                        <label for="product-name">Product Description</label>
                         <textarea name="" id="" cols="30" rows="5" class="product-input" placeholder="Product Description"></textarea>
                         <button type="submit">Submit</button>
                     </form>
