@@ -319,7 +319,13 @@ body {
 .stat-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 90px;
+    column-gap: 10px;
+    row-gap: 90px;
+}
+
+.stat-container .draw-canvas {
+    width: 100% !important;
+    height: 300px !important;
 }
 /* end styling main */
 
