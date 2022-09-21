@@ -28,6 +28,7 @@ body {
 
 .navbar h1{
     color:white;
+    font-size: 1.5rem;
 }
 
 .navbar .links {
@@ -79,6 +80,7 @@ body {
     display: flex;
     /* background-color: bisque; */
     justify-content: flex-start;
+    flex-wrap:wrap ;
 }
 
 .category-form{
@@ -220,6 +222,12 @@ body {
     padding: 2rem;
 }
 
+.revenue-form{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
 .status-form .revenue-form label{
     font-size: .7rem;
     color:#acacac;
@@ -287,15 +295,15 @@ body {
 /*media query*/
 @media only screen and (max-width: 800px) {
     *{
-        font-size: 90%;
+        font-size: 95%;
     }
     
 }
 
 @media only screen and (max-width: 600px) {
-    *{
+    /* *{
         font-size: 80%;
-    }
+    } */
     .navbar .links .link {
         background-color: aliceblue;
         border-radius: 1rem;
@@ -304,12 +312,18 @@ body {
         margin-bottom: 2rem;
         font-size: .7rem;
     }
+    .navbar {
+        padding: .3rem;
+    }
 
 }
 @media only screen and (max-width: 450px) {
     /* *{
         font-size: 70%;
     } */
+    .navbar{
+        padding: .3rem;
+    }
     .navbar .links .link {
         background-color: aliceblue;
         border-radius: 1rem;
@@ -317,6 +331,15 @@ body {
         padding: .5rem;
         margin-bottom: 2rem;
         font-size: .5rem;
+    }
+    .navbar h1 {
+        color: white;
+        font-size: .7rem;
+    }
+    .navbar .links {
+        list-style: none;
+        margin-top: 2rem;
+
     }
 
 }
