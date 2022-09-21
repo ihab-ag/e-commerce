@@ -43,7 +43,7 @@ body {
     width: 14vw;
     padding: 1rem;
     margin-bottom: 2rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .navbar .links .link a {
@@ -56,10 +56,6 @@ body {
     cursor: pointer;
     transition: .3s;
 }
-
-/* .navbar .links .link:first-child {
-    background-color: rgb(219, 219, 219);
-} */
 
 /*navbar setion ends*/
 
@@ -91,6 +87,7 @@ body {
 .category-form h2{
     margin-bottom: 1rem;
 }
+
 .add-category-form{
     display: none;
 }
@@ -123,6 +120,7 @@ body {
     font-size: .7rem;
     color: #acacac;
 }
+
 .inputs-container .add-form button {
     margin-bottom: 1rem;
     padding: .5rem;
@@ -163,8 +161,8 @@ body {
 .products-table{
     display:flex;
     flex-direction: column;
-
 }
+
 .products-row{
     display:flex;
     justify-content: space-between;
@@ -221,6 +219,7 @@ body {
     font-size: .7rem;
     color:#acacac;
 }
+
 .status-form .revenue-form button{
     margin-bottom: 1rem;
     padding: .5rem;
@@ -244,6 +243,7 @@ body {
 .nav-item4{
     display: none;
 }
+
 .coupons-ads-form{
     display: flex;
     flex-direction: column;
@@ -255,6 +255,7 @@ body {
     flex-direction: column;
     padding: 2rem;
 }
+
 .coupons-form{
     display: flex;
     flex-direction: column;
@@ -277,3 +278,40 @@ body {
 }
 
 /* ads and coupons section ends */
+
+/*media query*/
+@media only screen and (max-width: 800px) {
+    *{
+        font-size: 90%;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    *{
+        font-size: 80%;
+    }
+    .navbar .links .link {
+        background-color: aliceblue;
+        border-radius: 1rem;
+        width: 14vw;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        font-size: .7rem;
+    }
+
+}
+@media only screen and (max-width: 450px) {
+    /* *{
+        font-size: 70%;
+    } */
+    .navbar .links .link {
+        background-color: aliceblue;
+        border-radius: 1rem;
+        width: 14vw;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        font-size: .5rem;
+    }
+
+}
