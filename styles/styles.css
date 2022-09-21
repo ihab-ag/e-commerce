@@ -315,6 +315,12 @@ body {
 }
 
 
+
+.stat-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+}
 /* end styling main */
 
 
