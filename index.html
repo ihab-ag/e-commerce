@@ -8,6 +8,10 @@
 
     <script src="scripts/navbar-toggle.js" defer></script>
     <script src="scripts/navbar-links.js" defer></script>
+    <script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+<script src="scripts/draw-graphs.js" defer></script>
 </head>
 <body>
     <header class="header-container">
@@ -31,7 +35,7 @@
             <button class="btn btn-logout" id="admin-logout">logout</button>
         </nav>
 
-        <section class="main-sub-container" id="client-section">
+        <section class="main-sub-container view-none" id="client-section">
             <div class="main-content-wrapper">
                 <!-- <div class="main-action-btn-wrapper">
                     <button class="btn btn-add">+Add Client</button>
@@ -205,9 +209,11 @@
             </div>
         </section>
 
-        <section class="main-sub-container view-none" id="stat-section">
+        <section class="main-sub-container" id="stat-section">
             <div class="stat-container">
-                
+                <canvas class="draw-canvas" id="best-seller-week"></canvas>
+                <canvas class="draw-canvas" id="total-nb-seller"></canvas>
+
             </div>
         </section>
     </main>
