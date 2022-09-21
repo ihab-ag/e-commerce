@@ -58,6 +58,7 @@ body {
     font-size: 20px;
     color: white;
     background-color: #9BA0CD;
+    margin-top: 10px;
 }
 
 .btn-ban:hover {
@@ -203,6 +204,7 @@ body {
 }
 
 .table-wrapper table {
+    width: 100%;
     margin: 0 auto;
     border: 1px solid #9BA0CD;
     border-collapse: collapse;
@@ -237,13 +239,10 @@ body {
     border: 1px solid #ccc;
 }
 
-.table-wrapper table tr td {
-    /* text-overflow: ellipsis; */
-}
-
 .table-wrapper table tr td input {
     min-width: 100px;
-    max-width: 150px;
+    width: 100%;
+    /* max-width: 150px; */
     /* text-overflow: ellipsis; */
 }
 
@@ -252,6 +251,17 @@ body {
     background-color: transparent;
     color: black;
     font-size: 20px;
+}
+
+.btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    justify-content: center;
+}
+
+.btn-wrapper > button {
+    flex: 1;
 }
 
 
@@ -428,4 +438,11 @@ body {
         font-size: 14px;
     }
     /* end styling main */
+}
+
+@media only screen and (max-width: 480px) {
+    .btn-add {
+        height: 30px;
+        font-size: 16px;
+    }
 }
