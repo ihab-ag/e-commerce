@@ -75,3 +75,34 @@ h2{
 .guest{
     margin-left: 43px;
 }
+
+.sign-up-modal {
+    position: absolute;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    left: 50%;
+    top: 50%;
+    font-size: 1.5rem;
+    border: 1px solid var(--light-gray);
+    width: 700px;
+    padding: 30px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    box-shadow: 0 5px 10px #0001;
+    scale: 0;
+    translate: 200px -450px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease-in-out, scale 400ms ease-in-out, translate 400ms ease-in-out;
+}
+
+.show-modal {
+    scale: 1;
+    opacity: 1;
+    translate: 0;
+    pointer-events: unset;
+}
