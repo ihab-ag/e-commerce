@@ -50,7 +50,7 @@ window.addEventListener('resize', () => {
     
 })
 
-const bestSellerGraph = new Chart('best-seller-week', {
+const bestSellerWeekGraph = new Chart('best-seller-week', {
     type: 'bar',
     data: bestSellerData,
     options: {
@@ -81,7 +81,7 @@ const bestSellerGraph = new Chart('best-seller-week', {
     }
 })
 
-const totalNbOfSellerGraph = new Chart('best-seller-month', {
+const bestSellerMonthGraph = new Chart('best-seller-month', {
     type: 'bar',
     data: bestSellerData,
     options: {
@@ -112,7 +112,7 @@ const totalNbOfSellerGraph = new Chart('best-seller-month', {
     }
 })
 
-const ss =  new Chart('best-seller-year', {
+const bestSellerYearGraph =  new Chart('best-seller-year', {
     type: 'bar',
     data: bestSellerData,
     options: {
