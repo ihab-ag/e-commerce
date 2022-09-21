@@ -330,6 +330,7 @@ body {
 .stat-container .stat-result {
     text-align: center;
     font-size: 32px;
+    color: var(--admin-main-color);
 }
 
 
@@ -488,6 +489,21 @@ body {
     }
 
     .stat-container .stat-result {
-        font-size: 16px;
+        font-size: 24px;
+    }
+
+    .stat-container .stat-box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stat-container .stat-box .stat-result {
+        order: 1;
+        border-bottom: 3px solid #32C99C;
+    }
+
+    .stat-container .stat-box .draw-canvas {
+        order: 2;
     }
 }

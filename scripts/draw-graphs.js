@@ -69,7 +69,7 @@ const bestSellerGraph = new Chart('best-seller-week', {
         },
         layout: {
             padding: {
-                left: 30,
+                left: 10,
                 right: 0,
                 bottom: 0,
             }
@@ -100,7 +100,7 @@ const totalNbOfSellerGraph = new Chart('best-seller-month', {
         },
         layout: {
             padding: {
-                left: 30,
+                left: 10,
                 right: 0,
                 bottom: 0,
             }
@@ -131,7 +131,7 @@ const ss =  new Chart('best-seller-year', {
         },
         layout: {
             padding: {
-                left: 30,
+                left: 10,
                 right: 0,
                 bottom: 0,
             }
