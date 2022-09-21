@@ -278,11 +278,11 @@ body {
 
 .coupons-form button {
     margin-bottom: 1rem;
-    padding: .5rem;
+    padding: .3rem .6rem;
     border: .3px #A0DB8E solid;
     background: white;
     border-radius: .4rem;
-    width: 8vw;
+    width: 5rem;
 }
 
 .coupons-form button:hover {
@@ -310,7 +310,7 @@ body {
         width: 14vw;
         padding: 1rem;
         margin-bottom: 2rem;
-        font-size: .7rem;
+        font-size: 1rem;
     }
     .navbar {
         padding: .3rem;
@@ -330,7 +330,7 @@ body {
         width: 14vw;
         padding: .5rem;
         margin-bottom: 2rem;
-        font-size: .5rem;
+        font-size: .8rem;
     }
     .navbar h1 {
         color: white;
