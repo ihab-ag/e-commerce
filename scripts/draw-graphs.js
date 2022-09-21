@@ -142,3 +142,96 @@ const bestSellerYearGraph =  new Chart('best-seller-year', {
         }
     }
 })
+
+const bestClientWeekGraph =  new Chart('best-client-year', {
+    type: 'bar',
+    data: bestSellerData,
+    options: {
+        scales: {
+            yAxes: [{ticks: {min: 0, stepSize: 10000}}]
+        },
+        title: {
+            display: true,
+            text: "Best Seller of the Year",
+        },
+        legend: {
+            position: 'top',
+            labels: {
+                fontColor: '#000'
+            },
+        },
+        // layout: {
+        //     padding: {
+        //         left: 10,
+        //         right: 0,
+        //         bottom: 0,
+        //     }
+        // },
+        tooltips: {
+            //when hovered
+            enabled: true
+        }
+    }
+})
+
+const bestClientMonthGraph =  new Chart('best-client-year', {
+    type: 'bar',
+    data: bestSellerData,
+    options: {
+        scales: {
+            yAxes: [{ticks: {min: 0, stepSize: 10000}}]
+        },
+        title: {
+            display: true,
+            text: "Best Seller of the Year",
+        },
+        legend: {
+            position: 'top',
+            labels: {
+                fontColor: '#000'
+            },
+        },
+        // layout: {
+        //     padding: {
+        //         left: 10,
+        //         right: 0,
+        //         bottom: 0,
+        //     }
+        // },
+        tooltips: {
+            //when hovered
+            enabled: true
+        }
+    }
+})
+
+const bestClientYearGraph =  new Chart('best-client-year', {
+    type: 'bar',
+    data: bestSellerData,
+    options: {
+        scales: {
+            yAxes: [{ticks: {min: 0, stepSize: 10000}}]
+        },
+        title: {
+            display: true,
+            text: "Best Seller of the Year",
+        },
+        legend: {
+            position: 'top',
+            labels: {
+                fontColor: '#000'
+            },
+        },
+        // layout: {
+        //     padding: {
+        //         left: 10,
+        //         right: 0,
+        //         bottom: 0,
+        //     }
+        // },
+        tooltips: {
+            //when hovered
+            enabled: true
+        }
+    }
+})
