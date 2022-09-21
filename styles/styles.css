@@ -201,7 +201,7 @@ body {
 .table-wrapper table tr th {
     background-color: #32C99C;
     color: white;
-    padding: 5px 0;
+    padding: 5px;
     font-size: 20px;
 }
 
@@ -211,6 +211,7 @@ body {
 }
 
 .table-wrapper table tr td .btn-wrapper > button {
+    min-width: 50px;
     height: 30px;
     font-size: 16px;
     background-color: transparent;
@@ -218,7 +219,6 @@ body {
 }
 
 .table-wrapper table tr td {
-    white-space: nowrap;
     text-overflow: ellipsis;
 }
 
@@ -257,7 +257,7 @@ body {
     }
     
     .table-wrapper table tr td {
-        white-space: nowrap;
+
         text-overflow: ellipsis;
     }
     
@@ -266,9 +266,6 @@ body {
     }
     
     .table-wrapper table tr td input:disabled {
-        border: none;
-        background-color: transparent;
-        color: black;
         font-size: 16px;
     }
     
@@ -277,11 +274,7 @@ body {
     
 }
 
-@media only screen and (max-width: 750px) {
-
-}
-
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 780px) {
     /* start styling header */
     .header-container {
         height: 80px;
@@ -301,6 +294,10 @@ body {
 
 
     /* start styling main */
+    .main-title {
+        font-size: 16px;
+    }
+
     .main-container {
         width: 100%;
         height: calc(100% - 80px); /*80px refers to new width of header container*/
@@ -315,6 +312,109 @@ body {
     }
     .main-sub-container {
         margin-left: 10px;
+    }
+
+    .table-wrapper table tr th {
+        /* width: 100%; */
+    }
+
+    .table-wrapper table tr th {
+        font-size: 14px;
+    }
+    
+    .table-wrapper table tr td{
+        font-size: 14px;
+    }
+    
+    .table-wrapper table tr td .btn-wrapper > button {
+        height: 30px;
+        font-size: 10px;
+    }
+    
+    .table-wrapper table tr td {
+
+        text-overflow: ellipsis;
+        width: 50px !important;
+    }
+    
+    .table-wrapper table tr td input {
+        max-width: 50px;
+        width: 50px !important;
+        font-size: 10px;
+    }
+    
+    .table-wrapper table tr td input:disabled {
+        font-size: 14px;
+    }
+    /* end styling main */
+}
+
+@media only screen and (max-width: 780px) {
+    /* start styling header */
+    .header-container {
+        height: 60px;
+        padding-left: 10px;
+    }
+
+    .header-title-container .header-title {
+        font-size: 18px;
+    }
+
+    /* end styling header */
+
+
+
+    /* start styling main */
+    .main-title {
+        font-size: 16px;
+    }
+
+    .main-container {
+        width: 100%;
+        height: calc(100% - 60px); /*80px refers to new width of header container*/
+    }
+
+    .main-container .navbar {
+        z-index: -1;/* it will be -1 when toggled*/
+    }
+    /* will be used in js on navbar */
+    .navbar.navbar-toggle {
+        z-index: 9999 !important;
+    }
+    .main-sub-container {
+        margin-left: 0px;
+    }
+
+
+    .table-wrapper table tr th {
+        font-size: 14px;
+    }
+    
+    .table-wrapper table tr td{
+        font-size: 14px;
+    }
+    
+    .table-wrapper table tr td .btn-wrapper > button {
+        height: 30px;
+        font-size: 10px;
+    }
+    
+    .table-wrapper table tr td {
+
+        text-overflow: ellipsis;
+        width: 50px !important;
+        min-width: none;
+    }
+    
+    .table-wrapper table tr td input {
+        max-width: 50px;
+        width: 50px !important;
+        font-size: 10px;
+        min-width: auto;
+    }
+    
+    .table-wrapper table tr td input:disabled {
+        font-size: 14px;
     }
     /* end styling main */
 }
