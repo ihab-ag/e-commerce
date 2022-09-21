@@ -121,7 +121,7 @@ body {
 
 .inputs-container .add-form label {
     font-size: .7rem;
-    color: #81af73;
+    color: #acacac;
 }
 .inputs-container .add-form button {
     margin-bottom: 1rem;
@@ -217,6 +217,10 @@ body {
     padding: 2rem;
 }
 
+.status-form .revenue-form label{
+    font-size: .7rem;
+    color:#acacac;
+}
 .status-form .revenue-form button{
     margin-bottom: 1rem;
     padding: .5rem;
