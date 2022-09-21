@@ -15,8 +15,8 @@
             <div class="sign-in-modal">
                 <div class="flex row">
                     <div>
-                        <div>
-                            <h1>Welcome!</h1>
+                        <div class="titles">
+                            <h1 class="login-h1">Welcome!</h1>
                             <h2>Login to your account</h2>
                         </div>
                         <div class="form left">
@@ -37,27 +37,21 @@
                 </div>
             </div>
             <div class="sign-up-modal">
-                <div class="flex row">
-                    <div>
-                        <div>
-                            <h1>Welcome!</h1>
-                            <h2>Sign up to our website</h2>
-                        </div>
-                        <div class="form left">
-                            <div class="flex column">
-                                <input class="login-input" type="text" id="username" name="username" placeholder="Username">
-                                <input class="login-input" type="text" id="username" name="username" placeholder="Email">
-                                <input class="login-input" type="text" id="username" name="username" placeholder="Phone number">
-                                <input class="login-input" type="text" id="username" name="username" placeholder="Password">
-                                <input class="login-input" type="text" id="password" name="password" placeholder="Confirm password">
-                            </div>
-                            <input class="sign-up-btn submit-btn" type="submit" value="Sign Up">
-                        </div>
+                <div class="flex container">
+                    <div class="flex column">
+                        <h1>Welcome!</h1>
+                        <h2 class="signup-h2">Sign up to our website</h2>
+                        <input class="login-input" type="text" id="username" name="username" placeholder="Username">
+                        <input class="login-input" type="text" id="email" name="email" placeholder="Email">
+                        <input class="login-input" type="text" id="number" name="number" placeholder="Phone number">
+                        <input class="login-input" type="text" id="password" name="password" placeholder="Password">
+                        <input class="login-input" type="text" id="confirm" name="confirm" placeholder="Confirm password">
+                        <input class="sign-up-btn submit-btn" type="submit" value="Sign Up">
                     </div>
                     <div>
-                        <img class="login-img" src="images/red.jpg" alt="icon"> 
+                        <img class="signup-img" src="images/red.jpg" alt="icon"> 
                     </div>
-                </div>
+                </div>   
             </div>
         </section>
     </body>
