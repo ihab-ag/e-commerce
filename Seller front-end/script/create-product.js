@@ -36,7 +36,10 @@ const CreateProductPage = () => {
     navItem2.style.display = "none";
     navItem3.style.display = "none";
     navItem4.style.display = "none";
-    createProductButton.style.backgroundColor='rgb(' + 219 + ',' + 219 + ',' + 219 + ')';
+    createProductButton.style.backgroundColor = 'rgb(' + 219 + ',' + 219 + ',' + 219 + ')';
+    showProductsButton.style.backgroundColor = "white";
+    statusButton.style.backgroundColor = "white";
+    couponsAdsButton.style.backgroundColor = "white";
 }
 
 //load view product page
@@ -45,6 +48,11 @@ const showProductsPage = () => {
     navItem2.style.display = "block";
     navItem3.style.display = "none";
     navItem4.style.display = "none";
+    //BUTTONS
+    createProductButton.style.backgroundColor = "white";
+    showProductsButton.style.backgroundColor = 'rgb(' + 219 + ',' + 219 + ',' + 219 + ')';
+    statusButton.style.backgroundColor = "white";
+    couponsAdsButton.style.backgroundColor = "white";
     // showProductsButton.style.backgroundColor='rgb(' + 219 + ',' + 219 + ',' + 219 + ')';
 }
 
@@ -54,6 +62,11 @@ const statusPage = () => {
     navItem2.style.display = "none";
     navItem3.style.display = "block";
     navItem4.style.display = "none";
+    //BUTTONS COLOR
+    createProductButton.style.backgroundColor = "white";
+    showProductsButton.style.backgroundColor = "white";
+    statusButton.style.backgroundColor = 'rgb(' + 219 + ',' + 219 + ',' + 219 + ')';
+    couponsAdsButton.style.backgroundColor = "white";
 }
 
 //load coupons and ads page
@@ -62,6 +75,11 @@ const couponsAdsPage = () => {
     navItem2.style.display = "none";
     navItem3.style.display = "none";
     navItem4.style.display = "block";
+    //BUTTONS
+    createProductButton.style.backgroundColor = "white";
+    showProductsButton.style.backgroundColor = "white";
+    statusButton.style.backgroundColor ="white";
+    couponsAdsButton.style.backgroundColor = 'rgb(' + 219 + ',' + 219 + ',' + 219 + ')';
 
 }
 //eventListeners
