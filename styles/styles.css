@@ -13,7 +13,7 @@
 :root {
     --admin-main-color: #1b4659;
     --admin-bg-color: #ecf0f5;
-    --navbar-width: 150px;
+    --navbar-width: 200px;
 }
 
 body {
@@ -109,7 +109,12 @@ body {
 
 /* start styling header */
 .header-container {
-    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 60px;
     display: flex;
     background-color: var(--admin-main-color);
     padding-left: 30px;
@@ -132,6 +137,7 @@ body {
 
 /* start styling main */
 .main-container {
+    margin-top: 60px;
     width: 100%;
     height: calc(100% - 100px); /*100px refers to header container*/
     background-color: var(--admin-bg-color);
@@ -140,10 +146,11 @@ body {
 }
 
 .main-container .navbar {
+    margin-top: 60px;
     width: var(--navbar-width);
-    height: 100%;
+    min-height: 100%;
     background-color: var(--admin-main-color);
-    position: absolute;/* for toggle purposes*/
+    position: fixed;/* for toggle purposes*/
     top: 0;
     left: 0;
     z-index: 9999;/* it will be -1 when toggled*/
@@ -219,6 +226,7 @@ body {
 }
 
 .table-wrapper table tr th {
+    text-align: left;
     background-color: #32C99C;
     color: white;
     padding: 5px;
@@ -234,7 +242,7 @@ body {
 .table-wrapper table tr td .btn-wrapper > button {
     min-width: 50px;
     height: 30px;
-    font-size: 16px;
+    font-size: 14px;
     background-color: transparent;
     border: 1px solid #ccc;
 }
@@ -273,6 +281,7 @@ body {
 @media only screen and (max-width: 1000px) {
     
     .table-wrapper table tr th {
+        text-align: center;
         font-size: 16px;
     }
     
@@ -304,7 +313,7 @@ body {
 @media only screen and (max-width: 780px) {
     /* start styling header */
     .header-container {
-        height: 80px;
+        height: 60px;
         padding-left: 10px;
     }
 
