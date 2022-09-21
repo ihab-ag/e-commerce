@@ -219,13 +219,13 @@ body {
 }
 
 .table-wrapper table tr td {
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
 }
 
 .table-wrapper table tr td input {
     min-width: 100px;
     max-width: 150px;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
 }
 
 .table-wrapper table tr td input:disabled {
@@ -257,7 +257,7 @@ body {
     }
     
     .table-wrapper table tr td {
-        text-overflow: ellipsis;
+        /* text-overflow: ellipsis; */
     }
     
     .table-wrapper table tr td input {
@@ -326,7 +326,7 @@ body {
     }
     
     .table-wrapper table tr td {
-        text-overflow: ellipsis;
+        /* text-overflow: ellipsis; */
         width: 50px !important;
     }
     
@@ -393,7 +393,7 @@ body {
     }
     
     .table-wrapper table tr td {
-        text-overflow: ellipsis;
+        /* text-overflow: ellipsis; */
         width: 50px !important;
         min-width: none;
     }
