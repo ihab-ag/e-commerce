@@ -1,36 +1,62 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bulba Shop</title>
+        <title>Bulba Shop-Login</title>
         <link rel="stylesheet" href="./styles/login.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="icon" href="./images/logo.png" type="image/png" />
+        <script src="./scripts/login.js" defer></script>
     </head>
     <body>
         <section>
-            <div class="flex row">
-                <div>
+            <div class="sign-in-modal">
+                <div class="flex row">
                     <div>
-                        <h1>Welcome!</h1>
-                        <h2>Login to your account</h2>
-                    </div>
-                    <div class="form left">
-                        <div class="flex column">
-                            <input class="login-input" type="text" id="username" name="username" placeholder="Username">
-                            <input class="login-input" type="text" id="password" name="password" placeholder="Password">
+                        <div>
+                            <h1>Welcome!</h1>
+                            <h2>Login to your account</h2>
                         </div>
-                        <input class="submit-btn" type="submit" value="Sign In">
+                        <div class="form left">
+                            <div class="flex column">
+                                <input class="login-input" type="text" id="username" name="username" placeholder="Username">
+                                <input class="login-input" type="text" id="password" name="password" placeholder="Password">
+                            </div>
+                            <button class="sign-in-btn submit-btn" type="submit">Sign In</button>
+                        </div>
+                        <div class="flex row paragraph">
+                            <p class="left">New here?<a class="green"> Sign up</a></p>
+                            <p class="green guest">Continue as a guest</p>
+                        </div>
                     </div>
-                    <div class="flex row paragraph">
-                        <p class="left">New here?<a class="green"> Sign up</a></p>
-                        <p class="green guest">Continue as a guest</p>
+                    <div>
+                        <img class="login-img" src="images/swiss.jpg" alt="icon"> 
                     </div>
                 </div>
-                <div>
-                    <img class="login-img" src="images/swiss.jpg" alt="icon"> 
+            </div>
+            <div class="sign-up-modal">
+                <div class="flex row">
+                    <div>
+                        <div>
+                            <h1>Welcome!</h1>
+                            <h2>Sign up to our website</h2>
+                        </div>
+                        <div class="form left">
+                            <div class="flex column">
+                                <input class="login-input" type="text" id="username" name="username" placeholder="Username">
+                                <input class="login-input" type="text" id="username" name="username" placeholder="Email">
+                                <input class="login-input" type="text" id="username" name="username" placeholder="Phone number">
+                                <input class="login-input" type="text" id="username" name="username" placeholder="Password">
+                                <input class="login-input" type="text" id="password" name="password" placeholder="Confirm password">
+                            </div>
+                            <input class="sign-up-btn submit-btn" type="submit" value="Sign Up">
+                        </div>
+                    </div>
+                    <div>
+                        <img class="login-img" src="images/red.jpg" alt="icon"> 
+                    </div>
                 </div>
             </div>
         </section>
