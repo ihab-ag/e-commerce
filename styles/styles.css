@@ -437,9 +437,10 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
-    .table-wrapper table tr td {
-        /* text-overflow: ellipsis; */
-        min-width: none;
+    .table-wrapper table tr td p {
+        width: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .table-wrapper table tr td input {
