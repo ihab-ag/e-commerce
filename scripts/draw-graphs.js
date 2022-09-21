@@ -1,5 +1,3 @@
-const Chart = require('chart.js')
-
 const bestSellerData = {
     labels: ['Guy1', 'Guy2', 'Guy3'],
     datasets: [{
