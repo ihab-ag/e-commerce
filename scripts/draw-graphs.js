@@ -1,6 +1,3 @@
-const bestSeller = document.getElementById('best-seller-week').getContext('2d')
-const totalNbOfSeller = document.getElementById('total-nb-seller').getContext('2d')
-
 const bestSellerData = {
     labels: ['Guy1', 'Guy2', 'Guy3'],
     datasets: [{
@@ -25,34 +22,35 @@ const bestSellerData = {
         ]
     }],
 }
-
+Chart.defaults.global.defaultFontSize = 36;
+Chart.defaults.global.defaultFontStyle = 'Bold'
 window.addEventListener('resize', () => {
     //console.log(window.outerWidth)
     // media queries
     if(window.outerWidth <= 480) {
-        console.log("<480")
+        // console.log("<480")
         Chart.defaults.global.defaultFontSize = 14;
-        console.log(Chart.defaults.global.defaultFontSize)
+        // console.log(Chart.defaults.global.defaultFontSize)
     } else if (window.outerWidth <= 780) {
-        console.log("<780")
+        // console.log("<780")
         Chart.defaults.global.defaultFontSize = 22;
-        console.log(Chart.defaults.global.defaultFontSize)
+        // console.log(Chart.defaults.global.defaultFontSize)
 
     }else if (window.outerWidth <= 1000) {
-        console.log("<1000")
+        // console.log("<1000")
         Chart.defaults.global.defaultFontSize = 28;
-        console.log(Chart.defaults.global.defaultFontSize)
+        // console.log(Chart.defaults.global.defaultFontSize)
 
     }else {
-        console.log(">1000")
+        // console.log(">1000")
         Chart.defaults.global.defaultFontSize = 36;
-        console.log(Chart.defaults.global.defaultFontSize)
+        // console.log(Chart.defaults.global.defaultFontSize)
 
     }
     
 })
-let x = Chart.defaults.global.defaultFontSize
-const bestSellerGraph = new Chart(bestSeller, {
+
+const bestSellerGraph = new Chart('best-seller-week', {
     type: 'bar',
     data: bestSellerData,
     options: {
@@ -83,32 +81,64 @@ const bestSellerGraph = new Chart(bestSeller, {
     }
 })
 
-const totalNbOfSellerGraph = new Chart(totalNbOfSeller, {
+const totalNbOfSellerGraph = new Chart('best-seller-month', {
     type: 'bar',
     data: bestSellerData,
     options: {
         scales: {
-            yAxes: [{ticks: {min: 0}}]
+            yAxes: [{ticks: {min: 0, stepSize: 10000}}]
+        },
+        title: {
+            display: true,
+            text: "Best Seller of the Month",
+        },
+        legend: {
+            position: 'top',
+            labels: {
+                fontColor: '#000'
+            },
+        },
+        layout: {
+            padding: {
+                left: 30,
+                right: 0,
+                bottom: 0,
+            }
+        },
+        tooltips: {
+            //when hovered
+            enabled: true
         }
     }
 })
 
-const ss = new Chart(document.getElementById('ss'), {
+const ss =  new Chart('best-seller-year', {
     type: 'bar',
     data: bestSellerData,
     options: {
         scales: {
-            yAxes: [{ticks: {min: 0}}]
+            yAxes: [{ticks: {min: 0, stepSize: 10000}}]
         },
-        // plugins: {
-        //     legend: {
-        //         labels: {
-        //             // This more specific font property overrides the global property
-        //             font: {
-        //                 size: 20
-        //             }
-        //         }
-        //     }
-        // }
+        title: {
+            display: true,
+            text: "Best Seller of the Year",
+        },
+        legend: {
+            position: 'top',
+            labels: {
+                fontColor: '#000'
+            },
+        },
+        layout: {
+            padding: {
+                left: 30,
+                right: 0,
+                bottom: 0,
+            }
+        },
+        tooltips: {
+            //when hovered
+            enabled: true
+        }
     }
 })

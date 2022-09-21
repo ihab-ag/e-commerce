@@ -462,6 +462,10 @@ body {
     .table-wrapper table tr td input:disabled {
         font-size: 14px;
     }
+
+    .stat-container .stat-result {
+        font-size: 20px;
+    }
     /* end styling main */
 }
 
@@ -481,5 +485,9 @@ body {
     
     .table-wrapper table tr td input:disabled {
         font-size: 14px;
+    }
+
+    .stat-container .stat-result {
+        font-size: 16px;
     }
 }
