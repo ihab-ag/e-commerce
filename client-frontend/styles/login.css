@@ -133,6 +133,10 @@ h2{
     gap: 50px;
 }
 
+#close_sign_up_modal{
+    margin-right: -45px;
+}
+
 @media screen and (max-width: 1050px) {
     section {
         flex-direction: column-reverse;
