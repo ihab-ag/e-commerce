@@ -14,6 +14,82 @@ body {
     flex-direction: row;
 }
 
+:root {
+    --admin-main-color: #1b4659;
+    --admin-bg-color: #ecf0f5;
+    --navbar-width: 200px;
+}
+.btn {
+    height: 40px;
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    font-weight: 700;
+    text-align: center;
+}
+
+.btn-logout {
+    display: block;
+    margin: auto;
+    color: var(--admin-main-color);
+    background-color: var(--admin-bg-color);
+    margin-top: 20px;
+}
+
+.btn-logout:hover {
+    background-color: white;
+}
+
+.btn-logout:active {
+    background-color: #f2f2f2;
+}
+
+.btn-add {
+    color: white;
+    background-color: #8f95cc;
+}
+
+.btn-add:hover {
+    background-color: #666a84;
+}
+
+.btn-add:active {
+    background-color: #666a848c;
+}
+
+.btn-ban:hover {
+    color: white;
+    background-color: #ff5252 !important;
+}
+
+.btn-ban:active {
+    background-color: #ff5252c2 !important;
+}
+
+.btn-confirm {
+    font-size: 11px !important;
+}
+
+.btn-confirm:hover {
+    color: white;
+    background-color: #32C99C !important;
+}
+
+.btn-confirm:active {
+    background-color: #32c99cb5 !important;
+}
+
+.btn-edit:hover {
+    background-color: var(--admin-main-color) !important;
+    color: white;
+}
+
+.btn-edit:active {
+    background-color: #1b46596c !important;
+}
+
 /* navbar */
 .navbar {
     width: 20vw;
@@ -165,7 +241,116 @@ body {
     padding: 2rem;
 }
 
-.products-table{
+
+
+
+
+
+
+
+
+
+
+
+
+.table-wrapper {
+    width: 100%;
+    margin: 30px 0;
+}
+
+.table-wrapper table {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #9BA0CD;
+    border-collapse: collapse;
+}
+
+.table-wrapper table tr:nth-child(odd) {
+    background-color: white;
+}
+
+.table-wrapper table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-wrapper table tr th {
+    text-align: left;
+    background-color: #32C99C;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.table-wrapper table tr td {
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.table-wrapper table tr td .btn-wrapper>button {
+    min-width: 50px;
+    height: 30px;
+    font-size: 12px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+}
+
+.table-wrapper table tr td input {
+    min-width: 100px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #32C99C;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    /* max-width: 150px; */
+    /* text-overflow: ellipsis; */
+}
+
+.table-wrapper table tr td input:disabled {
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 20px;
+    cursor: text;
+}
+
+.btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    justify-content: center;
+}
+
+.btn-wrapper>button {
+    flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .products-table{
     display:flex;
     flex-direction: column;
 }
@@ -203,7 +388,7 @@ body {
 
 .products-table .p-views{
     width: 14vw;
-}
+} */
 /*view products section ends*/
 
 
@@ -342,4 +527,115 @@ body {
 
     }
 
+}
+
+
+@media only screen and (max-width: 780px) {
+
+    /* start styling header */
+    .header-container {
+        text-align: center;
+        height: 60px;
+        padding-left: 10px;
+    }
+
+    .header-title-container .header-title {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* end styling header */
+
+    /* start styling main */
+    .main-title {
+        font-size: 16px;
+    }
+
+    .main-container {
+        width: 100%;
+        height: calc(100% - 60px);
+        /*60px refers to new width of header container*/
+    }
+
+    .main-container .navbar {
+        z-index: -1;
+        /* it will be -1 when toggled*/
+    }
+
+    /* will be used in js on navbar */
+    .main-title {
+        font-size: 16px;
+    }
+
+    .main-container {
+        width: 100%;
+        height: calc(100% - 60px);
+        /*80px refers to new width of header container*/
+    }
+
+    .main-container .navbar {
+        z-index: -1;
+        /* it will be -1 when toggled*/
+    }
+
+    /* will be used in js on navbar */
+    .navbar.navbar-toggle {
+        z-index: 9999 !important;
+    }
+
+    .main-sub-container {
+        margin-left: 0px;
+    }
+
+    .table-wrapper table tr th {
+        font-size: 14px;
+    }
+
+    .table-wrapper table tr td {
+        font-size: 14px;
+    }
+
+    .table-wrapper table tr td .btn-wrapper>button {
+        height: 30px;
+        font-size: 10px;
+    }
+
+    .table-wrapper table tr td {
+        /* text-overflow: ellipsis; */
+        min-width: none;
+    }
+
+    .table-wrapper table tr td input {
+        font-size: 10px;
+        min-width: auto;
+    }
+
+    .table-wrapper table tr td input:disabled {
+        font-size: 14px;
+    }
+
+    /* end styling main */
+}
+
+@media only screen and (max-width: 480px) {
+    .table-wrapper table tr td p {
+        width: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .table-wrapper table tr td input {
+        max-width: 50px;
+        width: 50px !important;
+        font-size: 10px;
+        min-width: auto;
+    }
+
+    .table-wrapper table tr td input:disabled {
+        font-size: 14px;
+    }
 }

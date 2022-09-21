@@ -53,7 +53,6 @@ const showProductsPage = () => {
     showProductsButton.style.backgroundColor = 'rgb(' + 219 + ',' + 219 + ',' + 219 + ')';
     statusButton.style.backgroundColor = "white";
     couponsAdsButton.style.backgroundColor = "white";
-    // showProductsButton.style.backgroundColor='rgb(' + 219 + ',' + 219 + ',' + 219 + ')';
 }
 
 //load status page
