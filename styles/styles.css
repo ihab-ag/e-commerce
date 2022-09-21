@@ -371,8 +371,14 @@ body {
     }
     
     
-    .stat-container .stat-box {
+    .stat-container .stat-box.graph-is-left {
         grid-template-columns: 1.5fr 1fr;
+        padding-left: 10px;
+    }
+    
+    .stat-container .stat-box.graph-is-right {
+        grid-template-columns: 1fr 1.5fr;
+        padding-right: 10px;
     }
     
     .stat-container .stat-result {

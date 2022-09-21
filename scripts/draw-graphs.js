@@ -67,13 +67,13 @@ const bestSellerGraph = new Chart('best-seller-week', {
                 fontColor: '#000'
             },
         },
-        layout: {
-            padding: {
-                left: 10,
-                right: 0,
-                bottom: 0,
-            }
-        },
+        // layout: {
+        //     padding: {
+        //         left: 10,
+        //         right: 0,
+        //         bottom: 0,
+        //     }
+        // },
         tooltips: {
             //when hovered
             enabled: true
@@ -98,13 +98,13 @@ const totalNbOfSellerGraph = new Chart('best-seller-month', {
                 fontColor: '#000'
             },
         },
-        layout: {
-            padding: {
-                left: 10,
-                right: 0,
-                bottom: 0,
-            }
-        },
+        // layout: {
+        //     padding: {
+        //         left: 10,
+        //         right: 0,
+        //         bottom: 0,
+        //     }
+        // },
         tooltips: {
             //when hovered
             enabled: true
@@ -129,13 +129,13 @@ const ss =  new Chart('best-seller-year', {
                 fontColor: '#000'
             },
         },
-        layout: {
-            padding: {
-                left: 10,
-                right: 0,
-                bottom: 0,
-            }
-        },
+        // layout: {
+        //     padding: {
+        //         left: 10,
+        //         right: 0,
+        //         bottom: 0,
+        //     }
+        // },
         tooltips: {
             //when hovered
             enabled: true
