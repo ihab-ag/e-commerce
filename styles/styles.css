@@ -56,10 +56,16 @@ body {
 }
 
 .btn-add {
-    font-size: 20px;
     color: white;
-    background-color: #9BA0CD;
-    margin-top: 10px;
+    background-color: #8f95cc;
+}
+
+.btn-add:hover {
+    background-color: #666a84;
+}
+
+.btn-add:active {
+    background-color: #666a848c;
 }
 
 .btn-ban:hover {
@@ -184,7 +190,7 @@ body {
 }
 
 .navbar .navbar-links > li:hover {
-    text-decoration: underline;text-decoration-color: gold;
+    text-decoration: underline;text-decoration-color: #32C99C;
     text-underline-offset: 5px;
     color: white;
     background-color: #79949f;
@@ -202,6 +208,15 @@ body {
     margin-left: calc(var(--navbar-width) + 10px);
     padding-top: 10px;
     font-size: 20px;
+}
+
+.main-action-btn-wrapper {
+    margin-top: 10px;
+}
+
+.main-action-btn-wrapper > button {
+    height: 25px;
+    font-size: 14px;
 }
 
 .main-content-wrapper {
