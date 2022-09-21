@@ -60,6 +60,24 @@ body {
     background-color: #9BA0CD;
 }
 
+.btn-ban:hover {
+    color: white;
+    background-color: #ff5252 !important;
+}
+
+.btn-ban:active {
+    background-color: #ff5252c2 !important;
+}
+
+.btn-confirm:hover {
+    color: white;
+    background-color: #32C99C !important;
+}
+
+.btn-confirm:active {
+    background-color: #32c99cb5 !important;
+}
+
 .hamburger-menu {
     display: none;
     width: 40px;
@@ -208,6 +226,7 @@ body {
 .table-wrapper table tr td{
     padding: 5px;
     font-size: 20px;
+    text-align: center;
 }
 
 .table-wrapper table tr td .btn-wrapper > button {
