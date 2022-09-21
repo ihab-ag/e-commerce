@@ -316,8 +316,8 @@ body {
 
 
 
-.stat-container {
-}
+/* .stat-container {
+} */
 
 .stat-container .stat-box {
     display: grid;
@@ -329,6 +329,7 @@ body {
 
 .stat-container .stat-result {
     text-align: center;
+    font-size: 32px;
 }
 
 
@@ -369,6 +370,13 @@ body {
     }
     
     
+    .stat-container .stat-box {
+        grid-template-columns: 1.5fr 1fr;
+    }
+    
+    .stat-container .stat-result {
+        font-size: 26px;
+    }
     /* end styling main */
     
 }

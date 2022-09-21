@@ -26,19 +26,42 @@ const bestSellerData = {
     }],
 }
 
-Chart.defaults.global.defaultFontSize= 36;
+window.addEventListener('resize', () => {
+    //console.log(window.outerWidth)
+    // media queries
+    if(window.outerWidth <= 480) {
+        console.log("<480")
+        Chart.defaults.global.defaultFontSize = 14;
+        console.log(Chart.defaults.global.defaultFontSize)
+    } else if (window.outerWidth <= 780) {
+        console.log("<780")
+        Chart.defaults.global.defaultFontSize = 22;
+        console.log(Chart.defaults.global.defaultFontSize)
 
+    }else if (window.outerWidth <= 1000) {
+        console.log("<1000")
+        Chart.defaults.global.defaultFontSize = 28;
+        console.log(Chart.defaults.global.defaultFontSize)
+
+    }else {
+        console.log(">1000")
+        Chart.defaults.global.defaultFontSize = 36;
+        console.log(Chart.defaults.global.defaultFontSize)
+
+    }
+    
+})
+let x = Chart.defaults.global.defaultFontSize
 const bestSellerGraph = new Chart(bestSeller, {
     type: 'bar',
     data: bestSellerData,
     options: {
         scales: {
-            yAxes: [{ticks: {min: 0}}]
+            yAxes: [{ticks: {min: 0, stepSize: 10000}}]
         },
         title: {
             display: true,
             text: "Best Seller of the Week",
-            fontSize: 36,
         },
         legend: {
             position: 'top',
