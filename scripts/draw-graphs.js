@@ -4,7 +4,7 @@ const totalNbOfSeller = document.getElementById('total-nb-seller').getContext('2
 const bestSellerData = {
     labels: ['Guy1', 'Guy2', 'Guy3'],
     datasets: [{
-        label: 'Best seller of the week',
+        label: 'Amount($$)',
         data: [50000, 40000, 30000],
         backgroundColor: [
             'rgba(27, 70, 89, 0.2)',
@@ -34,6 +34,28 @@ const bestSellerGraph = new Chart(bestSeller, {
     options: {
         scales: {
             yAxes: [{ticks: {min: 0}}]
+        },
+        title: {
+            display: true,
+            text: "Best Seller of the Week",
+            fontSize: 36,
+        },
+        legend: {
+            position: 'top',
+            labels: {
+                fontColor: '#000'
+            },
+        },
+        layout: {
+            padding: {
+                left: 30,
+                right: 0,
+                bottom: 0,
+            }
+        },
+        tooltips: {
+            //when hovered
+            enabled: true
         }
     }
 })

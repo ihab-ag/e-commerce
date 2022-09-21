@@ -317,13 +317,22 @@ body {
 
 
 .stat-container {
+}
+
+.stat-container .stat-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
     row-gap: 90px;
+    align-items: center;
 }
 
-.stat-container .draw-canvas {
+.stat-container .stat-result {
+    text-align: center;
+}
+
+
+.stat-container .stat-box .draw-canvas {
     width: 100% !important;
     height: 300px !important;
 }
