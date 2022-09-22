@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2022 at 02:24 PM
+-- Generation Time: Sep 22, 2022 at 07:50 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -42,7 +42,7 @@ CREATE TABLE `addresses` (
 CREATE TABLE `ads` (
   `id` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `Sellers_id` int(11) NOT NULL,
+  `sellers_id` int(11) NOT NULL,
   `validity_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -72,7 +72,7 @@ INSERT INTO `banned_users` (`clients_id`) VALUES
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
-  `Sellers_id` int(11) NOT NULL
+  `sellers_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -83,9 +83,18 @@ CREATE TABLE `categories` (
 
 CREATE TABLE `chats_rooms` (
   `id` int(11) NOT NULL,
-  `Sellers_id` int(11) NOT NULL,
+  `sellers_id` int(11) NOT NULL,
   `clients_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `chats_rooms`
+--
+
+INSERT INTO `chats_rooms` (`id`, `sellers_id`, `clients_id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -208,6 +217,14 @@ CREATE TABLE `sellers` (
   `email` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `sellers`
+--
+
+INSERT INTO `sellers` (`id`, `name`, `password`, `phone`, `location`, `email`) VALUES
+(1, 'seller1', 'password', '98228888888', 'somewhere.123', 'mail@mail.com'),
+(2, 'seller2', NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -247,7 +264,7 @@ ALTER TABLE `addresses`
 --
 ALTER TABLE `ads`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_ads_Sellers1` (`Sellers_id`);
+  ADD KEY `fk_ads_Sellers1` (`sellers_id`);
 
 --
 -- Indexes for table `banned_users`
@@ -260,14 +277,14 @@ ALTER TABLE `banned_users`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Categories_Sellers1` (`Sellers_id`);
+  ADD KEY `fk_Categories_Sellers1` (`sellers_id`);
 
 --
 -- Indexes for table `chats_rooms`
 --
 ALTER TABLE `chats_rooms`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_chats_rooms_Sellers1` (`Sellers_id`),
+  ADD KEY `fk_chats_rooms_Sellers1` (`sellers_id`),
   ADD KEY `fk_chats_rooms_clients1` (`clients_id`);
 
 --
@@ -364,7 +381,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `chats_rooms`
 --
 ALTER TABLE `chats_rooms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `clients`
@@ -406,7 +423,7 @@ ALTER TABLE `revenues`
 -- AUTO_INCREMENT for table `sellers`
 --
 ALTER TABLE `sellers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `vouchers`
