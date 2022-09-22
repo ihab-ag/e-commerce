@@ -9,7 +9,7 @@
     $currentSellerId = $_POST['seller_id'];
     // connect to db
     $query= $mysqli->prepare('SELECT email FROM sellers WHERE email=? AND id!=?;');
-    $query->bind_param('sd', $email. $currentSellerId);
+    $query->bind_param('sd', $email, $currentSellerId);
     // query to put client into the banned list
     if(!$query->execute()) {
         //statement failed
