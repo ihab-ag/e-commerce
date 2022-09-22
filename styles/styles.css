@@ -25,7 +25,10 @@ body {
 }
 
 .view-hidden {
-    display: hidden;
+    /* display: hidden; */
+    width: 0px !important;
+    overflow: hidden !important;
+    transition: all 300ms !important;
 }
 
 .btn {
@@ -173,7 +176,8 @@ body {
     position: fixed;/* for toggle purposes*/
     top: 0;
     left: 0;
-    z-index: 9999;/* it will be -1 when toggled*/
+    /*z-index: 9999;*//* it will be -1 when toggled*/
+    transition: all 500ms;
 }
 
 .navbar .navbar-links {
@@ -428,8 +432,10 @@ body {
     }
 
     .main-container .navbar {
-        display: none;
-        z-index: -1;/* it will be -1 when toggled*/
+        width: 0%;
+        overflow: hidden;
+        /* display: none; */
+        /*z-index: -1;*//*it will be -1 when toggled*/
     }
     /* will be used in js on navbar */
     .main-title {
@@ -441,13 +447,12 @@ body {
         height: calc(100% - 60px); /*80px refers to new width of header container*/
     }
 
-    .main-container .navbar {
-        z-index: -1;/* it will be -1 when toggled*/
-    }
     /* will be used in js on navbar */
     .navbar.navbar-toggle {
-        display: block;
-        z-index: 9999 !important;
+        /* display: block; */
+        /* z-index: 9999 !important; */
+        width: var(--navbar-width) !important;
+        overflow: visible !important;
     }
 
     .main-sub-container {
