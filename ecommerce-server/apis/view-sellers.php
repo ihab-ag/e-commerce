@@ -5,7 +5,7 @@
     header('Access-Control-Allow-Methods: POST');
     header('Allow-Control-Allow-Headers: Allow-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
     // connect to db
-    $query= $mysqli->prepare('SELECT * FROM sellers LIMIT 10;');
+    $query= $mysqli->prepare('SELECT * FROM sellers ORDER BY id DESC LIMIT 10;');
     // query to get clients
     if(!$query->execute()) {
         die("Error in view-sellers-api");

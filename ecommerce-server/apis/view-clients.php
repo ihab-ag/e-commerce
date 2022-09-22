@@ -13,6 +13,7 @@
     DATE_FORMAT(`joined_date`,"%b, %e, %Y") AS joined_date
 FROM
     `clients`
+ORDER BY id DESC
 LIMIT 10;');
     // query to get clients
     if(!$query->execute()) {
