@@ -21,7 +21,8 @@ const emailValidation = (email) => {
 }
 
 const phoneValidation = (phone) => {
-    const exp = /^+\d+$/
+    //least phone number of digits internationally is country code +  4 numbers
+    const exp = /^[+]\d{1, 3}\d{4}+$/
     if(!exp.match(phone)) {
         return false
     }
