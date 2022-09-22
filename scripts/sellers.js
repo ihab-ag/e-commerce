@@ -30,27 +30,27 @@ const getAllSellers = () => {
                 const locationRow = document.getElementById(`seller-location-${seller.id}`).value
                 if(!emptyFieldsValidation(nameRow, emailRow, phoneRow, locationRow)) {
                     console.log("empty field")
-                    setErrorMessage('All fields are required')
+                    setMessage('All fields are required', false)
                     return
                 }else if(!nameValidation(nameRow)) {
                     console.log(nameRow)
                     console.log("name field")
-                    setErrorMessage(`${nameRow} has wrong format`)
+                    setMessage(`${nameRow} has wrong format`, false)
                     return
                 }else if(!emailValidation(emailRow)) {
                     console.log(emailRow)
                     console.log("email field")
-                    setErrorMessage(`${emailRow} is not an email`)
+                    setMessage(`${emailRow} is not an email`, false)
                     return
                 }else if(!phoneValidation(phoneRow)) {
                     console.log(phoneRow)
                     console.log("phone field")
-                    setErrorMessage(`${phoneRow} has wrong format`)
+                    setMessage(`${phoneRow} has wrong format`, false)
                     return
                 }else if(!locationValidation(locationRow)) {
                     console.log(locationRow)
                     console.log("location field")
-                    setErrorMessage(`${locationRow} has wrong format`)
+                    setMessage(`${locationRow} has wrong format`, false)
                     return
                 }
                 info.forEach(box => box.setAttribute('disabled', true))
@@ -59,6 +59,7 @@ const getAllSellers = () => {
                 //const arr = []
                 //document.querySelectorAll(`.btn-seller-${seller.id}`).forEach(seller => arr.push(seller.value))
                 updateSellerInfo(seller.id, nameRow, emailRow, phoneRow, locationRow)
+                setMessage('Seller info updated successfully', true)
             })
 
             deleteBtn.addEventListener('click', () => {

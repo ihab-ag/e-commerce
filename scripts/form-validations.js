@@ -50,7 +50,15 @@ const emptyFieldsValidation = (name, email, phone, location) => {
 const msgSection = document.querySelector('.msg-section')
 const msgContent = document.querySelector('.msg-content')
 
-const setErrorMessage = (message) => {
+// false if error and true if validate
+const setMessage = (message, boolean) => {
+    if(boolean) {
+        msgSection.classList.remove('msg-error')
+        msgSection.classList.add('msg-success')
+    }else {
+        msgSection.classList.remove('msg-success')
+        msgSection.classList.add('msg-error')
+    }
     msgSection.classList.add('msg-appear')
     msgContent.textContent = message
     setTimeout(() => {
