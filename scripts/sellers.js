@@ -26,7 +26,9 @@ const getAllSellers = () => {
                 info.forEach(box => box.setAttribute('disabled', true))
                 editConfirmBtn.classList.add('view-none')
                 editBtn.classList.remove('view-none')
-                updateSellerInfo(seller.id, seller.name, seller.email, seller.phone, seller.location)
+                const arr = []
+                document.querySelectorAll(`.btn-seller-${seller.id}`).forEach(seller => arr.push(seller.value))
+                updateSellerInfo(seller.id, arr[0], arr[1], arr[2], arr[3])
             })
 
             deleteBtn.addEventListener('click', () => {
