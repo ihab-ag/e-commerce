@@ -122,8 +122,25 @@
                 <h2 class="main-title">Information of Sellers</h2>
 
                 <div class="main-action-btn-wrapper">
-                    <button class="btn btn-add">+Add Seller</button>
+                    <button class="btn btn-add" id="add-table-caller">+Add Seller</button>
+                    <button class="btn btn-ban view-none" id="add-seller-cancel">Cancel</button>
                     <input type="search" name="sellerSearch" placeholder="Search Seller..." id="seller-search">
+                </div>
+                <div class="table-wrapper" id="insert-container">
+                    <table id="seller-table">
+                        <tr>
+                            <td><input type="text" name="name" id="add-seller-name" placeholder="Name..."></td>
+                            <td><input type="email" name="email" id="add-seller-email" placeholder="Email..."></td>
+                            <td><input type="tel" name="tel" id="add-seller-phone" placeholder="Phone..."></td>
+                            <td><input type="text" name="streetName" id="add-seller-location" placeholder="Location..."></td>
+                            <td><input type="password" name="pwd" id="add-seller-pwd" placeholder="Password..."></td>
+                            <td>
+                                <div class="btn-wrapper">
+                                    <button class="btn btn-edit" id="add-btn" >Add</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="table-wrapper">
                     <table id="seller-table">
