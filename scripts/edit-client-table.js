@@ -9,24 +9,20 @@ banClientBtn.addEventListener('click', () => {
 })
 
 banClientConfirmBtn.addEventListener('mouseleave', () => {
-    console.log('mouse-leave')
+    // console.log('mouse-leave')
     if(unBanClientBtn.classList.contains('view-none')) {
-        console.log("if")
+        // console.log("if")
         banClientBtn.classList.remove('view-none')
         banClientConfirmBtn.classList.add('view-none')
     }else {
-        console.log('else')
+        // console.log('else')
         banClientBtn.classList.add('view-none')
     }
 })
 
 banClientConfirmBtn.addEventListener('click', () => {
     unBanClientBtn.classList.remove('view-none')
-    if(!banClientBtn.classList.contains('view-none')) {
-        console.log("No view-none")
-        banClientBtn.classList.add('view-none')
-    }
-    console.log("Yes view-none")
+    banClientBtn.classList.add('view-none')
     banClientConfirmBtn.classList.add('view-none')
 })
 
