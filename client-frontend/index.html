@@ -12,34 +12,36 @@
     </head>
     <body>
         <!-- Start of header section -->
-        <section class="flex space-between header">
-            <div>
-                <h1 class="nav-title">Bulba Shop</h1>
-            </div>
-            <div class="search-bar">
-                <div class="search">
-                    <i class="fa fa-search search-icon"></i>
-                    <input class="search-input" type="search" name="search" placeholder="Search" >
+        <header class="flex space-between">
+            <div class="container">
+                <div>
+                    <h1 class="nav-title">Bulba Shop</h1>
                 </div>
-            </div>
-            <div class="flex">
-                <div>   
-                    <img class="whitecart" src="images/whitecart.png" alt="icon">
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn" onclick="myFunction()">Account
-                      <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content" id="myDropdown">
-                      <a href="#">Favourites</a>
-                      <a href="#">Wishlist</a>
-                      <a href="#">Vouchers</a>
-                      <a href="#">Edit</a>
-                      <a href="#">Logout</a>
+                <div class="search-bar">
+                    <div class="search">
+                        <i class="fa fa-search search-icon"></i>
+                        <input class="search-input" type="search" name="search" placeholder="Search" >
                     </div>
-                </div> 
+                </div>
+                <div class="flex">
+                    <div>   
+                        <img class="whitecart" src="images/whitecart.png" alt="icon">
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="myFunction()">Account
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content" id="myDropdown">
+                          <a href="#">Favourites</a>
+                          <a href="#">Wishlist</a>
+                          <a href="#">Vouchers</a>
+                          <a href="#">Edit</a>
+                          <a href="#">Logout</a>
+                        </div>
+                    </div> 
+                </div>
             </div>
-        </section>
+        </header>
         <!-- End of header section -->
         <!-- Start of AD Section -->
         <section>
@@ -48,55 +50,64 @@
             </div>
         </section>
         <!-- End of AD Section -->
+        <!-- Start of Items Setion -->
         <section>
-            <div>
-                <div class="flex row">
-                    <div class="left">
+            <div class="container">
+                <div class="left">
+                    <h2 class="items-title">New arrivals:</h2>
+                </div>
+                <div class="flex evenly">
+                    <div>
                         <div>
-                            <h2 class="items-title">Items:</h2>
+                            <div class="flex column">
+                                <img class="item-img" src="images/chinese.jpg" alt="image">
+                            </div>
+                            <div class="flex space-between">
+                                <p class="item-name">Chinese Money Plant</p>
+                                <img class="green-icons" src="images/wishlist-green.png" alt="icon">
+                                <img class="green-icons" src="images/greenheart.png" alt="icon">
+                                <img class="green-icons" src="images/plus.png" alt="icon">
+                            </div>
+                            <p class="price">25$</p>
                         </div>
-                        <div class="flex column">
-                            <img class="item1-img" src="images/chinese.jpg" alt="image">
-                        </div>
-                        <div class="flex row top">
-                            <p class="item-name">Chinese Money Plant</p>
-                            <img class="green-icons" src="images/wishlist-green.png" alt="icon">
-                            <img class="green-icons" src="images/greenheart.png" alt="icon">
-                            <img class="green-icons" src="images/plus.png" alt="icon">
-                        </div>
-                        <p class="price">25$</p>
                     </div>
-                    <div class="left ad-top">
-                        <div class="flex column">
-                            <img class="item1-img" src="images/silver.jpg" alt="image">
+                    <div>
+                        <div class="">
+                            <div class="flex column">
+                                <img class="item-img" src="images/silver.jpg" alt="image">
+                            </div>
+                            <div class="flex row">
+                                <p class="item-name">Silver Dollar Plant</p>
+                                <img class="green-icons" src="images/wishlist-green.png" alt="icon">
+                                <img class="green-icons" src="images/greenheart.png" alt="icon">
+                                <img class="green-icons" src="images/plus.png" alt="icon">
+                            </div>
+                            <p class="price">22$</p>
                         </div>
-                        <div class="flex row top">
-                            <p class="item-name">Silver Dollar Plant</p>
-                            <img class="green-icons" src="images/wishlist-green.png" alt="icon">
-                            <img class="green-icons" src="images/greenheart.png" alt="icon">
-                            <img class="green-icons" src="images/plus.png" alt="icon">
-                        </div>
-                        <p class="price">22$</p>
                     </div>
-                    <div class="left ad-top">
-                        <div class="flex column">
-                            <img class="item1-img" src="images/aloe.jpg" alt="image">
+                    <div>
+                        <div class="">
+                            <div class="flex column">
+                                <img class="item-img" src="images/aloe.jpg" alt="image">
+                            </div>
+                            <div class="flex row">
+                                <p class="item-name">Aloe Vera</p>
+                                <div class="end">
+                                    <img class="green-icons" src="images/wishlist-green.png" alt="icon">
+                                    <img class="green-icons" src="images/greenheart.png" alt="icon">
+                                    <img class="green-icons" src="images/plus.png" alt="icon">
+                                </div>
+                            </div>
+                            <p class="price">18$</p>
                         </div>
-                        <div class="flex row top">
-                            <p class="item-name">Aloe Vera</p>
-                            <img class="green-icons" src="images/wishlist-green.png" alt="icon">
-                            <img class="green-icons" src="images/greenheart.png" alt="icon">
-                            <img class="green-icons" src="images/plus.png" alt="icon">
-                        </div>
-                        <p class="price">18$</p>
                     </div>
                 </div>
                 <div class="flex row">
-                    <div class="left">
+                    <div class="">
                         <div class="flex column">
-                            <img class="item1-img" src="images/pothos.jpg" alt="image">
+                            <img class="item-img" src="images/pothos.jpg" alt="image">
                         </div>
-                        <div class="flex row top">
+                        <div class="flex row">
                             <p class="item-name">Pothos Plant</p>
                             <img class="green-icons" src="images/wishlist-green.png" alt="icon">
                             <img class="green-icons" src="images/greenheart.png" alt="icon">
@@ -104,11 +115,11 @@
                         </div>
                         <p class="price">38$</p>
                     </div>
-                    <div class="left">
+                    <div class="">
                         <div class="flex column">
-                            <img class="item1-img" src="images/prayer.jpg" alt="image">
+                            <img class="item-img" src="images/prayer.jpg" alt="image">
                         </div>
-                        <div class="flex row top">
+                        <div class="flex row">
                             <p class="item-name">Prayer Plant</p>
                             <img class="green-icons" src="images/wishlist-green.png" alt="icon">
                             <img class="green-icons" src="images/greenheart.png" alt="icon">
@@ -116,20 +127,23 @@
                         </div>
                         <p class="price">15$</p>
                     </div>
-                    <div class="left">
+                    <div class="">
                         <div class="flex column">
-                            <img class="item1-img" src="images/swiss.jpg" alt="image">
+                            <img class="item-img" src="images/swiss.jpg" alt="image">
                         </div>
-                        <div class="flex row top">
+                        <div class="flex row">
                             <p class="item-name">Swiss Cheese Plant</p>
-                            <img class="green-icons" src="images/wishlist-green.png" alt="icon">
-                            <img class="green-icons" src="images/greenheart.png" alt="icon">
-                            <img class="green-icons" src="images/plus.png" alt="icon">
+                            <div class="">
+                                <img class="green-icons" src="images/wishlist-green.png" alt="icon">
+                                <img class="green-icons" src="images/greenheart.png" alt="icon">
+                                <img class="green-icons" src="images/plus.png" alt="icon">
+                            </div>
                         </div>
                         <p class="price">57$</p>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- End of Items Setion -->
     </body>
 </html>
