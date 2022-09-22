@@ -6,9 +6,10 @@
     header('Access-Control-Allow-Methods: POST');
     header('Allow-Control-Allow-Headers: Allow-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
     $email = $_POST['seller_email'];
+    $currentSellerId = $_POST['seller_id'];
     // connect to db
-    $query= $mysqli->prepare('SELECT email FROM sellers WHERE email=?;');
-    $query->bind_param('s', $email);
+    $query= $mysqli->prepare('SELECT email FROM sellers WHERE email=? AND id!=?;');
+    $query->bind_param('sd', $email. $currentSellerId);
     // query to put client into the banned list
     if(!$query->execute()) {
         //statement failed
