@@ -12,13 +12,13 @@
     $sellerEmail = $_POST['seller_email'];
 
     // connect to db
-    $query= $mysqli->prepare('UPDATE sellers SET name=?, phone=? location=?, email? WHERE id=?;');
+    $query= $mysqli->prepare('UPDATE sellers SET name=?, phone=?, location=?, email=? WHERE id=?;');
     $query->bind_param('ssssd', $sellerName, $sellerPhone, $sellerLocation, $sellerEmail, $sellerID);
     // query to get clients
     if(!$query->execute()) {
-        json_encode(["success" => false]);
+        echo json_encode(["success" => false]);
         die("Error in update-sellers-api");
     }else {
-        json_encode(["success" => true]);
+        echo json_encode(["success" => true]);
     }
 ?>
