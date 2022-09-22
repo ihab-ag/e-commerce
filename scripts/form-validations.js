@@ -11,6 +11,16 @@ const nameValidation = (name) => {
     return true
 }
 
+const emailValidation = (email) => {
+    const exp = /^(\w([\.-]?\w)*)+@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if(!exp.match(email)) {
+        return false
+    }
+
+    return true
+}
+
+
 
 
 const setErrorMessage = (message) => {
