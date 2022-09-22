@@ -26,6 +26,7 @@ const getAllSellers = () => {
                 info.forEach(box => box.setAttribute('disabled', true))
                 editConfirmBtn.classList.add('view-none')
                 editBtn.classList.remove('view-none')
+                updateSellerInfo(seller.id, seller.name, seller.email, seller.phone, seller.location)
             })
 
             deleteBtn.addEventListener('click', () => {
@@ -37,11 +38,12 @@ const getAllSellers = () => {
             })
 
             deleteConfirmBtn.addEventListener('click', () => {
-                document.getElementById('seller-row-1').classList.add('view-none')
+                document.getElementById(`seller-row-${seller.id}`).classList.add('view-none')
                 editConfirmBtn.classList.add('view-none')
                 editBtn.classList.remove('view-none')
                 editConfirmBtn.classList.add('view-none')
                 editBtn.classList.remove('view-none')
+                deleteSeller(seller.id)
             })
 
             deleteConfirmBtn.addEventListener('mouseleave', () => {
@@ -83,6 +85,7 @@ const deleteSeller = (sellerID) => {
 
 const createSellerRow = (id, name, email, phone, location) => {
     const tr = document.createElement('tr')
+    tr.setAttribute('id', `seller-row-${id}`)
 
     const sellerIdTd = document.createElement('td')
     sellerIdTd.textContent = id
