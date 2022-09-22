@@ -126,6 +126,33 @@ body {
     background-color: var(--admin-bg-color);
     border-radius: 5px;
 }
+
+.msg-appear {
+    width: 40% !important;
+    overflow: visible !important;
+    padding: 10px 5px !important;
+}
+
+.msg-section {
+    width: 0;
+    overflow: hidden;
+    min-height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    /* padding: 10px 5px; */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    transition: all 1s;
+}
+
+.msg-section .msg-content {
+
+}
 /* end utilities */
 
 
