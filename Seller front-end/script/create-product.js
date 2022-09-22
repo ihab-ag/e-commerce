@@ -9,12 +9,13 @@ const showProductsButton=document.querySelector("#show-p-btn");
 const statusButton=document.querySelector("#status-btn");
 const couponsAdsButton = document.querySelector("#coupons-ads-btn");
 //submit category variable
-const addCategoryForm = document.getElementsByClassName("add-category-form")[0];
+const addCategoryForm = document.getElementsByClassName("add-category-form")[0];    
 const addCategoryButton = document.querySelector("#submit-cat");
 const productCategories = document.querySelector("#cars");
 const productCategoryName = document.querySelector("#product-cat-name").value;
 const addNewCategory = document.querySelector("#add-new-catg");
-console.log(addNewCategory);
+
+
 //add new product 
 addNewCategory.onclick = () => {
     addCategoryForm.classList.toggle("add-category-form-block");
@@ -88,3 +89,29 @@ statusButton.onclick = () => statusPage();
 couponsAdsButton.onclick = () => couponsAdsPage();
 //  homeNav.onclick=()=>showHome();
 
+
+
+
+//form actions
+
+//add product action
+const addProductForm = document.querySelector(".add-form");
+const submitProductButton = document.querySelector("#product-desc");
+
+//prevent refresh when submit
+addProductForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
+//submit a product validation
+submitProductButton.addEventListener('click', () => {
+    const productName = document.querySelector("#product-name").value;
+    const productPrice = document.querySelector("#product-price").value;
+    const productImage = document.querySelector("#product-img").value;
+    const productDescription = document.querySelector("#product-desc").value;
+    //specifications
+    if (productName.length < 3) {
+        
+
+        
+    }
+});

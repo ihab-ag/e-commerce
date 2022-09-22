@@ -13,247 +13,247 @@
     <!-- add product section -->
     <!-- <section class="add-product"> -->
 
-        <!-- navbar div starts -->
-        <div class="navbar">
-            <h1>E-Commerce Website</h1>
-            <ul class="links">
-                <li class="link" id="create-p-btn">Create Product </li>
-                <li class="link" id="show-p-btn">View Products </li>
-                <li class="link" id="status-btn">Status</li>
-                <li class="link" id="coupons-ads-btn"> Coupons | Ads </li>
-            </ul>
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <!-- navbar div ends -->
+    <!-- navbar div starts -->
+    <div class="navbar">
+        <h1>E-Commerce Website</h1>
+        <ul class="links">
+            <li class="link" id="create-p-btn">Create Product </li>
+            <li class="link" id="show-p-btn">View Products </li>
+            <li class="link" id="status-btn">Status</li>
+            <li class="link" id="coupons-ads-btn"> Coupons | Ads </li>
+        </ul>
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <!-- navbar div ends -->
 
-        <!-- add product form starts -->
-        <div class="nav-item1" id="nav-item1">
-            <div class="add-product-form">
-                <div class="category-form">
-                    <h2>Select Product Category</h2>
-                    <select name="cars" id="cars" class="product-input">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                        
-                    </select>
-                    <button id="add-new-catg" class="product-input">Add New Category</button> 
-                    <form class="add-category-form" >
-                        <input type="text" class="product-input" id="product-cat-name" placeholder="Add your category" style="width:10vw" class="product-input">
-                        <button style="width:5vw" class="product-input" id="submit-cat">Submit</button>
-                    </form>
+    <!-- add product form starts -->
+    <div class="nav-item1" id="nav-item1">
+        <div class="add-product-form">
+            <div class="category-form">
+                <h2>Select Product Category</h2>
+                <select name="cars" id="cars" class="product-input">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
                     
-                </div>
-                <div class="inputs-container">
-                    <h2>Add Your Product</h2>
-                    <form class="add-form" action="" method="post">
-                        <label for="product-name">Product Name</label>
-                        <input type="text" class="product-input" placeholder="Product Name">
-                        <label for="product-name">Product Price </label>
-                        <input type="number" class="product-input" placeholder="Product Price in $">
-                        <label for="product-name">Product Image</label>
-                        <input type="file" name="asdasdasd" id="" style="margin-bottom:1rem" accept="image/*">
-                        <label for="product-name">Product Description</label>
-                        <textarea name="" id="" cols="30" rows="5" class="product-input" placeholder="Product Description"></textarea>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        
-        <!-- add product form ends -->
-
-        <!-- view products section starts -->
-        <div class="nav-item2" id="nav-item2" >
-            <div class="view-products-form">
-                <h2>All your products are here</h2>
-                <div class="products-table">
-                    <!-- <div class="products-row">
-                        <div class="id">ID</div>
-                        <div class="p-name">Product Name</div>
-                        <div class="p-description">Product Description</div>
-                        <div class="p-image">Product image</div>
-                        <div class="p-edit-remove">Remove | Edit</div>
-                    </div>
-                    <div class="products-row">
-                        <div class="id">1</div>
-                        <div class="p-name">First product</div>
-                        <div class="p-description">First Product Description</div>
-                        <div class="p-image"> First Product image</div>
-                        <div class="p-edit-remove"> <button>Remove</button>  | <button>Edit</button></div>
-                    </div>
-                    <div class="products-row">
-                        <div class="id">2</div>
-                        <div class="p-name">Second product</div>
-                        <div class="p-description">Second Product Description asdas gjskdfhbv,mzn vv asdv jasd v,mv mnasdjhs dc skhj</div>
-                        <div class="p-image"> Second Product image</div>
-                        <div class="p-edit-remove"> <button>Remove</button>  | <button>Edit</button></div>
-                    </div> -->
-                    
-                    <div class="table-wrapper">
-                        <table>
-                            <tr>
-                                <th>ID</th>
-                                <th>Product Name</th>
-                                <th>Product Description</th>
-                                <th>Product image</th>
-                                <th>Remove | Edit</th>
-                                
-                            </tr>
-                            <!-- dummy text -->
-                            <tr>
-                                <td>1</td>
-                                <td><input type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
-                                <td><input type="email" name="email" id="email-idNumber" disabled value="lorem@epsum.com"></td>
-                                <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
-                                
-                                <td>
-                                    <div class="btn-wrapper">
-                                        <button class="btn btn-ban">Delete</button>
-                                        <button class="btn btn-confirm view-none">Edit</button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>2</td>
-                                <td><input type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
-                                <td><input type="email" name="email" id="email-idNumber" disabled value="lorem@epsum.cosdasdasdasd asd as d asd asd asdsasdasdasdas  asd m"></td>
-                                <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
-                                
-                                <td>
-                                    <div class="btn-wrapper">
-                                        <button class="btn btn-ban">Delete</button>
-                                        <button class="btn btn-confirm view-none">Edit</button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td><input type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
-                                <td><input type="email" name="email" id="email-idNumber" disabled value="lorem@epsum.com"></td>
-                                <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
-                                <td>
-                                    <div class="btn-wrapper">
-                                        <button class="btn btn-ban">Delete</button>
-                                        <button class="btn btn-confirm view-none">Edit</button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>4</td>
-                                <td><input type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
-                                <td><input type="email" name="email" id="email-idNumber" disabled value="lorem@epsum.com"></td>
-                                <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
-                                
-                                <td>
-                                    <div class="btn-wrapper">
-                                        <button class="btn btn-ban">Delete</button>
-                                        <button class="btn btn-confirm view-none">Edit</button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+                </select>
+                <button id="add-new-catg" class="product-input">Add New Category</button> 
+                <form class="add-category-form" >
+                    <input type="text" class="product-input" id="product-cat-name" placeholder="Add your category" style="width:10vw" class="product-input">
+                    <button style="width:5vw" class="product-input" id="submit-cat">Submit</button>
+                </form>
                 
             </div>
+            <div class="inputs-container">
+                <h2>Add Your Product</h2>
+                <form class="add-form" action="" method="post">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" class="product-input" id="product-name" minlength="4" maxlength="20" placeholder="Product Name" required>
+                    <label for="product-price">Product Price </label>
+                    <input type="number" class="product-input" id="product-price" min="1" max="5000" placeholder="Product Price in $" required>
+                    <label for="product-name">Product Image</label>
+                    <input type="file" name="asdasdasd" id="product-img" style="margin-bottom:1rem" accept="image/*" required>
+                    <label for="product-desc">Product Description</label>
+                    <textarea name="" id="product-desc" cols="30" rows="5" class="product-input" minlength="20" maxlength="100"placeholder="Product Description" required></textarea>
+                    <button type="submit" id="submit-product">Submit</button>
+                </form>
+            </div>
         </div>
-        <!-- view products section ends -->
+    </div>
+    
+    <!-- add product form ends -->
 
-        <!-- status section starts -->
-        <div class="nav-item3" id="nav-item3">
-            <div class="status-form">
-                <div class="revenue-form">
-                    <div class="start-date">
-                        <label for="">Start Date </label>
-                        <input type="date" name="" id="" class="product-input">
-                    </div>
-                    <div class="end-date">
-                        <label for="">End Date </label>
-                        <input type="date" name="" id="" class="product-input">
-                    </div>
+    <!-- view products section starts -->
+    <div class="nav-item2" id="nav-item2" >
+        <div class="view-products-form">
+            <h2>All your products are here</h2>
+            <div class="products-table">
+                <!-- <div class="products-row">
+                    <div class="id">ID</div>
+                    <div class="p-name">Product Name</div>
+                    <div class="p-description">Product Description</div>
+                    <div class="p-image">Product image</div>
+                    <div class="p-edit-remove">Remove | Edit</div>
+                </div>
+                <div class="products-row">
+                    <div class="id">1</div>
+                    <div class="p-name">First product</div>
+                    <div class="p-description">First Product Description</div>
+                    <div class="p-image"> First Product image</div>
+                    <div class="p-edit-remove"> <button>Remove</button>  | <button>Edit</button></div>
+                </div>
+                <div class="products-row">
+                    <div class="id">2</div>
+                    <div class="p-name">Second product</div>
+                    <div class="p-description">Second Product Description asdas gjskdfhbv,mzn vv asdv jasd v,mv mnasdjhs dc skhj</div>
+                    <div class="p-image"> Second Product image</div>
+                    <div class="p-edit-remove"> <button>Remove</button>  | <button>Edit</button></div>
+                </div> -->
+                
+                <div class="table-wrapper">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product Name</th>
+                            <th>Product Description</th>
+                            <th>Product image</th>
+                            <th>Remove | Edit</th>
+                            
+                        </tr>
+                        <!-- dummy text -->
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
+                            <td><input type="email" name="email" id="email-idNumber" disabled value="lorem@epsum.com"></td>
+                            <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
+                            
+                            <td>
+                                <div class="btn-wrapper">
+                                    <button class="btn btn-ban">Delete</button>
+                                    <button class="btn btn-confirm view-none">Edit</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
+                            <td><input type="email" name="email" id="email-idNumber" disabled value="lorem@epsum.cosdasdasdasd asd as d asd asd asdsasdasdasdas  asd m"></td>
+                            <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
+                            
+                            <td>
+                                <div class="btn-wrapper">
+                                    <button class="btn btn-ban">Delete</button>
+                                    <button class="btn btn-confirm view-none">Edit</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
+                            <td><input type="email" name="email" id="email-idNumber" disabled value="lorem@epsum.com"></td>
+                            <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
+                            <td>
+                                <div class="btn-wrapper">
+                                    <button class="btn btn-ban">Delete</button>
+                                    <button class="btn btn-confirm view-none">Edit</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
+                            <td><input type="email" name="email" id="email-idNumber" disabled value="lorem@epsum.com"></td>
+                            <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
+                            
+                            <td>
+                                <div class="btn-wrapper">
+                                    <button class="btn btn-ban">Delete</button>
+                                    <button class="btn btn-confirm view-none">Edit</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- view products section ends -->
+
+    <!-- status section starts -->
+    <div class="nav-item3" id="nav-item3">
+        <div class="status-form">
+            <div class="revenue-form">
+                <div class="start-date">
+                    <label for="">Start Date </label>
+                    <input type="date" name="" id="" class="product-input">
+                </div>
+                <div class="end-date">
+                    <label for="">End Date </label>
+                    <input type="date" name="" id="" class="product-input">
+                </div>
+                <button>Calculate</button>
+            </div>
+            <h4>Revenue :</h4><h4></h4>
+
+            <div class="table-wrapper">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product Name</th>
+                            <th>Product Description</th>
+                            <th>Product image</th>
+                            <th>Views</th>
+                            
+                        </tr>
+                        <!-- dummy text -->
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" name="name" id="name-idNumber" disabled value="product1"></td>
+                            <td><input type="email" name="email" id="email-idNumber" disabled value="description 1 "></td>
+                            <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
+        
+                            <td>30 views</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" name="name" id="name-idNumber" disabled value="product1"></td>
+                            <td><input type="email" name="email" id="email-idNumber" disabled value="description 1 "></td>
+                            <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
+                            
+                            <td>30 views</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" name="name" id="name-idNumber" disabled value="product1"></td>
+                            <td><input type="email" name="email" id="email-idNumber" disabled value="description 1 "></td>
+                            <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
+                            <td>30 views</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" name="name" id="name-idNumber" disabled value="product1"></td>
+                            <td><input type="email" name="email" id="email-idNumber" disabled value="description 1 "></td>
+                            <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
+                            
+                            <td>30 views</td>
+                        </tr>
+                    </table>
+                </div>
+
+        </div>
+    </div>
+    <!-- status section ends -->
+
+    <!-- ads and coupons section starts -->
+    <div class="nav-item4" id="nav-item4">
+        <div class="coupons-ads-form">
+            <div class="coupons-form">
+                <h2>Coupons</h2>
+                <div class="status-form">
+                    <input type="text" name="" id="" class="product-input" placeholder="Code">
+                    <input type="text" name="" id="" class="product-input" placeholder="Product Name">
+                    <input type="text" name="" id="" class="product-input" placeholder="Discount">
                     <button>Calculate</button>
                 </div>
-                <h4>Revenue :</h4><h4></h4>
-
-                <div class="table-wrapper">
-                        <table>
-                            <tr>
-                                <th>ID</th>
-                                <th>Product Name</th>
-                                <th>Product Description</th>
-                                <th>Product image</th>
-                                <th>Views</th>
-                                
-                            </tr>
-                            <!-- dummy text -->
-                            <tr>
-                                <td>1</td>
-                                <td><input type="text" name="name" id="name-idNumber" disabled value="product1"></td>
-                                <td><input type="email" name="email" id="email-idNumber" disabled value="description 1 "></td>
-                                <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
-            
-                                <td>30 views</td>
-                            </tr>
-
-                            <tr>
-                                <td>2</td>
-                                <td><input type="text" name="name" id="name-idNumber" disabled value="product1"></td>
-                                <td><input type="email" name="email" id="email-idNumber" disabled value="description 1 "></td>
-                                <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
-                                
-                                <td>30 views</td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td><input type="text" name="name" id="name-idNumber" disabled value="product1"></td>
-                                <td><input type="email" name="email" id="email-idNumber" disabled value="description 1 "></td>
-                                <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
-                                <td>30 views</td>
-                            </tr>
-
-                            <tr>
-                                <td>4</td>
-                                <td><input type="text" name="name" id="name-idNumber" disabled value="product1"></td>
-                                <td><input type="email" name="email" id="email-idNumber" disabled value="description 1 "></td>
-                                <td><input type="text" name="streetName" id="street-name-idNumber" disabled value="image URL"></td>
-                                
-                                <td>30 views</td>
-                            </tr>
-                        </table>
-                    </div>
-
             </div>
-        </div>
-        <!-- status section ends -->
-
-        <!-- ads and coupons section starts -->
-        <div class="nav-item4" id="nav-item4">
-            <div class="coupons-ads-form">
-                <div class="coupons-form">
-                    <h2>Coupons</h2>
-                    <div class="status-form">
-                        <input type="text" name="" id="" class="product-input" placeholder="Code">
-                        <input type="text" name="" id="" class="product-input" placeholder="Product Name">
-                        <input type="text" name="" id="" class="product-input" placeholder="Discount">
-                        <button>Calculate</button>
-                    </div>
-                </div>
-                <div class="coupons-form">
-                    <h2>Ads</h2>
-                    <div class="status-form">
-                        <input type="file" name="" id="" style="margin-bottom:1rem">
-                        <button>Submit Ad</button>
-                    </div>
+            <div class="coupons-form">
+                <h2>Ads</h2>
+                <div class="status-form">
+                    <input type="file" name="" id="" style="margin-bottom:1rem">
+                    <button>Submit Ad</button>
                 </div>
             </div>
         </div>
-        <!-- ads and coupons section ends -->
+    </div>
+    <!-- ads and coupons section ends -->
 
 
 
