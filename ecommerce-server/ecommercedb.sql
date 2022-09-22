@@ -91,7 +91,6 @@ CREATE TABLE `clients` (
   `name` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `phone` varchar(45) DEFAULT NULL,
-  `banned` tinyint(4) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `joined_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
