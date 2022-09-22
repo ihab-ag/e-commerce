@@ -26,9 +26,13 @@ const getAllSellers = () => {
                 info.forEach(box => box.setAttribute('disabled', true))
                 editConfirmBtn.classList.add('view-none')
                 editBtn.classList.remove('view-none')
-                const arr = []
-                document.querySelectorAll(`.btn-seller-${seller.id}`).forEach(seller => arr.push(seller.value))
-                updateSellerInfo(seller.id, arr[0], arr[1], arr[2], arr[3])
+                const nameRow = document.getElementById(`seller-name-${seller.id}`).value
+                const emailRow = document.getElementById(`seller-email-${seller.id}`).value
+                const phoneRow = document.getElementById(`seller-phone-${seller.id}`).value
+                const locationRow = document.getElementById(`seller-location-${seller.id}`).value
+                //const arr = []
+                //document.querySelectorAll(`.btn-seller-${seller.id}`).forEach(seller => arr.push(seller.value))
+                updateSellerInfo(seller.id, nameRow, emailRow, phoneRow, locationRow)
             })
 
             deleteBtn.addEventListener('click', () => {
