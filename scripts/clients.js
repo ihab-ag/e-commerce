@@ -1,4 +1,6 @@
 const getAllClientsUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/view-clients.php"
+const banUserUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/ban-client.php"
+const checkIfBannedUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/check-client-banned.php"
 const clientTable = document.getElementById('client-table')
 
 
@@ -34,6 +36,7 @@ const getAllClients = () => {
                 unBanClientBtn.classList.remove('view-none')
                 banClientBtn.classList.add('view-none')
                 banClientConfirmBtn.classList.add('view-none')
+                banClient(client.id) // post api that ban user
             })
 
 
@@ -47,6 +50,18 @@ const getAllClients = () => {
 }
 
 getAllClients()
+
+
+const banClient = (clientID) => {
+    const formData = new FormData()
+    formData.append('client_id', clientID)
+
+    axios.post(banUserUrl, formData).then((response) => {
+        const nowBanned = response.data
+        console.log(nowBanned)
+    })
+}
+
 
 const createClientRow = (id, name, email, phone, joined_date) => {
     const tr = document.createElement('tr')
@@ -102,10 +117,25 @@ const createClientRow = (id, name, email, phone, joined_date) => {
     btnConfirm.textContent = "Confirm"
 
     const btnUnBan = document.createElement('button')
-    btnUnBan.setAttribute('class', 'btn btn-ban view-none')
+    btnUnBan.setAttribute('class', 'btn btn-ban') // Moatasem removed the view-none
     btnUnBan.setAttribute('id', `unban-client-${id}`)
     btnUnBan.textContent = "unBan"
-
+    const checkClientIfBanned = (clientID) => {
+        const formData = new FormData()
+        formData.append('client_id', clientID)
+    
+        axios.post(checkIfBannedUrl, formData).then(response => {
+            const isBanned = response.data
+            //console.log(isBanned.banned)
+            if(isBanned.banned) {// if client is banned
+                //we should have the option to un-ban him
+                btnBan.classList.add('view-none')
+            }else {
+                btnUnBan.classList.add('view-none')
+            }
+        })
+    }
+    checkClientIfBanned(id)
     btnDiv.appendChild(btnBan)
     btnDiv.appendChild(btnConfirm)
     btnDiv.appendChild(btnUnBan)
