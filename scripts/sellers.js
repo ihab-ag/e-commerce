@@ -57,6 +57,30 @@ const getAllSellers = () => {
 
 getAllSellers()
 
+const updateSellerInfo = (sellerID, name, email, phone, location) => {
+    const formData = new FormData()
+    formData.append('seller_id', sellerID)
+    formData.append('seller_name', name)
+    formData.append('seller_email', email)
+    formData.append('seller_phone', phone)
+    formData.append('seller_location', location)
+
+    axios.post(editSellerUrl, formData).then((response) => {
+        const nowUpdate = response.data
+        console.log(nowUpdate)
+    })
+}
+
+const deleteSeller = (sellerID) => {
+    const formData = new FormData()
+    formData.append('seller_id', sellerID)
+    
+    axios.post(deleteSellerUrl, formData).then(response => {
+        const deleteNow = response.data
+        console.log(deleteNow)
+    })
+}
+
 const createSellerRow = (id, name, email, phone, location) => {
     const tr = document.createElement('tr')
 
