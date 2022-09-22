@@ -8,6 +8,39 @@ const getAllClients = () => {
         console.log(clients)
         clients.forEach(client => {
             createClientRow(client.id, client.name, client.email, client.phone, client.joined_date)
+            const banClientBtn = document.getElementById(`ban-client-${client.id}`)
+            const unBanClientBtn = document.getElementById(`unban-client-${client.id}`)
+            const banClientConfirmBtn = document.getElementById(`ban-client-${client.id}-confirm`)
+
+            banClientBtn.addEventListener('click', () => {
+                banClientConfirmBtn.classList.remove('view-none')
+                banClientBtn.classList.add('view-none')
+                unBanClientBtn.classList.add('view-none')
+            })
+
+            banClientConfirmBtn.addEventListener('mouseleave', () => {
+                // console.log('mouse-leave')
+                if(unBanClientBtn.classList.contains('view-none')) {
+                    // console.log("if")
+                    banClientBtn.classList.remove('view-none')
+                    banClientConfirmBtn.classList.add('view-none')
+                }else {
+                    // console.log('else')
+                    banClientBtn.classList.add('view-none')
+                }
+            })
+
+            banClientConfirmBtn.addEventListener('click', () => {
+                unBanClientBtn.classList.remove('view-none')
+                banClientBtn.classList.add('view-none')
+                banClientConfirmBtn.classList.add('view-none')
+            })
+
+
+            unBanClientBtn.addEventListener('click', () => {
+                banClientBtn.classList.remove('view-none')
+                unBanClientBtn.classList.add('view-none')
+            })
         });
         
     }).catch(error => console.error(error))
@@ -70,7 +103,7 @@ const createClientRow = (id, name, email, phone, joined_date) => {
 
     const btnUnBan = document.createElement('button')
     btnUnBan.setAttribute('class', 'btn btn-ban view-none')
-    btnUnBan.setAttribute('id', `ban-client-${id}`)
+    btnUnBan.setAttribute('id', `unban-client-${id}`)
     btnUnBan.textContent = "unBan"
 
     btnDiv.appendChild(btnBan)
