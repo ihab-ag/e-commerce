@@ -20,6 +20,14 @@ const emailValidation = (email) => {
     return true
 }
 
+const phoneValidation = (phone) => {
+    const exp = /^+\d$/
+    if(!exp.match(phone)) {
+        return false
+    }
+
+    return true
+}
 
 
 
