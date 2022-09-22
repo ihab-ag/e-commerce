@@ -1,6 +1,7 @@
 const getAllClientsUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/view-clients.php"
-const banUserUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/ban-client.php"
-const checkIfBannedUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/check-client-banned.php"
+const banClientUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/ban-client.php"
+const checkClientBannedUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/check-client-banned.php"
+const unBanClientUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/unban-client.php"
 const clientTable = document.getElementById('client-table')
 
 
@@ -43,6 +44,7 @@ const getAllClients = () => {
             unBanClientBtn.addEventListener('click', () => {
                 banClientBtn.classList.remove('view-none')
                 unBanClientBtn.classList.add('view-none')
+                unBanClient(client.id) // post api that un-ban user
             })
         });
         
@@ -56,12 +58,21 @@ const banClient = (clientID) => {
     const formData = new FormData()
     formData.append('client_id', clientID)
 
-    axios.post(banUserUrl, formData).then((response) => {
+    axios.post(banClientUrl, formData).then((response) => {
         const nowBanned = response.data
         console.log(nowBanned)
     })
 }
 
+const unBanClient = (clientID) => {
+    const formData = new FormData()
+    formData.append('client_id', clientID)
+    
+    axios.post(unBanClientUrl, formData).then(response => {
+        const unBan = response.data
+        console.log(unBan)
+    })
+}
 
 const createClientRow = (id, name, email, phone, joined_date) => {
     const tr = document.createElement('tr')
@@ -120,11 +131,12 @@ const createClientRow = (id, name, email, phone, joined_date) => {
     btnUnBan.setAttribute('class', 'btn btn-ban') // Moatasem removed the view-none
     btnUnBan.setAttribute('id', `unban-client-${id}`)
     btnUnBan.textContent = "unBan"
+    
     const checkClientIfBanned = (clientID) => {
         const formData = new FormData()
         formData.append('client_id', clientID)
     
-        axios.post(checkIfBannedUrl, formData).then(response => {
+        axios.post(checkClientBannedUrl, formData).then(response => {
             const isBanned = response.data
             //console.log(isBanned.banned)
             if(isBanned.banned) {// if client is banned
