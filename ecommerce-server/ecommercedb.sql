@@ -211,7 +211,7 @@ CREATE TABLE `revenues` (
 CREATE TABLE `sellers` (
   `id` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `phone` varchar(45) DEFAULT NULL,
   `location` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL
