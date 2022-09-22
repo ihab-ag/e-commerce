@@ -1,10 +1,11 @@
 const nameValidation = (name) => {
-    const exp = /^[A-Za-z\s]{5, 255}$/
+    const exp = /^[A-Za-z\s]{5,255}$/
     if(name.length < 5) {
         return false
     }else if (name.length > 255) {
         return false
     }else if(!name.match(exp)) {
+        console.log("match")
         return false
     }
 
@@ -22,7 +23,7 @@ const emailValidation = (email) => {
 
 const phoneValidation = (phone) => {
     //least phone number of digits internationally is country code +  4 numbers
-    const exp = /^[+]\d{1, 3}\d{4, }+$/
+    const exp = /^[+]\d{7,255}$/
     if(!phone.match(exp)) {
         return false
     }
@@ -31,7 +32,7 @@ const phoneValidation = (phone) => {
 }
 
 const locationValidation = (location) => {
-    const exp = /^[A-Za-z,\s]+$/
+    const exp = /^[A-Za-z0-9,\s]+$/
     if(!location.match(exp)) {
         return false
     }

@@ -28,14 +28,24 @@ const getAllSellers = () => {
                 const emailRow = document.getElementById(`seller-email-${seller.id}`).value
                 const phoneRow = document.getElementById(`seller-phone-${seller.id}`).value
                 const locationRow = document.getElementById(`seller-location-${seller.id}`).value
-
-                if(!nameValidation(nameRow)) {
+                if(!emptyFieldsValidation(nameRow, emailRow, phoneRow, locationRow)) {
+                    console.log("empty field")
+                    return
+                }else if(!nameValidation(nameRow)) {
+                    console.log(nameRow)
+                    console.log("name field")
                     return
                 }else if(!emailValidation(emailRow)) {
+                    console.log(emailRow)
+                    console.log("email field")
                     return
-                }else if(!phoneValidation) {
+                }else if(!phoneValidation(phoneRow)) {
+                    console.log(phoneRow)
+                    console.log("phone field")
                     return
                 }else if(!locationValidation(locationRow)) {
+                    console.log(locationRow)
+                    console.log("location field")
                     return
                 }
                 info.forEach(box => box.setAttribute('disabled', true))
