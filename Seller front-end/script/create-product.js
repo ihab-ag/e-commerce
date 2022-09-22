@@ -20,15 +20,21 @@ const addNewCategory = document.querySelector("#add-new-catg");
 addNewCategory.onclick = () => {
     addCategoryForm.classList.toggle("add-category-form-block");
 };
+addCategoryForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+})
 
 //submit new product 
-addCategoryButton.onclick = (e) => {
-    e.preventDefault();
+addCategoryButton.onclick = () => {
+    
     const productCategoryName = document.querySelector("#product-cat-name").value;
-    let newCategory = document.createElement("option");
-    productCategories.appendChild(newCategory);
-    newCategory.innerHTML = `${productCategoryName}`;
-    newCategory.value=`${productCategoryName}`;
+    if (productCategoryName.length != 0) {
+        let newCategory = document.createElement("option");
+        productCategories.appendChild(newCategory);
+        newCategory.innerHTML = `${productCategoryName}`;
+        newCategory.value=`${productCategoryName}`;
+    }
+    
 }
 
 //load create product page 

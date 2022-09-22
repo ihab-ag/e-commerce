@@ -32,6 +32,7 @@
             <div class="category-form">
                 <h2>Select Product Category</h2>
                 <select name="cars" id="cars" class="product-input">
+                    <option value="">--Choose an Category--</option>
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
                     <option value="mercedes">Mercedes</option>
@@ -40,7 +41,7 @@
                 </select>
                 <button id="add-new-catg" class="product-input">Add New Category</button> 
                 <form class="add-category-form" >
-                    <input type="text" class="product-input" id="product-cat-name" placeholder="Add your category" style="width:10vw" class="product-input">
+                    <input type="text" class="product-input" id="product-cat-name" placeholder="Add your category" style="width:10vw" class="product-input" min="3" required>
                     <button style="width:5vw" class="product-input" id="submit-cat">Submit</button>
                 </form>
                 
