@@ -31,7 +31,7 @@
         <div class="add-product-form">
             <div class="category-form">
                 <h2>Select Product Category</h2>
-                <select name="cars" id="cars" class="product-input">
+                <select name="cars" id="product-categories" class="product-input" required>
                     <option value="">--Choose an Category--</option>
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
@@ -41,9 +41,10 @@
                 </select>
                 <button id="add-new-catg" class="product-input">Add New Category</button> 
                 <form class="add-category-form" >
-                    <input type="text" class="product-input" id="product-cat-name" placeholder="Add your category" style="width:10vw" class="product-input" min="3" required>
-                    <button style="width:5vw" class="product-input" id="submit-cat">Submit</button>
+                    <input type="text" class="product-input" id="product-cat-name" placeholder="Add your category" style="width:10vw" class="product-input" minlength="3" required>
+                    <button style="width:5rem" class="product-input" id="submit-cat">Submit</button>
                 </form>
+                
                 
             </div>
             <div class="inputs-container">
@@ -59,6 +60,7 @@
                     <textarea name="" id="product-desc" cols="30" rows="5" class="product-input" minlength="20" maxlength="100"placeholder="Product Description" required></textarea>
                     <button type="submit" id="submit-product">Submit</button>
                 </form>
+                <p id="product-warnings"></p>
             </div>
         </div>
     </div>
