@@ -6,4 +6,12 @@
     $query->excute();
     $array = $query->get_result();
     // get results
+    $response=[];
+
+    while($a=$array->fetch_assoc()){
+        $response[]= $a;
+    }
+    // store results in response
+    $json = json_encode($response);
+    echo $json;
 ?>
