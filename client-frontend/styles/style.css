@@ -20,7 +20,7 @@
 }
 
 /* Header section */
-.header{
+header{
     background-color: #a0db8e;
     margin-top: 0;
     height: 90px;
@@ -137,31 +137,21 @@
 }
 
 /* Items Section */
-.item1-img{
+.item-img{
     height: 140px;
     width: 230px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .green-icons{
     height: 22px; 
     width: 22px;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
 .items-title{
-    margin-top: 50px;
-    margin-bottom: 40px;
+    margin: 50px;
     font-size: 25px;
-}
-
-.item1-img{
-    border-radius: 10px;
-}
-
-.left{
-    margin-left: 50px;
 }
 
 .item-name{
@@ -170,16 +160,16 @@
     margin-right: 15px;
 }
 
-.top{
-    margin-top: 15px;
-}
-
 .price{
     color: #a0db8e;
     font-weight: bold;
     margin-bottom: 30px;
 }
 
-.ad-top{
-    margin-top: 120px;
+.evenly{
+    justify-content: space-evenly;
+}
+
+.end{
+    float: right;
 }
