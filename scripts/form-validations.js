@@ -21,7 +21,7 @@ const emailValidation = (email) => {
 }
 
 const phoneValidation = (phone) => {
-    const exp = /^+\d$/
+    const exp = /^+\d+$/
     if(!exp.match(phone)) {
         return false
     }
@@ -29,7 +29,14 @@ const phoneValidation = (phone) => {
     return true
 }
 
+const locationValidation = (location) => {
+    const exp = /^[A-Za-z,\s]+$/
+    if(!exp.match(location)) {
+        return false
+    }
 
+    return true
+} 
 
 const setErrorMessage = (message) => {
 
