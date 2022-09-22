@@ -1,7 +1,7 @@
 <?php
     include('connection.php');
     // connect to db
-    $query= $mysqli->prepare("SELECT
+    $query= $mysqli->prepare('SELECT
     `id`,
     `name`,
     `email`,
@@ -9,7 +9,7 @@
     DATE_FORMAT(`joined_date`,"%b, %e, %Y") AS joined_date
 FROM
     `clients`
-LIMIT 10;");
+LIMIT 10;');
     // query to get clients
     $query->execute();
     $array = $query->get_result();
