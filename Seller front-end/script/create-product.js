@@ -116,4 +116,28 @@ submitProductButton.addEventListener('click', () => {
     }
 );
 
-//status form 
+//status form
+//revenue form
+const revenueForm = document.querySelector(".revenue-form"); 
+calculateRevenueButton = document.querySelector("#calculate-rev-btn"); 
+//prevent refresh 
+revenueForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
+//click on calculate
+calculateRevenueButton.addEventListener('click', () => {
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1;//january is 0
+    let yyyy = today.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById('end-date').setAttribute('max', today);
+
+});
+
