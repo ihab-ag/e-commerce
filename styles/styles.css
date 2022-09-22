@@ -444,7 +444,7 @@ body {
 
     .main-container {
         width: 100%;
-        height: calc(100% - 60px); /*80px refers to new width of header container*/
+        height: calc(100% - 60px); /*60px refers to new width of header container*/
     }
 
     /* will be used in js on navbar */
