@@ -1,5 +1,9 @@
 <?php
     include('connection.php');
+    header('Access-Control-Allow-Origin: *');//access by anybody with no auth
+    header('Content-Type: application/json');
+    header('Access-Control-Allow-Methods: POST');
+    header('Allow-Control-Allow-Headers: Allow-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
     // connect to db
     $query= $mysqli->prepare('SELECT
     `id`,
@@ -11,7 +15,9 @@ FROM
     `clients`
 LIMIT 10;');
     // query to get clients
-    $query->execute();
+    if(!$query->execute()) {
+        die("Error in view-clients-api");
+    }
     $array = $query->get_result();
     // get results
     $response=[];
