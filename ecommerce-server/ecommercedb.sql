@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2022 at 09:33 AM
+-- Generation Time: Sep 22, 2022 at 02:24 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -31,7 +31,7 @@ CREATE TABLE `addresses` (
   `id` int(11) NOT NULL,
   `address` varchar(45) DEFAULT NULL,
   `clients_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -44,7 +44,7 @@ CREATE TABLE `ads` (
   `image` varchar(255) DEFAULT NULL,
   `Sellers_id` int(11) NOT NULL,
   `validity_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -54,7 +54,14 @@ CREATE TABLE `ads` (
 
 CREATE TABLE `banned_users` (
   `clients_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `banned_users`
+--
+
+INSERT INTO `banned_users` (`clients_id`) VALUES
+(1);
 
 -- --------------------------------------------------------
 
@@ -66,7 +73,7 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `Sellers_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -78,7 +85,7 @@ CREATE TABLE `chats_rooms` (
   `id` int(11) NOT NULL,
   `Sellers_id` int(11) NOT NULL,
   `clients_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -93,7 +100,18 @@ CREATE TABLE `clients` (
   `phone` varchar(45) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `joined_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `clients`
+--
+
+INSERT INTO `clients` (`id`, `name`, `email`, `phone`, `password`, `joined_date`) VALUES
+(1, 'client1', 'mail@mail.com', '98228888888', 'password', '2022-09-09'),
+(2, 'client2', 'mail@mail.com', '98228888888', 'password', '0000-00-00'),
+(3, 'client3', 'mail@mail.com', '24978317849', 'password', '0000-00-00'),
+(4, 'client4', '-', '90877654432', 'password', '0000-00-00'),
+(5, 'client2', 'mail@mail.com', '98228888888', 'password', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -105,7 +123,7 @@ CREATE TABLE `discounts` (
   `id` int(11) NOT NULL,
   `amount` int(11) DEFAULT NULL,
   `products_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -116,7 +134,7 @@ CREATE TABLE `discounts` (
 CREATE TABLE `favourits` (
   `client_id` int(11) NOT NULL,
   `products_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -130,7 +148,7 @@ CREATE TABLE `messages` (
   `message` varchar(45) DEFAULT NULL,
   `date` datetime(1) DEFAULT NULL,
   `chats_rooms_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -147,7 +165,7 @@ CREATE TABLE `products` (
   `image` varchar(255) DEFAULT NULL,
   `Categories_id` int(11) NOT NULL,
   `issue_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -160,7 +178,7 @@ CREATE TABLE `receipts` (
   `amount` int(11) DEFAULT NULL,
   `client_id` int(11) NOT NULL,
   `date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -173,7 +191,7 @@ CREATE TABLE `revenues` (
   `amount` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `Sellers_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -188,7 +206,7 @@ CREATE TABLE `sellers` (
   `phone` varchar(45) DEFAULT NULL,
   `location` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -200,7 +218,7 @@ CREATE TABLE `vouchers` (
   `id` int(11) NOT NULL,
   `value` int(11) DEFAULT NULL,
   `client_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -211,7 +229,7 @@ CREATE TABLE `vouchers` (
 CREATE TABLE `wishlist_items` (
   `client_id` int(11) NOT NULL,
   `products_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -319,6 +337,82 @@ ALTER TABLE `vouchers`
 ALTER TABLE `wishlist_items`
   ADD PRIMARY KEY (`client_id`,`products_id`),
   ADD KEY `fk_client_has_products_products2` (`products_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `addresses`
+--
+ALTER TABLE `addresses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ads`
+--
+ALTER TABLE `ads`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `chats_rooms`
+--
+ALTER TABLE `chats_rooms`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `clients`
+--
+ALTER TABLE `clients`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `discounts`
+--
+ALTER TABLE `discounts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `receipts`
+--
+ALTER TABLE `receipts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `revenues`
+--
+ALTER TABLE `revenues`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sellers`
+--
+ALTER TABLE `sellers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `vouchers`
+--
+ALTER TABLE `vouchers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
