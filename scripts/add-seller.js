@@ -9,3 +9,20 @@ const addBtn = document.getElementById('add-btn')
 const addSellerCaller = document.getElementById('add-table-caller')
 const addSellerCanceler = document.getElementById('add-seller-canceler')
 
+addSellerCaller.addEventListener('click', () => {
+    
+})
+
+const insertSeller = (name, email, phone, location, pwd) => {
+    const formData = new FormData()
+    formData.append('name', name)
+    formData.append('pwd', pwd)
+    formData.append('phone', phone)
+    formData.append('location', location)
+    formData.append('email', email)
+
+    axios.post(addSellerUrl, formData).then((response) => {
+        const nowInsert = response.data
+        console.log(nowInsert)
+    })
+}  
