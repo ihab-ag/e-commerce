@@ -97,6 +97,7 @@ header{
     height: 40px;
     margin: 22px;
     margin-right: 30px;
+    cursor: pointer;
 }
 
 .search-bar{
@@ -155,11 +156,13 @@ header{
     width: 230px;
     object-fit: cover;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .green-icons{
     height: 22px; 
     width: 22px;
+    cursor: pointer;
 }
 
 .items-title{
@@ -187,3 +190,30 @@ header{
     margin-right: 0;
 }
 
+@media screen and (max-width: 500px) {
+    header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+
+    header {
+        width: 500px;
+   }
+
+   .header-container{
+        gap: 150px;
+   }
+
+   .nav-title{
+        font-size: 20px;
+   }
+
+   .search-input{
+        width: 200px;
+   }
+
+   .whitecart{
+        margin-left: -135px;
+   }
+  }
