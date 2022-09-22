@@ -12,7 +12,17 @@
     $query->execute();
     $array=$query->get_result();
     // check if chat room exists
-    
+    if(!$a=$array->fetch_assoc()){
+        $query= $mysqli->prepare("INSERT INTO `chat_rooms` (`sellers_id`, `clients_id`) VALUES ( ? , ? );");
+        $query->bind_param("ii",$seller_id,$client_id);
+        $query->execute();
+        $query= $mysqli->prepare("SELECT id FROM chat_rooms WHERE sellers_id= ? AND clients_id= ?");
+        $query->bind_param("ii",$seller_id,$client_id);
+        $query->execute();
+        $array=$query->get_result();
+        $a=$array->fetch_assoc();
+    }
+    // create room if it doesn't exist
     
     
 ?>
