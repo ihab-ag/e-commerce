@@ -4,7 +4,7 @@ const nameValidation = (name) => {
         return false
     }else if (name.length > 255) {
         return false
-    }else if(!exp.match(name)) {
+    }else if(!name.match(exp)) {
         return false
     }
 
@@ -13,7 +13,7 @@ const nameValidation = (name) => {
 
 const emailValidation = (email) => {
     const exp = /^(\w([\.-]?\w)*)+@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    if(!exp.match(email)) {
+    if(!email.match(exp)) {
         return false
     }
 
@@ -22,8 +22,8 @@ const emailValidation = (email) => {
 
 const phoneValidation = (phone) => {
     //least phone number of digits internationally is country code +  4 numbers
-    const exp = /^[+]\d{1, 3}\d{4}+$/
-    if(!exp.match(phone)) {
+    const exp = /^[+]\d{1, 3}\d{4, }+$/
+    if(!phone.match(exp)) {
         return false
     }
 
@@ -32,12 +32,19 @@ const phoneValidation = (phone) => {
 
 const locationValidation = (location) => {
     const exp = /^[A-Za-z,\s]+$/
-    if(!exp.match(location)) {
+    if(!location.match(exp)) {
         return false
     }
 
     return true
 } 
+
+const emptyFieldsValidation = (name, email, phone, location) => {
+    if(!name || !email || !phone || !location) {
+        return false
+    }
+    return true
+}
 
 const setErrorMessage = (message) => {
 

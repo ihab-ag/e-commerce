@@ -3,6 +3,7 @@ const deleteSellerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-serve
 const editSellerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/update-seller.php"
 const sellersTable= document.getElementById('seller-table')
 
+
 const getAllSellers = () => {
     axios.get(getAllSellersUrl).then(response => {
         const sellers = response.data
@@ -23,13 +24,23 @@ const getAllSellers = () => {
             })
 
             editConfirmBtn.addEventListener('click', () => {
-                info.forEach(box => box.setAttribute('disabled', true))
-                editConfirmBtn.classList.add('view-none')
-                editBtn.classList.remove('view-none')
                 const nameRow = document.getElementById(`seller-name-${seller.id}`).value
                 const emailRow = document.getElementById(`seller-email-${seller.id}`).value
                 const phoneRow = document.getElementById(`seller-phone-${seller.id}`).value
                 const locationRow = document.getElementById(`seller-location-${seller.id}`).value
+
+                if(!nameValidation(nameRow)) {
+                    return
+                }else if(!emailValidation(emailRow)) {
+                    return
+                }else if(!phoneValidation) {
+                    return
+                }else if(!locationValidation(locationRow)) {
+                    return
+                }
+                info.forEach(box => box.setAttribute('disabled', true))
+                editConfirmBtn.classList.add('view-none')
+                editBtn.classList.remove('view-none')
                 //const arr = []
                 //document.querySelectorAll(`.btn-seller-${seller.id}`).forEach(seller => arr.push(seller.value))
                 updateSellerInfo(seller.id, nameRow, emailRow, phoneRow, locationRow)
