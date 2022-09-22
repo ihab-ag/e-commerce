@@ -237,19 +237,19 @@
         <div class="coupons-ads-form">
             <div class="coupons-form">
                 <h2>Coupons</h2>
-                <div class="status-form">
-                    <input type="text" name="" id="" class="product-input" placeholder="Code">
-                    <input type="text" name="" id="" class="product-input" placeholder="Product Name">
-                    <input type="text" name="" id="" class="product-input" placeholder="Discount">
+                <form class="status-form">
+                    <input type="number" name="" id="" class="product-input" min="1" placeholder="Code" required>
+                    <input type="text" name="" id="" class="product-input" minlength="3" placeholder="Product Name" required>
+                    <input type="number" name="" id="" class="product-input" min="1" placeholder="Discount in %" required>
                     <button>Calculate</button>
-                </div>
+                </form>
             </div>
             <div class="coupons-form">
                 <h2>Ads</h2>
-                <div class="status-form">
-                    <input type="file" name="" id="" style="margin-bottom:1rem">
+                <form class="status-form">
+                    <input type="file" name="" id="" style="margin-bottom:1rem" required>
                     <button>Submit Ad</button>
-                </div>
+                </form>
             </div>
         </div>
     </div>

@@ -126,6 +126,7 @@ revenueForm.addEventListener('submit', (e) => {
 });
 //click on calculate
 calculateRevenueButton.addEventListener('click', () => {
+    //end date validation
     let today = new Date();
     let dd = today.getDate();
     let mm = today.getMonth() + 1;//january is 0
@@ -138,6 +139,6 @@ calculateRevenueButton.addEventListener('click', () => {
     }
     today = yyyy + '-' + mm + '-' + dd;
     document.getElementById('end-date').setAttribute('max', today);
-
 });
+
 
