@@ -23,6 +23,10 @@
         $a=$array->fetch_assoc();
     }
     // create room if it doesn't exist
-    
+     $response=[];
+     $response['chat_id']=$a['id'];
+     $json = json_encode($response);
+    echo $json;
+    // respond with id
     
 ?>
