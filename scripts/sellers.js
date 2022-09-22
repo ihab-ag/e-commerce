@@ -9,6 +9,48 @@ const getAllSellers = () => {
         console.log(sellers)
         sellers.forEach(seller => {
             createSellerRow(seller.id, seller.name, seller.email, seller.phone, seller.location)
+            const editBtn = document.getElementById(`btn-edit-${seller.id}`)
+            const deleteBtn = document.getElementById(`btn-delete-${seller.id}`)
+            const editConfirmBtn = document.getElementById(`btn-edit-${seller.id}-confirm`)
+            const deleteConfirmBtn = document.getElementById(`btn-delete-${seller.id}-confirm`)
+            const info = document.querySelectorAll(`.btn-seller-${seller.id}`)
+
+            editBtn.addEventListener('click', () => {
+                info.forEach(box => box.removeAttribute('disabled'))
+                editConfirmBtn.classList.remove('view-none')
+                editBtn.classList.add('view-none')
+                
+            })
+
+            editConfirmBtn.addEventListener('click', () => {
+                info.forEach(box => box.setAttribute('disabled', true))
+                editConfirmBtn.classList.add('view-none')
+                editBtn.classList.remove('view-none')
+            })
+
+            deleteBtn.addEventListener('click', () => {
+                deleteConfirmBtn.classList.remove('view-none')
+                deleteBtn.classList.add('view-none')
+                info.forEach(box => box.setAttribute('disabled', true))
+                editConfirmBtn.classList.add('view-none')
+                editBtn.classList.remove('view-none')
+            })
+
+            deleteConfirmBtn.addEventListener('click', () => {
+                document.getElementById('seller-row-1').classList.add('view-none')
+                editConfirmBtn.classList.add('view-none')
+                editBtn.classList.remove('view-none')
+                editConfirmBtn.classList.add('view-none')
+                editBtn.classList.remove('view-none')
+            })
+
+            deleteConfirmBtn.addEventListener('mouseleave', () => {
+                info.forEach(box => box.setAttribute('disabled', true))
+                editConfirmBtn.classList.add('view-none')
+                editBtn.classList.remove('view-none')
+                deleteBtn.classList.remove('view-none')
+                deleteConfirmBtn.classList.add('view-none')
+            })
         });
     })
 }
