@@ -5,7 +5,7 @@
     header('Content-Type: application/json');
     header('Access-Control-Allow-Methods: POST');
     header('Allow-Control-Allow-Headers: Allow-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
-    $clientID = $_POST['clients_id'];
+    $clientID = $_POST['client_id'];
     // connect to db
     $query= $mysqli->prepare('INSERT INTO banned_users VALUES(?);');
     $query->bind_param('d', $clientID);
