@@ -132,11 +132,21 @@ header{
 
 /* AD section */
 .ad-img{
-    object-fit: none;
-    width: 2000px;
-    height: 150px;
-    margin-left: 32px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 30px;
+    border-radius: 10px;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+  .mySlides {
+    display: none;
 }
 
 /* Items Section */
