@@ -109,9 +109,11 @@ submitProductButton.addEventListener('click', () => {
     const productImage = document.querySelector("#product-img").value;
     const productDescription = document.querySelector("#product-desc").value;
     //specifications
-    if (productName.length < 3) {
+    
         
 
         
     }
-});
+);
+
+//status form 
