@@ -1,7 +1,7 @@
 const editBtn = document.getElementById('btn-edit-1')
 const deleteBtn = document.getElementById('btn-delete-1')
-const editConfirmBtn = document.getElementById('btn-edit-confirm')
-const deleteConfirmBtn = document.getElementById('btn-delete-confirm')
+const editConfirmBtn = document.getElementById('btn-edit-1-confirm')
+const deleteConfirmBtn = document.getElementById('btn-delete-1-confirm')
 const info = document.querySelectorAll('.btn-seller-1')
 
 editBtn.addEventListener('click', () => {
