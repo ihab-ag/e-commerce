@@ -38,6 +38,7 @@ const getAllClients = () => {
                 banClientBtn.classList.add('view-none')
                 banClientConfirmBtn.classList.add('view-none')
                 banClient(client.id) // post api that ban user
+                setMessage('Client is banned', false)
             })
 
 
@@ -45,6 +46,7 @@ const getAllClients = () => {
                 banClientBtn.classList.remove('view-none')
                 unBanClientBtn.classList.add('view-none')
                 unBanClient(client.id) // post api that un-ban user
+                setMessage('Client is Unbanned', true)
             })
         });
         

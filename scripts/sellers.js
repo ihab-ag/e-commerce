@@ -77,6 +77,7 @@ const getAllSellers = () => {
                 editConfirmBtn.classList.add('view-none')
                 editBtn.classList.remove('view-none')
                 deleteSeller(seller.id)
+                setMessage('Seller info deleted successfully', true)
             })
 
             deleteConfirmBtn.addEventListener('mouseleave', () => {
