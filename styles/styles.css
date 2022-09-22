@@ -150,6 +150,16 @@ body {
     transition: all 1s;
 }
 
+.msg-success {
+    background-color: #00ffb3;
+    color: #09490d;
+}
+
+.msg-error {
+    background-color: #ff6262;
+    color: #b70404;
+}
+
 .msg-section .msg-content {
 
 }

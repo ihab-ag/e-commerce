@@ -47,6 +47,14 @@ const emptyFieldsValidation = (name, email, phone, location) => {
     return true
 }
 
+const msgSection = document.querySelector('.msg-section')
+const msgContent = document.querySelector('.msg-content')
+
 const setErrorMessage = (message) => {
+    msgSection.classList.add('msg-appear')
+    msgContent.textContent = message
+    setTimeout(() => {
+        msgSection.classList.remove('msg-appear')
+    }, 3000);
 
 }
