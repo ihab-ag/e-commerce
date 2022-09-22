@@ -3,7 +3,7 @@
     // connect to db
     $query= $mysqli->prepare("SELECT `id`, `name`, `email`, `phone`, `joined_date` FROM `clients` LIMIT 10");
     // query to get clients
-    $query->excute();
+    $query->execute();
     $array = $query->get_result();
     // get results
     $response=[];
