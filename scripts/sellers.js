@@ -1,6 +1,7 @@
 const getAllSellersUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/view-sellers.php"
 const deleteSellerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/delete-seller.php"
 const editSellerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/update-seller.php"
+const emailSellerCheckUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/check-email.php"
 const sellersTable= document.getElementById('seller-table')
 
 
@@ -53,13 +54,31 @@ const getAllSellers = () => {
                     setMessage(`${locationRow} has wrong format`, false)
                     return
                 }
-                info.forEach(box => box.setAttribute('disabled', true))
-                editConfirmBtn.classList.add('view-none')
-                editBtn.classList.remove('view-none')
-                //const arr = []
-                //document.querySelectorAll(`.btn-seller-${seller.id}`).forEach(seller => arr.push(seller.value))
-                updateSellerInfo(seller.id, nameRow, emailRow, phoneRow, locationRow)
-                setMessage('Seller info updated successfully', true)
+
+                const emailSellerChecker = (sellerID, email) => {
+                    const formData = new FormData()
+                    formData.append('seller_id', sellerID)
+                    formData.append('seller_email', email)
+                    
+                    axios.post(emailSellerCheckUrl, formData).then(response => {
+                        const checkEmail = response.data
+                        console.log(checkEmail)
+                        if(checkEmail.emailTaken) {
+                            setMessage('Email is taken', false)
+                            return
+                        }
+                        
+                        info.forEach(box => box.setAttribute('disabled', true))
+                        editConfirmBtn.classList.add('view-none')
+                        editBtn.classList.remove('view-none')
+                        //const arr = []
+                        //document.querySelectorAll(`.btn-seller-${seller.id}`).forEach(seller => arr.push(seller.value))
+                        updateSellerInfo(seller.id, nameRow, emailRow, phoneRow, locationRow)
+                        setMessage('Seller info updated successfully', true)
+                    })
+                }
+                emailSellerChecker(seller.id, emailRow)
+                
             })
 
             deleteBtn.addEventListener('click', () => {
@@ -116,6 +135,7 @@ const deleteSeller = (sellerID) => {
         console.log(deleteNow)
     })
 }
+
 
 const createSellerRow = (id, name, email, phone, location) => {
     const tr = document.createElement('tr')
