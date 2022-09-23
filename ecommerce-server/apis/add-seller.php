@@ -17,9 +17,21 @@
     // query to put client into the banned list
     if(!$query->execute()) {
         //statement failed
-        echo json_encode(["success" => false]);
+        // echo json_encode(["success" => false]);
         die("Error in add-seller-api");
     }
     //statement succeeded
-    echo json_encode(["success" => true]);
+    // echo json_encode(["success" => true]);
+    // email is unique
+    $query2 = $mysqli->prepare('SELECT id FROM sellers WHERE email=?;');
+    $query2->bind_param('s', $email);
+    if(!$query2->execute()) {
+        die("Error in add-seller-api selection part");
+    }
+    $results = $query2->get_result();
+    $result = $results->fetch_assoc();
+    $sellerID = $result['id']; //guaranteed one answer
+
+    json_encode(["success" => true, "seller_id" => $sellerID]);
+
 ?>
