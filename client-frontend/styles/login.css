@@ -19,7 +19,7 @@
     justify-content: space-between;
 }
 
-.login-input{
+.login-input, .signup-input{
     border-radius: 5px;
     width: 260px;
     padding: 12px;
@@ -29,7 +29,7 @@
     margin-top: 30px;
 }
 
-.submit-btn{
+.sign-in-btn, .sign-up-btn{
     border-radius: 5px;
     width: 300px;
     padding: 12px;
@@ -40,6 +40,7 @@
     font-size: 15px;
     font-weight: bold;
     color: white;
+    cursor: pointer;
 }
 
 .end{
@@ -95,6 +96,7 @@ h2{
 
 .guest{
     margin-left: 43px;
+    cursor: pointer;
 }
 
 .sign-up-modal {
@@ -135,11 +137,18 @@ h2{
 }
 
 .container{
-    gap: 50px;
+    gap: 30px;
 }
 
 #close_sign_up_modal{
-    margin-right: -45px;
+    cursor: pointer;
+    margin-left: 0px;
+    margin-right: auto;
+
+}
+
+.signup-text{
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1050px) {
@@ -159,7 +168,6 @@ h2{
         max-width: 100%;
         height: 100vh;
         background-size: contain;
-        
     }
 
     .signup-img {
@@ -168,7 +176,7 @@ h2{
     }
     
     .container{
-      margin-left: 70px;
+        justify-content: center;
     }
 
     .titles {
@@ -200,5 +208,51 @@ h2{
 
     .form{
         left: 20%;
+    }
+
+    #close_sign_up_modal{
+        margin-left: auto;
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 682px){
+    .sign-up-modal,
+    .sign-in-modal {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container{
+        justify-content: center;
+        gap: 20px;
+        margin-left: 20px;
+    }
+
+    .signup-input{
+        width: 200px;
+    }
+
+    .sign-up-btn{
+        width: 240px;
+    }
+}
+
+@media (max-width: 980px){
+    .titles {
+        align-items: center;
+        text-align: center;
+    }
+
+    .titles h1 {
+        font-size: 50px;
+    }
+
+    .titles h2 {
+        font-size: 30px;
+    }
+
+    .form{
+        left: 35%;
     }
 }
