@@ -23,7 +23,7 @@
     //statement succeeded
     // echo json_encode(["success" => true]);
     // email is unique
-    $query2 = $mysqli->prepare('SELECT id FROM sellers WHERE email=?;');
+    $query2 = $mysqli->prepare('SELECT id FROM clients WHERE email=?;');
     $query2->bind_param('s', $email);
     if(!$query2->execute()) {
         die("Error in add-client-api selection part");
