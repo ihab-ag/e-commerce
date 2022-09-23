@@ -215,5 +215,35 @@ header{
 
    .whitecart{
         margin-left: -135px;
+        height: 30px;
+        margin-top: 30px;
    }
+
+   .ad-img{
+    max-width: 480px;
+   }
+
+   .items-title{
+    font-size:18px ;
+    margin: 20px;
+   }
+   
+   .item-img{
+    height: 80px;
+    width: 130px;
+   }
+
+   .green-icons{
+    height: 13px; 
+    width: 13px;
+    }
+
+    .item-name{
+        font-size: 10px;
+    }
+
+    .price{
+        font-size: 10px;
+    }
+
   }
