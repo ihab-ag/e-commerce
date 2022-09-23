@@ -565,10 +565,23 @@ body {
     .stat-container .stat-box .draw-canvas {
         order: 2;
     }
-    
+
     table {
+        width: 100%;
         display: block;
         overflow-x: auto !important;
         white-space: nowrap;
+    }
+
+    table tr {
+        width: 100%;
+    }
+
+    table tr th {
+        width: 100%;
+    }
+
+    table tr td {
+        width: 100%;
     }
 }

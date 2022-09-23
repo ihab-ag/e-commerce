@@ -2,8 +2,9 @@ const getAllSellersUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-serv
 const deleteSellerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/delete-seller.php"
 const editSellerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/update-seller.php"
 const emailSellerCheckUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/check-email.php"
+const searchSellerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/search-seller.php"
 const sellersTable= document.getElementById('seller-table')
-
+const searchSeller = document.getElementById('seller-search')
 
 const getAllSellers = () => {
     axios.get(getAllSellersUrl).then(response => {
@@ -133,6 +134,16 @@ const deleteSeller = (sellerID) => {
     axios.post(deleteSellerUrl, formData).then(response => {
         const deleteNow = response.data
         console.log(deleteNow)
+    })
+}
+
+const searchForSeller = (search) => {
+    const formData = new FormData()
+    formData.append('seller_id', search)
+    
+    axios.post(searchSellerUrl, formData).then(response => {
+        const searchNow = response.data
+        //console.log(searchNow)
     })
 }
 
