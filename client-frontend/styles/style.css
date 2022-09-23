@@ -192,9 +192,9 @@ header{
 
 @media screen and (max-width: 500px) {
     header a {
-      float: none;
-      display: block;
-      text-align: left;
+        float: none;
+        display: block;
+        text-align: left;
     }
 
     header {
@@ -220,22 +220,22 @@ header{
    }
 
    .ad-img{
-    max-width: 480px;
+        max-width: 480px;
    }
 
    .items-title{
-    font-size:18px ;
-    margin: 20px;
+        font-size:18px ;
+        margin: 20px;
    }
    
    .item-img{
-    height: 80px;
-    width: 130px;
+        height: 80px;
+        width: 130px;
    }
 
    .green-icons{
-    height: 13px; 
-    width: 13px;
+        height: 13px; 
+        width: 13px;
     }
 
     .item-name{
@@ -244,6 +244,10 @@ header{
 
     .price{
         font-size: 10px;
+    }
+
+    .dropbtn{
+        display: none;
     }
 
   }
