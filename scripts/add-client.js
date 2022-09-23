@@ -1,87 +1,83 @@
-const addSellerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/add-seller.php"
-const emailSellerCheckerNoUserUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/check-email-no-user.php"
-const sellerName = document.getElementById('add-seller-name')
-const sellerEmail = document.getElementById('add-seller-email')
-const sellerPhone = document.getElementById('add-seller-phone')
-const sellerLocation = document.getElementById('add-seller-location')
-const sellerPassword = document.getElementById('add-seller-pwd')
+const addClientUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/add-client.php"
+const emailClientCheckerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/check-client-email.php"
+const clientName = document.getElementById('add-client-name')
+const clientEmail = document.getElementById('add-client-email')
+const clientPhone = document.getElementById('add-client-phone')
+const clientPassword = document.getElementById('add-client-pwd')
 
-const addBtn = document.getElementById('add-btn')
-const addSellerCaller = document.getElementById('add-table-caller')
-const addSellerCanceler = document.getElementById('add-seller-canceler')
-const addSellerContainer = document.getElementById('insert-container')
-const inertSellerInputs = document.querySelectorAll('.seller-insert-inputs')
+const addClientBtn = document.getElementById('add-client-btn')
+const addClientCaller = document.getElementById('add-client-table-caller')
+const addClientCanceler = document.getElementById('add-client-canceler')
+const addClientContainer = document.getElementById('insert-client-container')
+const insertClientInputs = document.querySelectorAll('.client-insert-inputs')
 
-addSellerCaller.addEventListener('click', () => {
-    addSellerContainer.classList.remove('view-none')
-    addSellerCanceler.classList.remove('view-none')
-    addSellerCaller.classList.add('view-none')
+addClientCaller.addEventListener('click', () => {
+    console.log("client click")
+    addClientContainer.classList.remove('view-none')
+    addClientCanceler.classList.remove('view-none')
+    addClientCaller.classList.add('view-none')
 })
 
-addSellerCanceler.addEventListener('click', () => {
-    addSellerContainer.classList.add('view-none')
-    addSellerCaller.classList.remove('view-none')
-    addSellerCanceler.classList.add('view-none')
-    inertSellerInputs.forEach(input => input.value = "")
+addClientCanceler.addEventListener('click', () => {
+    addClientContainer.classList.add('view-none')
+    addClientCaller.classList.remove('view-none')
+    addClientCanceler.classList.add('view-none')
+    insertClientInputs.forEach(input => input.value = "")
 })
 
-addBtn.addEventListener('click', () => {
-    if(!emptyFieldsValidation(sellerName.value, sellerEmail.value, sellerPhone.value, sellerLocation.value) || !sellerPassword.value) {
+addClientBtn.addEventListener('click', () => {
+    if(!clientName.value|| !clientEmail.value|| !clientPhone.value || !clientPassword.value) {
         setMessage('All Fields are required', false)
         return
-    }else if (!nameValidation(sellerName.value)) {
-        setMessage(`${sellerName.value} is not valid`, false)
+    }else if (!nameValidation(clientName.value)) {
+        setMessage(`${clientName.value} is not valid`, false)
         return
-    }else if (!emailValidation(sellerEmail.value)) {
-        setMessage(`${sellerEmail.value} is not valid email`, false)
+    }else if (!emailValidation(clientEmail.value)) {
+        setMessage(`${clientEmail.value} is not valid email`, false)
         return
-    }else if(!phoneValidation(sellerPhone.value)) {
-        setMessage(`${sellerPhone.value} is not a valid phone`, false)
-        return
-    }else if(!locationValidation(sellerLocation.value)) {
-        setMessage("location format is not valid", false)
+    }else if(!phoneValidation(clientPhone.value)) {
+        setMessage(`${clientPhone.value} is not a valid phone`, false)
         return
     }
-    emailSellerChecker(sellerName.value, sellerEmail.value, sellerPhone.value, sellerLocation.value, sellerPassword.value)
+    emailClientChecker(clientName.value, clientEmail.value, clientPhone.value, clientPassword.value)
 
 })
 
 
 
-const emailSellerChecker = (name, email, phone, location, pwd) => {
+const emailClientChecker = (name, email, phone, pwd) => {
     const formData = new FormData()
-    formData.append('seller_email', email)
+    formData.append('client_email', email)
     
-    axios.post(emailSellerCheckerNoUserUrl, formData).then(response => {
+    axios.post(emailClientCheckerUrl, formData).then(response => {
         const checkEmail = response.data
         console.log(checkEmail)
         if(checkEmail.emailTaken) {
             setMessage('Email is taken', false)
             return
         }
-        insertSeller(name, email, phone, location, pwd)
-        setMessage("Seller added successfully", true)
-        inertSellerInputs.forEach(input => input.value = "")
-        addSellerContainer.classList.add('view-none')
-        addSellerCaller.classList.remove('view-none')
-        addSellerCanceler.classList.add('view-none')
+        insertClient(name, email, phone, pwd)
+        setMessage("Client added successfully", true)
+        insertClientInputs.forEach(input => input.value = "")
+        addClientContainer.classList.add('view-none')
+        addClientCaller.classList.remove('view-none')
+        addClientCanceler.classList.add('view-none')
     })
 }
 
-const insertSeller = (name, email, phone, location, pwd) => {
+const insertClient = (name, email, phone, pwd) => {
     console.log("call insert function")
     const formData = new FormData()
     formData.append('name', name)
     formData.append('pwd', pwd)
     formData.append('phone', phone)
-    formData.append('location', location)
     formData.append('email', email)
 
-    axios.post(addSellerUrl, formData).then((response) => {
+    axios.post(addClientUrl, formData).then((response) => {
         const nowInsert = response.data
         console.log("now insert", nowInsert)
-        deleteSellerRows()
-        getAllSellers()
+        deleteClientRows()
+        getAllClients()
         //createSellerRowAtFirst(nowInsert.seller_id, name, email, phone, location)
     })
 }  
