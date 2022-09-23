@@ -565,4 +565,10 @@ body {
     .stat-container .stat-box .draw-canvas {
         order: 2;
     }
+    
+    table {
+        display: block;
+        overflow-x: auto !important;
+        white-space: nowrap;
+    }
 }
