@@ -14,6 +14,7 @@
     <script src="scripts/form-validations.js" defer></script>
     <script src="scripts/clients.js" defer></script>
     <script src="scripts/sellers.js" defer></script>
+    <script src="scripts/add-seller.js" defer></script>
 </head>
 <body>
     <header class="header-container">
@@ -46,7 +47,7 @@
 
                 <div class="table-wrapper">
                     <table id="client-table">
-                        <tr>
+                        <tr id="client-headers">
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -129,11 +130,11 @@
                 <div class="table-wrapper view-none" id="insert-container">
                     <table>
                         <tr>
-                            <td><input type="text" name="name" id="add-seller-name" placeholder="Name..."></td>
-                            <td><input type="email" name="email" id="add-seller-email" placeholder="Email..."></td>
-                            <td><input type="tel" name="tel" id="add-seller-phone" placeholder="Phone..."></td>
-                            <td><input type="text" name="streetName" id="add-seller-location" placeholder="Location..."></td>
-                            <td><input type="password" name="pwd" id="add-seller-pwd" placeholder="Password..."></td>
+                            <td><input class="seller-insert-inputs" type="text" name="name" id="add-seller-name" placeholder="Name..."></td>
+                            <td><input class="seller-insert-inputs" type="email" name="email" id="add-seller-email" placeholder="Email..."></td>
+                            <td><input class="seller-insert-inputs" type="tel" name="tel" id="add-seller-phone" placeholder="Phone..."></td>
+                            <td><input class="seller-insert-inputs" type="text" name="streetName" id="add-seller-location" placeholder="Location..."></td>
+                            <td><input class="seller-insert-inputs" type="password" name="pwd" id="add-seller-pwd" placeholder="Password..."></td>
                             <td>
                                 <div class="btn-wrapper">
                                     <button class="btn btn-edit" id="add-btn" >Add</button>
@@ -144,7 +145,7 @@
                 </div>
                 <div class="table-wrapper">
                     <table id="seller-table">
-                        <tr>
+                        <tr id="seller-headers">
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
