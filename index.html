@@ -44,7 +44,26 @@
                     <button class="btn btn-add">+Add Client</button>
                 </div> -->
                 <h2 class="main-title">Information of Clients</h2>
-
+                <div class="main-action-btn-wrapper">
+                    <button class="btn btn-add" id="add-client-table-caller">+Add Client</button>
+                    <button class="btn btn-ban view-none" id="add-client-canceler">Cancel</button>
+                    <input type="search" name="clientSearch" placeholder="Search Client..." id="client-search">
+                </div>
+                <div class="table-wrapper view-none" id="insert-client-container">
+                    <table>
+                        <tr>
+                            <td><input class="client-insert-inputs" type="text" name="name" id="add-client-name" placeholder="Name..."></td>
+                            <td><input class="client-insert-inputs" type="email" name="email" id="add-client-email" placeholder="Email..."></td>
+                            <td><input class="client-insert-inputs" type="tel" name="tel" id="add-client-phone" placeholder="Phone..."></td>
+                            <td><input class="client-insert-inputs" type="password" name="pwd" id="add-client-pwd" placeholder="Password..."></td>
+                            <td>
+                                <div class="btn-wrapper">
+                                    <button class="btn btn-edit" id="add-client-btn" >Add</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
                 <div class="table-wrapper">
                     <table id="client-table">
                         <tr id="client-headers">
