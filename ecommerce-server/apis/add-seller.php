@@ -32,6 +32,6 @@
     $result = $results->fetch_assoc();
     $sellerID = $result['id']; //guaranteed one answer
 
-    json_encode(["success" => true, "seller_id" => $sellerID]);
+    echo json_encode(["success" => true, "seller_id" => $sellerID]);
 
 ?>
