@@ -2,8 +2,9 @@ const getAllClientsUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-serv
 const banClientUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/ban-client.php"
 const checkClientBannedUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/check-client-banned.php"
 const unBanClientUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/unban-client.php"
+const searchClientUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/search-client.php"
 const clientTable = document.getElementById('client-table')
-
+const searchClient = document.getElementById('client-search')
 
 const getAllClients = () => {
     axios.get(getAllClientsUrl).then(response => {
@@ -76,8 +77,39 @@ const unBanClient = (clientID) => {
     })
 }
 
+searchClient.addEventListener('input', () => {
+    deleteClientRows()
+
+    if(!searchClient.value) {
+        getAllClients()
+        return
+    }
+        searchForClient(searchClient.value)
+    
+})
+
+const searchForClient = (search) => {
+    const formData = new FormData()
+    formData.append('client_search', search)
+    
+    axios.post(searchClientUrl, formData).then(response => {
+        const specificClients = response.data
+        console.log(specificClients)
+        specificClients.forEach(client => {
+            createClientRow(client.id, client.name, client.email, client.phone, client.joined_date)
+        })
+    })
+}
+const deleteClientRows = () => {
+    const rows = document.querySelectorAll('.client-rows')
+    rows.forEach(row => {
+        row.remove()
+    })
+}
+
 const createClientRow = (id, name, email, phone, joined_date) => {
     const tr = document.createElement('tr')
+    tr.setAttribute('class', 'client-rows')
 
     const clientIdTd = document.createElement('td')
     clientIdTd.textContent = id
