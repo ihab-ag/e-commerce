@@ -9,48 +9,8 @@ const searchClient = document.getElementById('client-search')
 const getAllClients = () => {
     axios.get(getAllClientsUrl).then(response => {
         const clients = response.data
-        console.log(clients)
-        clients.forEach(client => {
-            createClientRow(client.id, client.name, client.email, client.phone, client.joined_date)
-            const banClientBtn = document.getElementById(`ban-client-${client.id}`)
-            const unBanClientBtn = document.getElementById(`unban-client-${client.id}`)
-            const banClientConfirmBtn = document.getElementById(`ban-client-${client.id}-confirm`)
-
-            banClientBtn.addEventListener('click', () => {
-                banClientConfirmBtn.classList.remove('view-none')
-                banClientBtn.classList.add('view-none')
-                unBanClientBtn.classList.add('view-none')
-            })
-
-            banClientConfirmBtn.addEventListener('mouseleave', () => {
-                // console.log('mouse-leave')
-                if(unBanClientBtn.classList.contains('view-none')) {
-                    // console.log("if")
-                    banClientBtn.classList.remove('view-none')
-                    banClientConfirmBtn.classList.add('view-none')
-                }else {
-                    // console.log('else')
-                    banClientBtn.classList.add('view-none')
-                }
-            })
-
-            banClientConfirmBtn.addEventListener('click', () => {
-                unBanClientBtn.classList.remove('view-none')
-                banClientBtn.classList.add('view-none')
-                banClientConfirmBtn.classList.add('view-none')
-                banClient(client.id) // post api that ban user
-                setMessage('Client is banned', false)
-            })
-
-
-            unBanClientBtn.addEventListener('click', () => {
-                banClientBtn.classList.remove('view-none')
-                unBanClientBtn.classList.add('view-none')
-                unBanClient(client.id) // post api that un-ban user
-                setMessage('Client is Unbanned', true)
-            })
-        });
-        
+        //console.log(clients)
+        btnClientAction(clients)
     }).catch(error => console.error(error))
 }
 
@@ -63,7 +23,7 @@ const banClient = (clientID) => {
 
     axios.post(banClientUrl, formData).then((response) => {
         const nowBanned = response.data
-        console.log(nowBanned)
+        //console.log(nowBanned)
     })
 }
 
@@ -73,7 +33,7 @@ const unBanClient = (clientID) => {
     
     axios.post(unBanClientUrl, formData).then(response => {
         const unBan = response.data
-        console.log(unBan)
+        //console.log(unBan)
     })
 }
 
@@ -94,10 +54,8 @@ const searchForClient = (search) => {
     
     axios.post(searchClientUrl, formData).then(response => {
         const specificClients = response.data
-        console.log(specificClients)
-        specificClients.forEach(client => {
-            createClientRow(client.id, client.name, client.email, client.phone, client.joined_date)
-        })
+        //console.log(specificClients)
+        btnClientAction(specificClients)
     })
 }
 const deleteClientRows = () => {
@@ -105,6 +63,49 @@ const deleteClientRows = () => {
     rows.forEach(row => {
         row.remove()
     })
+}
+
+const btnClientAction = (looper) => {
+    looper.forEach(client => {
+        createClientRow(client.id, client.name, client.email, client.phone, client.joined_date)
+        const banClientBtn = document.getElementById(`ban-client-${client.id}`)
+        const unBanClientBtn = document.getElementById(`unban-client-${client.id}`)
+        const banClientConfirmBtn = document.getElementById(`ban-client-${client.id}-confirm`)
+
+        banClientBtn.addEventListener('click', () => {
+            banClientConfirmBtn.classList.remove('view-none')
+            banClientBtn.classList.add('view-none')
+            unBanClientBtn.classList.add('view-none')
+        })
+
+        banClientConfirmBtn.addEventListener('mouseleave', () => {
+            // console.log('mouse-leave')
+            if(unBanClientBtn.classList.contains('view-none')) {
+                // console.log("if")
+                banClientBtn.classList.remove('view-none')
+                banClientConfirmBtn.classList.add('view-none')
+            }else {
+                // console.log('else')
+                banClientBtn.classList.add('view-none')
+            }
+        })
+
+        banClientConfirmBtn.addEventListener('click', () => {
+            unBanClientBtn.classList.remove('view-none')
+            banClientBtn.classList.add('view-none')
+            banClientConfirmBtn.classList.add('view-none')
+            banClient(client.id) // post api that ban user
+            setMessage('Client is banned', false)
+        })
+
+
+        unBanClientBtn.addEventListener('click', () => {
+            banClientBtn.classList.remove('view-none')
+            unBanClientBtn.classList.add('view-none')
+            unBanClient(client.id) // post api that un-ban user
+            setMessage('Client is Unbanned', true)
+        })
+    });
 }
 
 const createClientRow = (id, name, email, phone, joined_date) => {
