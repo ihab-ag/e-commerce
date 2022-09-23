@@ -9,7 +9,7 @@ const searchSeller = document.getElementById('seller-search')
 const getAllSellers = () => {
     axios.get(getAllSellersUrl).then(response => {
         const sellers = response.data
-        console.log(sellers)
+        //console.log(sellers)
         sellers.forEach(seller => {
             createSellerRow(seller.id, seller.name, seller.email, seller.phone, seller.location)
             const editBtn = document.getElementById(`btn-edit-${seller.id}`)
@@ -31,27 +31,27 @@ const getAllSellers = () => {
                 const phoneRow = document.getElementById(`seller-phone-${seller.id}`).value
                 const locationRow = document.getElementById(`seller-location-${seller.id}`).value
                 if(!emptyFieldsValidation(nameRow, emailRow, phoneRow, locationRow)) {
-                    console.log("empty field")
+                    //console.log("empty field")
                     setMessage('All fields are required', false)
                     return
                 }else if(!nameValidation(nameRow)) {
-                    console.log(nameRow)
-                    console.log("name field")
+                    //console.log(nameRow)
+                    //console.log("name field")
                     setMessage(`${nameRow} has wrong format`, false)
                     return
                 }else if(!emailValidation(emailRow)) {
-                    console.log(emailRow)
-                    console.log("email field")
+                    //console.log(emailRow)
+                    //console.log("email field")
                     setMessage(`${emailRow} is not an email`, false)
                     return
                 }else if(!phoneValidation(phoneRow)) {
-                    console.log(phoneRow)
-                    console.log("phone field")
+                    //console.log(phoneRow)
+                    //console.log("phone field")
                     setMessage(`${phoneRow} has wrong format`, false)
                     return
                 }else if(!locationValidation(locationRow)) {
-                    console.log(locationRow)
-                    console.log("location field")
+                    //console.log(locationRow)
+                    //console.log("location field")
                     setMessage(`${locationRow} has wrong format`, false)
                     return
                 }
@@ -63,7 +63,7 @@ const getAllSellers = () => {
                     
                     axios.post(emailSellerCheckUrl, formData).then(response => {
                         const checkEmail = response.data
-                        console.log(checkEmail)
+                        //console.log(checkEmail)
                         if(checkEmail.emailTaken) {
                             setMessage('Email is taken', false)
                             return
@@ -113,6 +113,17 @@ const getAllSellers = () => {
 
 getAllSellers()
 
+searchSeller.addEventListener('input', () => {
+    deleteSellerRows()
+
+    if(!searchSeller.value) {
+        getAllSellers()
+        return
+    }
+        searchForSeller(searchSeller.value)
+    
+})
+
 const updateSellerInfo = (sellerID, name, email, phone, location) => {
     const formData = new FormData()
     formData.append('seller_id', sellerID)
@@ -123,7 +134,7 @@ const updateSellerInfo = (sellerID, name, email, phone, location) => {
 
     axios.post(editSellerUrl, formData).then((response) => {
         const nowUpdate = response.data
-        console.log(nowUpdate)
+        //console.log(nowUpdate)
     })
 }
 
@@ -133,24 +144,32 @@ const deleteSeller = (sellerID) => {
     
     axios.post(deleteSellerUrl, formData).then(response => {
         const deleteNow = response.data
-        console.log(deleteNow)
+        //console.log(deleteNow)
     })
 }
 
 const searchForSeller = (search) => {
     const formData = new FormData()
-    formData.append('seller_id', search)
+    formData.append('seller_search', search)
     
     axios.post(searchSellerUrl, formData).then(response => {
-        const searchNow = response.data
-        //console.log(searchNow)
+        const specificSellers = response.data
+        specificSellers.forEach(seller => {
+            createSellerRow(seller.id, seller.name, seller.email, seller.phone, seller.location)
+        })
     })
 }
 
-
+const deleteSellerRows = () => {
+    const rows = document.querySelectorAll('.seller-rows')
+    rows.forEach(row => {
+        row.remove()
+    })
+}
 const createSellerRow = (id, name, email, phone, location) => {
     const tr = document.createElement('tr')
     tr.setAttribute('id', `seller-row-${id}`)
+    tr.setAttribute('class', 'seller-rows')
 
     const sellerIdTd = document.createElement('td')
     sellerIdTd.textContent = id
