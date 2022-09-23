@@ -10,104 +10,7 @@ const getAllSellers = () => {
     axios.get(getAllSellersUrl).then(response => {
         const sellers = response.data
         //console.log(sellers)
-        sellers.forEach(seller => {
-            createSellerRow(seller.id, seller.name, seller.email, seller.phone, seller.location)
-            const editBtn = document.getElementById(`btn-edit-${seller.id}`)
-            const deleteBtn = document.getElementById(`btn-delete-${seller.id}`)
-            const editConfirmBtn = document.getElementById(`btn-edit-${seller.id}-confirm`)
-            const deleteConfirmBtn = document.getElementById(`btn-delete-${seller.id}-confirm`)
-            const info = document.querySelectorAll(`.btn-seller-${seller.id}`)
-
-            editBtn.addEventListener('click', () => {
-                info.forEach(box => box.removeAttribute('disabled'))
-                editConfirmBtn.classList.remove('view-none')
-                editBtn.classList.add('view-none')
-                
-            })
-
-            editConfirmBtn.addEventListener('click', () => {
-                const nameRow = document.getElementById(`seller-name-${seller.id}`).value
-                const emailRow = document.getElementById(`seller-email-${seller.id}`).value
-                const phoneRow = document.getElementById(`seller-phone-${seller.id}`).value
-                const locationRow = document.getElementById(`seller-location-${seller.id}`).value
-                if(!emptyFieldsValidation(nameRow, emailRow, phoneRow, locationRow)) {
-                    //console.log("empty field")
-                    setMessage('All fields are required', false)
-                    return
-                }else if(!nameValidation(nameRow)) {
-                    //console.log(nameRow)
-                    //console.log("name field")
-                    setMessage(`${nameRow} has wrong format`, false)
-                    return
-                }else if(!emailValidation(emailRow)) {
-                    //console.log(emailRow)
-                    //console.log("email field")
-                    setMessage(`${emailRow} is not an email`, false)
-                    return
-                }else if(!phoneValidation(phoneRow)) {
-                    //console.log(phoneRow)
-                    //console.log("phone field")
-                    setMessage(`${phoneRow} has wrong format`, false)
-                    return
-                }else if(!locationValidation(locationRow)) {
-                    //console.log(locationRow)
-                    //console.log("location field")
-                    setMessage(`${locationRow} has wrong format`, false)
-                    return
-                }
-
-                const emailSellerChecker = (sellerID, email) => {
-                    const formData = new FormData()
-                    formData.append('seller_id', sellerID)
-                    formData.append('seller_email', email)
-                    
-                    axios.post(emailSellerCheckUrl, formData).then(response => {
-                        const checkEmail = response.data
-                        //console.log(checkEmail)
-                        if(checkEmail.emailTaken) {
-                            setMessage('Email is taken', false)
-                            return
-                        }
-                        
-                        info.forEach(box => box.setAttribute('disabled', true))
-                        editConfirmBtn.classList.add('view-none')
-                        editBtn.classList.remove('view-none')
-                        //const arr = []
-                        //document.querySelectorAll(`.btn-seller-${seller.id}`).forEach(seller => arr.push(seller.value))
-                        updateSellerInfo(seller.id, nameRow, emailRow, phoneRow, locationRow)
-                        setMessage('Seller info updated successfully', true)
-                    })
-                }
-                emailSellerChecker(seller.id, emailRow)
-                
-            })
-
-            deleteBtn.addEventListener('click', () => {
-                deleteConfirmBtn.classList.remove('view-none')
-                deleteBtn.classList.add('view-none')
-                info.forEach(box => box.setAttribute('disabled', true))
-                editConfirmBtn.classList.add('view-none')
-                editBtn.classList.remove('view-none')
-            })
-
-            deleteConfirmBtn.addEventListener('click', () => {
-                document.getElementById(`seller-row-${seller.id}`).classList.add('view-none')
-                editConfirmBtn.classList.add('view-none')
-                editBtn.classList.remove('view-none')
-                editConfirmBtn.classList.add('view-none')
-                editBtn.classList.remove('view-none')
-                deleteSeller(seller.id)
-                setMessage('Seller info deleted successfully', true)
-            })
-
-            deleteConfirmBtn.addEventListener('mouseleave', () => {
-                info.forEach(box => box.setAttribute('disabled', true))
-                editConfirmBtn.classList.add('view-none')
-                editBtn.classList.remove('view-none')
-                deleteBtn.classList.remove('view-none')
-                deleteConfirmBtn.classList.add('view-none')
-            })
-        });
+        btnActions(sellers)
     })
 }
 
@@ -154,8 +57,107 @@ const searchForSeller = (search) => {
     
     axios.post(searchSellerUrl, formData).then(response => {
         const specificSellers = response.data
-        specificSellers.forEach(seller => {
-            createSellerRow(seller.id, seller.name, seller.email, seller.phone, seller.location)
+        btnActions(specificSellers)
+        })
+}
+
+const btnActions = (sellers) => {
+    sellers.forEach(seller => {
+        createSellerRow(seller.id, seller.name, seller.email, seller.phone, seller.location)
+        const editBtn = document.getElementById(`btn-edit-${seller.id}`)
+        const deleteBtn = document.getElementById(`btn-delete-${seller.id}`)
+        const editConfirmBtn = document.getElementById(`btn-edit-${seller.id}-confirm`)
+        const deleteConfirmBtn = document.getElementById(`btn-delete-${seller.id}-confirm`)
+        const info = document.querySelectorAll(`.btn-seller-${seller.id}`)
+
+        editBtn.addEventListener('click', () => {
+            info.forEach(box => box.removeAttribute('disabled'))
+            editConfirmBtn.classList.remove('view-none')
+            editBtn.classList.add('view-none')
+            
+        })
+
+        editConfirmBtn.addEventListener('click', () => {
+            const nameRow = document.getElementById(`seller-name-${seller.id}`).value
+            const emailRow = document.getElementById(`seller-email-${seller.id}`).value
+            const phoneRow = document.getElementById(`seller-phone-${seller.id}`).value
+            const locationRow = document.getElementById(`seller-location-${seller.id}`).value
+            if(!emptyFieldsValidation(nameRow, emailRow, phoneRow, locationRow)) {
+                //console.log("empty field")
+                setMessage('All fields are required', false)
+                return
+            }else if(!nameValidation(nameRow)) {
+                //console.log(nameRow)
+                //console.log("name field")
+                setMessage(`${nameRow} has wrong format`, false)
+                return
+            }else if(!emailValidation(emailRow)) {
+                //console.log(emailRow)
+                //console.log("email field")
+                setMessage(`${emailRow} is not an email`, false)
+                return
+            }else if(!phoneValidation(phoneRow)) {
+                //console.log(phoneRow)
+                //console.log("phone field")
+                setMessage(`${phoneRow} has wrong format`, false)
+                return
+            }else if(!locationValidation(locationRow)) {
+                //console.log(locationRow)
+                //console.log("location field")
+                setMessage(`${locationRow} has wrong format`, false)
+                return
+            }
+
+            const emailSellerChecker = (sellerID, email) => {
+                const formData = new FormData()
+                formData.append('seller_id', sellerID)
+                formData.append('seller_email', email)
+                
+                axios.post(emailSellerCheckUrl, formData).then(response => {
+                    const checkEmail = response.data
+                    //console.log(checkEmail)
+                    if(checkEmail.emailTaken) {
+                        setMessage('Email is taken', false)
+                        return
+                    }
+                    
+                    info.forEach(box => box.setAttribute('disabled', true))
+                    editConfirmBtn.classList.add('view-none')
+                    editBtn.classList.remove('view-none')
+                    //const arr = []
+                    //document.querySelectorAll(`.btn-seller-${seller.id}`).forEach(seller => arr.push(seller.value))
+                    updateSellerInfo(seller.id, nameRow, emailRow, phoneRow, locationRow)
+                    setMessage('Seller info updated successfully', true)
+                })
+            }
+            emailSellerChecker(seller.id, emailRow)
+            
+        })
+
+        deleteBtn.addEventListener('click', () => {
+            deleteConfirmBtn.classList.remove('view-none')
+            deleteBtn.classList.add('view-none')
+            info.forEach(box => box.setAttribute('disabled', true))
+            editConfirmBtn.classList.add('view-none')
+            editBtn.classList.remove('view-none')
+        })
+
+        deleteConfirmBtn.addEventListener('click', () => {
+            document.getElementById(`seller-row-${seller.id}`).classList.add('view-none')
+            editConfirmBtn.classList.add('view-none')
+            editBtn.classList.remove('view-none')
+            editConfirmBtn.classList.add('view-none')
+            editBtn.classList.remove('view-none')
+            deleteSeller(seller.id)
+            setMessage('Seller info deleted successfully', true)
+        })
+
+        deleteConfirmBtn.addEventListener('mouseleave', () => {
+            info.forEach(box => box.setAttribute('disabled', true))
+            editConfirmBtn.classList.add('view-none')
+            editBtn.classList.remove('view-none')
+            deleteBtn.classList.remove('view-none')
+            deleteConfirmBtn.classList.add('view-none')
         })
     })
 }
