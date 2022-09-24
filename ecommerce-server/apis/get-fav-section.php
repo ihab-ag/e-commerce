@@ -16,7 +16,7 @@
         // get fav category products
         $query=$mysqli->prepare('SELECT products.id, products.name, products.description, products.price, products.image
         FROM categories, products
-        WHERE products.Categories_id=categories.id AND categories.name= ?');
+        WHERE products.Categories_id=categories.id AND categories.name= ? LIMIT 5');
         $query->bind_param("s",$category_name);
         $query->execute();
         $array=$query->get_result();
