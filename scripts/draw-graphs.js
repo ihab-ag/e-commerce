@@ -516,7 +516,65 @@ const getBestClientYear = () => {
 }
 
 getBestClientYear()
+const nbOfClientsUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/latest-signed-clients.php"
+const getNumberOfClients = () => {
+    axios.get(nbOfClientsUrl).then(response => {
+        const totNumber = response.data
+        console.log(totNumber)
+        const dataArr = []
+        //console.log(totNumber)
+        dataArr.push(totNumber['counter_clients_q1'])
+        dataArr.push(totNumber['counter_clients_q2'])
+        dataArr.push(totNumber['counter_clients_q3'])
+        dataArr.push(totNumber['counter_clients_q4'])
+        const totClientData = {
+            labels: ['Last year', 'Last Nine Months', 'Last Six Months', 'Last Three Months'],
+            datasets: [{
+                label: 'Client',
+                data: dataArr,
+                backgroundColor: 'rgba(50, 201, 156, 0.2)',
+                borderColor: 'rgba(50, 201, 156, 1)',
+                borderWidth: 1,
+                hoverBorderWidth: 3,
+                hoverBackgroundColor: 'rgba(50, 201, 156, 0.6)',
+                tension: 0.3
+            }],
+        }
 
+        const totalNbClients =  new Chart('tot-client', {
+            type: 'line',
+            data: totClientData,
+            options: {
+                scales: {
+                    yAxes: [{ticks: {min: 0}}]
+                },
+                title: {
+                    display: true,
+                    text: "Latest Signed Clients",
+                },
+                legend: {
+                    position: 'top',
+                    labels: {
+                        fontColor: '#000'
+                    },
+                },
+                // layout: {
+                //     padding: {
+                //         left: 10,
+                //         right: 0,
+                //         bottom: 0,
+                //     }
+                // },
+                tooltips: {
+                    //when hovered
+                    enabled: true
+                }
+            }
+        })
+    })
+}
+
+getNumberOfClients()
 const totalNumberData = {
     labels: ['Jan', 'Feb', 'March'],
     datasets: [{
@@ -531,95 +589,184 @@ const totalNumberData = {
     }],
 }
 
-const totalNbClients =  new Chart('tot-client', {
-    type: 'line',
-    data: totalNumberData,
-    options: {
-        scales: {
-            yAxes: [{ticks: {min: 0, stepSize: 50}}]
-        },
-        title: {
-            display: true,
-            text: "Total Number of Clients",
-        },
-        legend: {
-            position: 'top',
-            labels: {
-                fontColor: '#000'
-            },
-        },
-        // layout: {
-        //     padding: {
-        //         left: 10,
-        //         right: 0,
-        //         bottom: 0,
-        //     }
-        // },
-        tooltips: {
-            //when hovered
-            enabled: true
-        }
-    }
-})
+// const totalNbClients =  new Chart('tot-client', {
+//     type: 'line',
+//     data: totalNumberData,
+//     options: {
+//         scales: {
+//             yAxes: [{ticks: {min: 0, stepSize: 50}}]
+//         },
+//         title: {
+//             display: true,
+//             text: "Total Number of Clients",
+//         },
+//         legend: {
+//             position: 'top',
+//             labels: {
+//                 fontColor: '#000'
+//             },
+//         },
+//         // layout: {
+//         //     padding: {
+//         //         left: 10,
+//         //         right: 0,
+//         //         bottom: 0,
+//         //     }
+//         // },
+//         tooltips: {
+//             //when hovered
+//             enabled: true
+//         }
+//     }
+// })
 
-const totalNbSellers =  new Chart('tot-seller', {
-    type: 'line',
-    data: totalNumberData,
-    options: {
-        scales: {
-            yAxes: [{ticks: {min: 0, stepSize: 10000}}]
-        },
-        title: {
-            display: true,
-            text: "Total number of sellers",
-        },
-        legend: {
-            position: 'top',
-            labels: {
-                fontColor: '#000'
-            },
-        },
-        // layout: {
-        //     padding: {
-        //         left: 10,
-        //         right: 0,
-        //         bottom: 0,
-        //     }
-        // },
-        tooltips: {
-            //when hovered
-            enabled: true
+const nbOfSellersUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/latest-signed-sellers.php"
+const getNumberOfSellers = () => {
+    axios.get(nbOfSellersUrl).then(response => {
+        const totNumber = response.data
+        console.log(totNumber)
+        const dataArr = []
+        //console.log(totNumber)
+        dataArr.push(totNumber['counter_sellers_q1'])
+        dataArr.push(totNumber['counter_sellers_q2'])
+        dataArr.push(totNumber['counter_sellers_q3'])
+        dataArr.push(totNumber['counter_sellers_q4'])
+        const totSellerData = {
+            labels: ['Last year', 'Last Nine Months', 'Last Six Months', 'Last Three Months'],
+            datasets: [{
+                label: 'Seller',
+                data: dataArr,
+                backgroundColor: 'rgba(50, 201, 156, 0.2)',
+                borderColor: 'rgba(50, 201, 156, 1)',
+                borderWidth: 1,
+                hoverBorderWidth: 3,
+                hoverBackgroundColor: 'rgba(50, 201, 156, 0.6)',
+                tension: 0.3
+            }],
         }
-    }
-})
 
-const totalNbProducts =  new Chart('tot-products', {
-    type: 'line',
-    data: totalNumberData,
-    options: {
-        scales: {
-            yAxes: [{ticks: {min: 0, stepSize: 10000}}]
-        },
-        title: {
-            display: true,
-            text: "Total Number of Products",
-        },
-        legend: {
-            position: 'top',
-            labels: {
-                fontColor: '#000'
-            },
-        },
-        // layout: {
-        //     padding: {
-        //         left: 10,
-        //         right: 0,
-        //         bottom: 0,
-        //     }
-        // },
-        tooltips: {
-            //when hovered
-            enabled: true
+        const totalNbSellers =  new Chart('tot-seller', {
+            type: 'line',
+            data: totSellerData,
+            options: {
+                scales: {
+                    yAxes: [{ticks: {min: 0}}]
+                },
+                title: {
+                    display: true,
+                    text: "Latest Signed Clients",
+                },
+                legend: {
+                    position: 'top',
+                    labels: {
+                        fontColor: '#000'
+                    },
+                },
+                // layout: {
+                //     padding: {
+                //         left: 10,
+                //         right: 0,
+                //         bottom: 0,
+                //     }
+                // },
+                tooltips: {
+                    //when hovered
+                    enabled: true
+                }
+            }
+        })
+    })
+}
+
+getNumberOfSellers()
+
+const nbOfProductsUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/latest-signed-products.php"
+const getNumberOfProducts = () => {
+    axios.get(nbOfProductsUrl).then(response => {
+        const totNumber = response.data
+        console.log(totNumber)
+        const dataArr = []
+        //console.log(totNumber)
+        dataArr.push(totNumber['counter_products_q1'])
+        dataArr.push(totNumber['counter_products_q2'])
+        dataArr.push(totNumber['counter_products_q3'])
+        dataArr.push(totNumber['counter_products_q4'])
+        const totProductData = {
+            labels: ['Last year', 'Last Nine Months', 'Last Six Months', 'Last Three Months'],
+            datasets: [{
+                label: 'Product',
+                data: dataArr,
+                backgroundColor: 'rgba(50, 201, 156, 0.2)',
+                borderColor: 'rgba(50, 201, 156, 1)',
+                borderWidth: 1,
+                hoverBorderWidth: 3,
+                hoverBackgroundColor: 'rgba(50, 201, 156, 0.6)',
+                tension: 0.3
+            }],
         }
-    }
-})
+
+        const totalNbSellers =  new Chart('tot-products', {
+            type: 'line',
+            data: totProductData,
+            options: {
+                scales: {
+                    yAxes: [{ticks: {min: 0}}]
+                },
+                title: {
+                    display: true,
+                    text: "Latest Entered Products",
+                },
+                legend: {
+                    position: 'top',
+                    labels: {
+                        fontColor: '#000'
+                    },
+                },
+                // layout: {
+                //     padding: {
+                //         left: 10,
+                //         right: 0,
+                //         bottom: 0,
+                //     }
+                // },
+                tooltips: {
+                    //when hovered
+                    enabled: true
+                }
+            }
+        })
+    })
+}
+
+getNumberOfProducts()
+
+// const totalNbProducts =  new Chart('tot-products', {
+//     type: 'line',
+//     data: totalNumberData,
+//     options: {
+//         scales: {
+//             yAxes: [{ticks: {min: 0, stepSize: 10000}}]
+//         },
+//         title: {
+//             display: true,
+//             text: "Total Number of Products",
+//         },
+//         legend: {
+//             position: 'top',
+//             labels: {
+//                 fontColor: '#000'
+//             },
+//         },
+//         // layout: {
+//         //     padding: {
+//         //         left: 10,
+//         //         right: 0,
+//         //         bottom: 0,
+//         //     }
+//         // },
+//         tooltips: {
+//             //when hovered
+//             enabled: true
+//         }
+//     }
+// })
