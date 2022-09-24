@@ -9,6 +9,8 @@
     // decode jwt payload to string
     $array=json_decode(json_encode($object), true);
     // parse string to array
-
+    $validity= $array["validity"]-date('dm')==0?"valid":"invalid";
+    $id=$array["user_id"]; 
+    echo $validity;
     
 ?>
