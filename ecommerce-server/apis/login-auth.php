@@ -14,8 +14,22 @@
     // check if use exists
     if($a=$array->fetch_assoc()){
         $id=$a['id'];
-        
+        // JWT header
+        $header = json_encode(['typ' => 'JWT', 'alg' => 'HS256']);
+        // JWT payload
+        $payload = json_encode(['user_id' => $id,'validity'=> date("dm")]);
+        // Encode Header to Base64Url String
+        $base64UrlHeader = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($header));
+        // Encode Payload to Base64Url String
+        $base64UrlPayload = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($payload));
+        // Hash header and payload to form signature
+        $signature = hash_hmac('sha256', $base64UrlHeader . "." . $base64UrlPayload, 'abC123!', true);
+        // Encode Signature to Base64Url String
+        $base64UrlSignature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($signature));
+        // Form JWT
+        $jwt = $base64UrlHeader . "." . $base64UrlPayload . "." . $base64UrlSignature;
+        echo json_encode($jwt);
     }
     else
-    echo "nope";
+    echo json_encode("Wrong user credentials");
 ?>
