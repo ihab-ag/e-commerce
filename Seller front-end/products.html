@@ -32,28 +32,31 @@
         </nav>
 
         <section class="main-sub-container">
-            <h1 class="form-title">Add Your Product</h1>
             <form class="product-form" action="products.html" method="post">
                 <div class="form-container">
                     <div class="product-form-info-div">
-                        <input type="text" name="productName" id="product-name" placeholder="Product Name...">
-                        <input type="text" name="productPrice" placeholder="Price($)...">
-                        <div class="img">
+                        <h2 class="form-title">Add Your Product</h2>
+                        <input class="form-input" type="text" name="productName" id="product-name" placeholder="Product Name...">
+                        <input class="form-input" type="text" name="productPrice" placeholder="Price($)...">
+                        <div class="img-wrapper">
                             <label for="product-img">
                                 <img src="images/icons/default.png" alt="">
                             </label>
-                            <input type="file" name="productImage" id="product-img" enctype="multipart/form-data">
+                            
+                            <p>Insert Product Image</p>
+                            <input class="view-none" type="file" name="productImage" id="product-img" enctype="multipart/form-data">
                         </div>
                         <textarea name="productDescription" id="product-description" cols="30" rows="10" placeholder="Product Description..."></textarea>
                     </div>
                     
                     <div class="product-form-category-div">
+                        <h2 class="form-title">Add Category</h2>
                         <select name="productCategories" id="product-category-selector">
                             <option value="add-category">+Add Category</option>
                         </select>
     
-                        <div>
-                            <input type="text" name="categoryName" id="category-name">
+                        <div class="">
+                            <input class="form-input" type="text" name="categoryName" id="category-name" placeholder="Category Name...">
                             <button class="btn btn-confirm">Confirm</button>
                         </div>
                     </div>
