@@ -12,7 +12,10 @@
         $query->execute();
         $array=$query->get_result();
         $category_name=$array->fetch_assoc()['name'];
-        $category_name;
+        $response=[];
+        $response[]=[
+            "category"=>$category_name
+        ];
         // get fav category products
         $query=$mysqli->prepare('SELECT products.id, products.name, products.description, products.price, products.image
         FROM categories, products
@@ -20,7 +23,6 @@
         $query->bind_param("s",$category_name);
         $query->execute();
         $array=$query->get_result();
-        $response=[];
         while($a=$array->fetch_assoc()){
             $response[]=$a;
         }
