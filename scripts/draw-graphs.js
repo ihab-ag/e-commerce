@@ -63,7 +63,11 @@ const getBestSellerWeek = () => {
             dataArr.push(data['tot_amount'])
             
         })
-
+        if(weeklyData.length !== 0)
+            document.getElementById('stat-result-seller-week').textContent = "Best Seller: " + labelsArr[0] + ": " + dataArr[0]
+        else {
+            document.getElementById('stat-result-seller-week').textContent = "No data this week"
+        }
         const bestWeekSellerData = {
             labels: labelsArr,
             datasets: [{
