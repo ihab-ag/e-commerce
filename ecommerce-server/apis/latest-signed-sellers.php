@@ -16,7 +16,7 @@
     $response=[];
     $counterQ1 = 0;
     while($a=$array->fetch_assoc()){
-        $counterQ1 = $a['sellers_count'];
+        $counterQ1 += $a['sellers_count'];
     }
     $response['counter_sellers_q1'] = $counterQ1;
 
@@ -32,7 +32,7 @@
     $array = $query2->get_result();
     $counterQ2 = 0;
     while($a=$array->fetch_assoc()){
-        $counterQ2 = $a['sellers_count'];
+        $counterQ2 += $a['sellers_count'];
     }
     $response['counter_sellers_q2'] = $counterQ2;
 
@@ -48,7 +48,7 @@
     $array = $query3->get_result();
     $counterQ3 = 0;
     while($a=$array->fetch_assoc()){
-        $counterQ3 = $a['sellers_count'];
+        $counterQ3 += $a['sellers_count'];
     }
     $response['counter_sellers_q3'] = $counterQ3;
 
@@ -64,7 +64,7 @@
     $array = $query4->get_result();
     $counterQ4 = 0;
     while($a=$array->fetch_assoc()){
-        $counterQ4 = $a['sellers_count'];
+        $counterQ4 += $a['sellers_count'];
     }
     $response['counter_sellers_q4'] = $counterQ4;
     // store results in response
