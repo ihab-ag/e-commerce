@@ -5,15 +5,15 @@
     header('Content-Type: application/json');
     header('Access-Control-Allow-Methods: POST');
     header('Allow-Control-Allow-Headers: Allow-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
-    $clientID = $_POST['client_id'];
+    $sellerID = $_POST['seller_id'];
     // connect to db
-    $query= $mysqli->prepare('INSERT INTO banned_users VALUES(?);');
-    $query->bind_param('d', $clientID);
+    $query= $mysqli->prepare('DELETE FROM sellers WHERE id=?;');
+    $query->bind_param('d', $sellerID);
     // query to put client into the banned list
     if(!$query->execute()) {
         //statement failed
         echo json_encode(["success" => false]);
-        die("Error in ban-client-api");
+        die("Error in unban-client-api");
     }
     //statement succeeded
     echo json_encode(["success" => true]);

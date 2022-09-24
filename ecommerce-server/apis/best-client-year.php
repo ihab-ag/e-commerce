@@ -5,19 +5,16 @@
     header('Access-Control-Allow-Methods: POST');
     header('Allow-Control-Allow-Headers: Allow-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
     // connect to db
-    $query= $mysqli->prepare('SELECT
-    `id`,
-    `name`,
-    `email`,
-    `phone`,
-    DATE_FORMAT(`joined_date`,"%b, %e, %Y") AS joined_date
-FROM
-    `clients`
-ORDER BY id DESC
-LIMIT 10;');
+    $query= $mysqli->prepare('SELECT r.client_id, c.name, sum(r.amount) as tot_amount
+    FROM receipts r, clients c
+    WHERE date_format(r.date, "%Y")=date_format(sysdate(), "%Y")  AND c.id=r.client_id
+    GROUP BY client_id
+    ORDER BY (tot_amount) DESC
+    LIMIT 3;
+    ');
     // query to get clients
     if(!$query->execute()) {
-        die("Error in view-clients-api");
+        die("Error in best-sellers-year-api");
     }
     $array = $query->get_result();
     // get results
