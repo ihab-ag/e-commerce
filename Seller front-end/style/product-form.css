@@ -1,0 +1,25 @@
+.form-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.product-form {
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.form-container .product-form-info-div {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container .product-form-category-div {
+    order: 1;
+}

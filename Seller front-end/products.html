@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/product-form.css">
     <title>Products</title>
     <script src="script/navbar-toggle.js" defer></script>
     <script src="script/navbar-links.js" defer></script>
@@ -23,12 +24,43 @@
     <main class="main-container">
         <nav class="navbar" id="admin-navbar">
             <ul class="navbar-links">
-                <li class="navbar-link current-navbar-link" id="display-clients-table">Clients</li>
-                <li class="navbar-link" id="display-sellers-table">Sellers</li>
-                <li class="navbar-link" id="display-stats-graph">Stats</li>
+                <li class="navbar-link current-navbar-link" id="display-products-form">Create Product</li>
+                <li class="navbar-link" id="display-products-table">View Products</li>
+                <li class="navbar-link" id="display-status">Status</li>
+                <li class="navbar-link" id="display-coupons">Coupons|Ads</li>
             </ul>
-            <button class="btn btn-logout" id="admin-logout">logout</button>
         </nav>
+
+        <section class="main-sub-container">
+            <h1 class="form-title">Add Your Product</h1>
+            <form class="product-form" action="products.html" method="post">
+                <div class="form-container">
+                    <div class="product-form-info-div">
+                        <input type="text" name="productName" id="product-name" placeholder="Product Name...">
+                        <input type="text" name="productPrice" placeholder="Price($)...">
+                        <div class="img">
+                            <label for="product-img">
+                                <img src="images/icons/default.png" alt="">
+                            </label>
+                            <input type="file" name="productImage" id="product-img" enctype="multipart/form-data">
+                        </div>
+                        <textarea name="productDescription" id="product-description" cols="30" rows="10" placeholder="Product Description..."></textarea>
+                    </div>
+                    
+                    <div class="product-form-category-div">
+                        <select name="productCategories" id="product-category-selector">
+                            <option value="add-category">+Add Category</option>
+                        </select>
+    
+                        <div>
+                            <input type="text" name="categoryName" id="category-name">
+                            <button class="btn btn-confirm">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-add">Add Product</button>
+            </form>
+        </section>
     </main>
 </body>
 </html>

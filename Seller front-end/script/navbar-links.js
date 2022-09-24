@@ -12,10 +12,10 @@ clientPage.addEventListener('click', () => {
     clientPage.classList.add('current-navbar-link')
 })
 
-clientPage.addEventListener('dblclick', () => {
-    deleteClientRows()
-    getAllClients()
-})
+// clientPage.addEventListener('dblclick', () => {
+//     deleteClientRows()
+//     getAllClients()
+// })
 
 sellerPage.addEventListener('click', () => {
     sections.forEach(section => section.classList.add('view-none'))
@@ -24,10 +24,10 @@ sellerPage.addEventListener('click', () => {
     sellerPage.classList.add('current-navbar-link')
 })
 
-sellerPage.addEventListener('dblclick', () => {
-    deleteSellerRows()
-    getAllSellers()
-})
+// sellerPage.addEventListener('dblclick', () => {
+//     deleteSellerRows()
+//     getAllSellers()
+// })
 
 statPage.addEventListener('click', () => {
     sections.forEach(section => section.classList.add('view-none'))
