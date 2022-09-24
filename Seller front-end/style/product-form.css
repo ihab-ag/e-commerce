@@ -96,6 +96,7 @@ img {
     font-size: 22px;
     margin-bottom: 10px;
     max-width: 300px;
+    cursor: pointer;
 }
 
 .product-form-category-div .add-cat {
