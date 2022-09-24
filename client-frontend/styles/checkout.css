@@ -138,6 +138,56 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
 }
 
+/* Footer */
+.footer-container{
+    width: 100%;
+    padding: 22px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.checkout-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+}
+
+.checkout-btn, .address{
+    background-color: #a0db8e;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer{
+    background-color: lightgray;
+    height: 80px;
+    width: 100%;
+    bottom: 0;
+}
+
+.checkout-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.address-btn{
+    display: flex;
+    flex-direction: row;
+   justify-content: center;
+}
+
+.total{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 /* Responsive on mobile */
 @media screen and (max-width: 500px) {
     h1, h3{
