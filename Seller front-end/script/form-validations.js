@@ -1,3 +1,4 @@
+
 const nameValidation = (name) => {
     const exp = /^[A-Za-z\s]{5,255}$/
     if(name.length < 5) {
@@ -19,10 +20,10 @@ const priceValidation = (price) => {
     }
     return true
 }
+// console.log(priceValidation('19222.20'))
 
-console.log(priceValidation('19222.20'))
-const emptyFieldsValidation = (name, email, phone, location) => {
-    if(!name || !email || !phone || !location) {
+const emptyFieldsValidation = (name, price, photo, description, selector) => {
+    if(!name || !price || !photo || !description || (!selector || !selector.value || (selector.value === "addNewCategory"))) {
         return false
     }
     return true

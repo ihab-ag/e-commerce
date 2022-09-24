@@ -98,6 +98,7 @@ img {
     margin-bottom: 10px;
     max-width: 300px;
     cursor: pointer;
+    margin-top: 15px;
 }
 
 .product-form-category-div .add-cat {
@@ -135,21 +136,29 @@ img {
     .product-form-info-div > textarea {
         max-width: 220px;
         margin: 0;
+        resize: none;
     }
     .product-form-category-div > select {
-        display: block;
-        margin:  10 auto;
+        /* display: block;
+        margin:  0 auto; */
         max-width: 220px;
     }
 }
-
+@media screen and (max-width: 780px) {
+    .form-container {
+        padding: 0;
+    }
+    .product-form-info-div > textarea {
+        height: 150px;
+    }
+}
 @media screen and (max-width: 480px) {
     .form-container {
         display: flex;
         flex-direction: column;
         gap: 5vw;
         margin: 0 auto;
-
+        padding-bottom: 0;
     }
     .form-container .product-form-info-div {
         order: 1;
@@ -178,5 +187,7 @@ img {
         gap: 15px;
         align-items: flex-start;
     }
-    
+    .product-form-info-div > textarea {
+        height: 100px;
+    }
 }
