@@ -57,7 +57,7 @@ const getBestSellerWeek = () => {
         const weeklyData = response.data
         const labelsArr = []
         const dataArr = []
-        //console.log(weeklyData)
+        // console.log(weeklyData.length === 0)
         weeklyData.forEach(data => {
             labelsArr.push(data['name'])
             dataArr.push(data['tot_amount'])
@@ -199,11 +199,11 @@ const bestYearUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/ap
 
 const getBestSellerYear = () => {
     axios.get(bestYearUrl).then(response => {
-        const monthlyData = response.data
+        const yearlyData = response.data
         const labelsArr = []
         const dataArr = []
-        //console.log(monthlyData)
-        monthlyData.forEach(data => {
+        //console.log(yearlyData)
+        yearlyData.forEach(data => {
             labelsArr.push(data['name'])
             dataArr.push(data['tot_amount'])
             
@@ -267,98 +267,224 @@ const getBestSellerYear = () => {
 
 getBestSellerYear()
 
-const bestClientWeekGraph =  new Chart('best-client-week', {
-    type: 'bar',
-    data: bestSellerData,
-    options: {
-        scales: {
-            yAxes: [{ticks: {min: 0, stepSize: 10000}}]
-        },
-        title: {
-            display: true,
-            text: "Best Client of the Week",
-        },
-        legend: {
-            position: 'top',
-            labels: {
-                fontColor: '#000'
-            },
-        },
-        // layout: {
-        //     padding: {
-        //         left: 10,
-        //         right: 0,
-        //         bottom: 0,
-        //     }
-        // },
-        tooltips: {
-            //when hovered
-            enabled: true
-        }
-    }
-})
+//client graphs
 
-const bestClientMonthGraph =  new Chart('best-client-month', {
-    type: 'bar',
-    data: bestSellerData,
-    options: {
-        scales: {
-            yAxes: [{ticks: {min: 0, stepSize: 10000}}]
-        },
-        title: {
-            display: true,
-            text: "Best Client of the Month",
-        },
-        legend: {
-            position: 'top',
-            labels: {
-                fontColor: '#000'
-            },
-        },
-        // layout: {
-        //     padding: {
-        //         left: 10,
-        //         right: 0,
-        //         bottom: 0,
-        //     }
-        // },
-        tooltips: {
-            //when hovered
-            enabled: true
-        }
-    }
-})
+const bestClientWeekUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/best-client-week.php"
 
-const bestClientYearGraph =  new Chart('best-client-year', {
-    type: 'bar',
-    data: bestSellerData,
-    options: {
-        scales: {
-            yAxes: [{ticks: {min: 0, stepSize: 10000}}]
-        },
-        title: {
-            display: true,
-            text: "Best Client of the Year",
-        },
-        legend: {
-            position: 'top',
-            labels: {
-                fontColor: '#000'
-            },
-        },
-        // layout: {
-        //     padding: {
-        //         left: 10,
-        //         right: 0,
-        //         bottom: 0,
-        //     }
-        // },
-        tooltips: {
-            //when hovered
-            enabled: true
+const getBestClientWeek = () => {
+    axios.get(bestClientWeekUrl).then(response => {
+        const weeklyData = response.data
+        const labelsArr = []
+        const dataArr = []
+        // console.log(weeklyData.length === 0)
+        weeklyData.forEach(data => {
+            labelsArr.push(data['name'])
+            dataArr.push(data['tot_amount'])
+            
+        })
+
+        const bestWeekClientData = {
+            labels: labelsArr,
+            datasets: [{
+                label: 'Amount (in $)',
+                data: dataArr,
+                backgroundColor: [
+                    'rgba(27, 70, 89, 0.2)',
+                    'rgba(50, 201, 156, 0.2)',
+                    'rgba(255, 215, 0, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(27, 70, 89, 1)',
+                    'rgba(50, 201, 156, 1)',
+                    'rgba(255, 215, 0, 1)',
+                ],
+                borderWidth: 1,
+                hoverBorderWidth: 3,
+                hoverBackgroundColor: [
+                    'rgba(27, 70, 89, 0.6)',
+                    'rgba(50, 201, 156, 0.6)',
+                    'rgba(255, 215, 0, 0.6)',
+                ]
+            }],
         }
-    }
-})
+        const bestClientWeekGraph = new Chart('best-client-week', {
+            type: 'bar',
+            data: bestWeekClientData,
+            options: {
+                scales: {
+                    yAxes: [{ticks: {min: 0, max: (parseInt(dataArr[0]))}}]
+                },
+                title: {
+                    display: true,
+                    text: "Best Client of the Week",
+                },
+                legend: {
+                    position: 'top',
+                    labels: {
+                        fontColor: '#000'
+                    },
+                },
+                // layout: {
+                //     padding: {
+                //         left: 10,
+                //         right: 0,
+                //         bottom: 0,
+                //     }
+                // },
+                tooltips: {
+                    //when hovered
+                    enabled: true
+                }
+            }
+        })
+    })
+}
+//console.log(bestSellerData['datasets'][0]['data'])
+getBestClientWeek()
+
+const bestClientMonthUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/best-client-month.php"
+
+const getBestClientMonth = () => {
+    axios.get(bestClientMonthUrl).then(response => {
+        const monthlyData = response.data
+        const labelsArr = []
+        const dataArr = []
+        //console.log(monthlyData)
+        monthlyData.forEach(data => {
+            labelsArr.push(data['name'])
+            dataArr.push(data['tot_amount'])
+            
+        })
+        const bestMonthClientData = {
+            labels: labelsArr,
+            datasets: [{
+                label: 'Amount (in $)',
+                data: dataArr,
+                backgroundColor: [
+                    'rgba(27, 70, 89, 0.2)',
+                    'rgba(50, 201, 156, 0.2)',
+                    'rgba(255, 215, 0, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(27, 70, 89, 1)',
+                    'rgba(50, 201, 156, 1)',
+                    'rgba(255, 215, 0, 1)',
+                ],
+                borderWidth: 1,
+                hoverBorderWidth: 3,
+                hoverBackgroundColor: [
+                    'rgba(27, 70, 89, 0.6)',
+                    'rgba(50, 201, 156, 0.6)',
+                    'rgba(255, 215, 0, 0.6)',
+                ]
+            }],
+        }
+        const bestClientMonthGraph = new Chart('best-client-month', {
+            type: 'bar',
+            data: bestMonthClientData,
+            options: {
+                scales: {
+                    yAxes: [{ticks: {min: 0, max: parseInt(dataArr[0])}}]
+                },
+                title: {
+                    display: true,
+                    text: "Best Client of the Month",
+                },
+                legend: {
+                    position: 'top',
+                    labels: {
+                        fontColor: '#000'
+                    },
+                },
+                // layout: {
+                //     padding: {
+                //         left: 10,
+                //         right: 0,
+                //         bottom: 0,
+                //     }
+                // },
+                tooltips: {
+                    //when hovered
+                    enabled: true
+                }
+            }
+        })
+    })
+}
+
+getBestClientMonth()
+
+const bestClientYearUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/best-client-year.php"
+
+const getBestClientYear = () => {
+    axios.get(bestClientYearUrl).then(response => {
+        const yearlyData = response.data
+        const labelsArr = []
+        const dataArr = []
+        //console.log(yearlyData)
+        yearlyData.forEach(data => {
+            labelsArr.push(data['name'])
+            dataArr.push(data['tot_amount'])
+            
+        })
+        const bestClientYearData = {
+            labels: labelsArr,
+            datasets: [{
+                label: 'Amount (in $)',
+                data: dataArr,
+                backgroundColor: [
+                    'rgba(27, 70, 89, 0.2)',
+                    'rgba(50, 201, 156, 0.2)',
+                    'rgba(255, 215, 0, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(27, 70, 89, 1)',
+                    'rgba(50, 201, 156, 1)',
+                    'rgba(255, 215, 0, 1)',
+                ],
+                borderWidth: 1,
+                hoverBorderWidth: 3,
+                hoverBackgroundColor: [
+                    'rgba(27, 70, 89, 0.6)',
+                    'rgba(50, 201, 156, 0.6)',
+                    'rgba(255, 215, 0, 0.6)',
+                ]
+            }],
+        }
+        const bestClientYearGraph = new Chart('best-client-year', {
+            type: 'bar',
+            data: bestClientYearData,
+            options: {
+                scales: {
+                    yAxes: [{ticks: {min: 0, max: parseInt(dataArr[0])}}]
+                },
+                title: {
+                    display: true,
+                    text: "Best Client of the Year",
+                },
+                legend: {
+                    position: 'top',
+                    labels: {
+                        fontColor: '#000'
+                    },
+                },
+                // layout: {
+                //     padding: {
+                //         left: 10,
+                //         right: 0,
+                //         bottom: 0,
+                //     }
+                // },
+                tooltips: {
+                    //when hovered
+                    enabled: true
+                }
+            }
+        })
+    })
+}
+
+getBestClientYear()
 
 const totalNumberData = {
     labels: ['Jan', 'Feb', 'March'],
