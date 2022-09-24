@@ -8,6 +8,8 @@
     <title>Products</title>
     <script src="script/navbar-toggle.js" defer></script>
     <script src="script/navbar-links.js" defer></script>
+    <script src="script/add-products.js" defer></script>
+    <script src="script/form-validations.js"></script>
 </head>
 <body>
     <header class="header-container">
@@ -37,7 +39,7 @@
                     <div class="product-form-info-div">
                         <h2 class="form-title">Add Your Product</h2>
                         <input class="form-input" type="text" name="productName" id="product-name" placeholder="Product Name...">
-                        <input class="form-input" type="text" name="productPrice" placeholder="Price($)...">
+                        <input class="form-input" type="text" name="productPrice" placeholder="Price($)..." id="product-price">
                         <div class="img-wrapper">
                             <label for="product-img">
                                 <img src="images/icons/default.png" alt="">
@@ -52,7 +54,9 @@
                     <div class="product-form-category-div">
                         <h2 class="form-title">Add Category</h2>
                         <select name="productCategories" id="product-category-selector">
-                            <option value="add-category">+Add Category</option>
+                            <option value="addNewCategory">+Add Category</option>
+                            <option value="2">+haha</option>
+                            <option value="3">hehe</option>
                         </select>
     
                         <div class="view-none add-cat" id="add-category">
