@@ -11,24 +11,29 @@ const couponsAdsButton = document.querySelector("#coupons-ads-btn");
 //submit category variable
 const addCategoryForm = document.getElementsByClassName("add-category-form")[0];    
 const addCategoryButton = document.querySelector("#submit-cat");
-const productCategories = document.querySelector("#cars");
+const productCategories = document.querySelector("#product-categories");
 const productCategoryName = document.querySelector("#product-cat-name").value;
 const addNewCategory = document.querySelector("#add-new-catg");
-
 
 //add new product 
 addNewCategory.onclick = () => {
     addCategoryForm.classList.toggle("add-category-form-block");
 };
+addCategoryForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+})
 
 //submit new product 
-addCategoryButton.onclick = (e) => {
-    e.preventDefault();
+addCategoryButton.onclick = () => {
+    
     const productCategoryName = document.querySelector("#product-cat-name").value;
-    let newCategory = document.createElement("option");
-    productCategories.appendChild(newCategory);
-    newCategory.innerHTML = `${productCategoryName}`;
-    newCategory.value=`${productCategoryName}`;
+    if (productCategoryName.length != 0) {
+        let newCategory = document.createElement("option");
+        productCategories.appendChild(newCategory);
+        newCategory.innerHTML = `${productCategoryName}`;
+        newCategory.value=`${productCategoryName}`;
+    }
+    
 }
 
 //load create product page 
@@ -96,7 +101,7 @@ couponsAdsButton.onclick = () => couponsAdsPage();
 
 //add product action
 const addProductForm = document.querySelector(".add-form");
-const submitProductButton = document.querySelector("#product-desc");
+const submitProductButton = document.querySelector("#submit-product");
 
 //prevent refresh when submit
 addProductForm.addEventListener('submit', (e) => {
@@ -108,6 +113,16 @@ submitProductButton.addEventListener('click', () => {
     const productPrice = document.querySelector("#product-price").value;
     const productImage = document.querySelector("#product-img").value;
     const productDescription = document.querySelector("#product-desc").value;
+    const productCategories = document.querySelector("#product-categories");
+
+    if (productCategories.value == "") {
+        debugger
+        document.getElementById("product-warnings").innerHTML = "Please add a specific Category";
+        document.getElementById("product-warnings").style.color = "red";
+    }
+    else {
+        
+    }
     //specifications
     
         
@@ -126,6 +141,7 @@ revenueForm.addEventListener('submit', (e) => {
 });
 //click on calculate
 calculateRevenueButton.addEventListener('click', () => {
+    //end date validation
     let today = new Date();
     let dd = today.getDate();
     let mm = today.getMonth() + 1;//january is 0
@@ -138,6 +154,6 @@ calculateRevenueButton.addEventListener('click', () => {
     }
     today = yyyy + '-' + mm + '-' + dd;
     document.getElementById('end-date').setAttribute('max', today);
-
 });
+
 
