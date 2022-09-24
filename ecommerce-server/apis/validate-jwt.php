@@ -11,6 +11,5 @@
     // parse string to array
     $validity= $array["validity"]-date('dm')==0?"valid":"invalid";
     $id=$array["user_id"]; 
-    echo $validity;
-    
+
 ?>
