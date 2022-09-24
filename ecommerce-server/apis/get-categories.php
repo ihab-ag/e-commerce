@@ -1,23 +1,19 @@
 <?php
-    include('connection.php');
-    header('Access-Control-Allow-Origin: *');//access by anybody with no auth
+    header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
-    header('Access-Control-Allow-Methods: POST');
-    header('Allow-Control-Allow-Headers: Allow-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
-    // connect to db
-    $query= $mysqli->prepare('SELECT * FROM categories;');
-    // query to get clients
-    if(!$query->execute()) {
-        die("Error in get-categories-api");
-    }
-    $array = $query->get_result();
-    // get results
+    include('connection.php');
+    //  connect to db
+    $seller_id=$_POST["sellers_id"];
+    $query=$mysqli->prepare("SELECT id, name FROM `categories` WHERE sellers_id=?");
+    $query->bind_param("i",$seller_id);
+    $query->execute();
+    $array=$query->get_result();
+    // get query
     $response=[];
-
     while($a=$array->fetch_assoc()){
-        $response[]= $a;
+        $response[]=$a;
     }
-    // store results in response
-    $json = json_encode($response);
+    // store results in array
+    $json= json_encode($response);
     echo $json;
 ?>
