@@ -68,6 +68,13 @@
     }
     $response['counter_sellers_q4'] = $counterQ4;
     // store results in response
+    $query5 = $mysqli->prepare("SELECT count(id) as sellers_counter FROM sellers");
+    if(!$query5->execute()) {
+        die("Error in latest-signed-sellers");
+    }
+    $totResults = $query5->get_result();
+    $res = $totResults->fetch_assoc();
+    $response['tot_sellers'] = $res['sellers_counter'];
     $json = json_encode($response);
     echo $json;
 ?>

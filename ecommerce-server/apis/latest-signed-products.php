@@ -72,6 +72,14 @@ ORDER BY issue_date DESC');
     }
     $response['counter_products_q4'] = $counterQ4;
     // store results in response
+
+    $query5 = $mysqli->prepare("SELECT count(id) as products_counter FROM products");
+    if(!$query5->execute()) {
+        die("Error in latest-signed-products");
+    }
+    $totResults = $query5->get_result();
+    $res = $totResults->fetch_assoc();
+    $response['tot_products'] = $res['products_counter'];
     $json = json_encode($response);
     echo $json;
 ?>

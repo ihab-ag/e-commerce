@@ -73,6 +73,14 @@ ORDER BY joined_date DESC
     }
     $response['counter_clients_q4'] = $counterQ4;
     // store results in response
+
+    $query5 = $mysqli->prepare("SELECT count(id) as clients_counter FROM clients");
+    if(!$query5->execute()) {
+        die("Error in latest-signed-clients");
+    }
+    $totResults = $query5->get_result();
+    $res = $totResults->fetch_assoc();
+    $response['tot_clients'] = $res['clients_counter'];
     $json = json_encode($response);
     echo $json;
 ?>
