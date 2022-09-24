@@ -516,11 +516,14 @@ const getBestClientYear = () => {
 }
 
 getBestClientYear()
+
+// general stats
 const nbOfClientsUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/latest-signed-clients.php"
 const getNumberOfClients = () => {
     axios.get(nbOfClientsUrl).then(response => {
         const totNumber = response.data
         console.log(totNumber)
+        document.getElementById('stat-result-tot-clients').textContent = "Total Number of clients: " + totNumber['tot_clients']
         const dataArr = []
         //console.log(totNumber)
         dataArr.push(totNumber['counter_clients_q1'])
@@ -575,50 +578,6 @@ const getNumberOfClients = () => {
 }
 
 getNumberOfClients()
-const totalNumberData = {
-    labels: ['Jan', 'Feb', 'March'],
-    datasets: [{
-        label: 'Person',
-        data: [
-            100, 200, 300],
-        backgroundColor: 'rgba(50, 201, 156, 0.2)',
-        borderColor: 'rgba(50, 201, 156, 1)',
-        borderWidth: 1,
-        hoverBorderWidth: 3,
-        hoverBackgroundColor: 'rgba(50, 201, 156, 0.6)',
-    }],
-}
-
-// const totalNbClients =  new Chart('tot-client', {
-//     type: 'line',
-//     data: totalNumberData,
-//     options: {
-//         scales: {
-//             yAxes: [{ticks: {min: 0, stepSize: 50}}]
-//         },
-//         title: {
-//             display: true,
-//             text: "Total Number of Clients",
-//         },
-//         legend: {
-//             position: 'top',
-//             labels: {
-//                 fontColor: '#000'
-//             },
-//         },
-//         // layout: {
-//         //     padding: {
-//         //         left: 10,
-//         //         right: 0,
-//         //         bottom: 0,
-//         //     }
-//         // },
-//         tooltips: {
-//             //when hovered
-//             enabled: true
-//         }
-//     }
-// })
 
 const nbOfSellersUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/latest-signed-sellers.php"
 const getNumberOfSellers = () => {
@@ -627,6 +586,7 @@ const getNumberOfSellers = () => {
         console.log(totNumber)
         const dataArr = []
         //console.log(totNumber)
+        document.getElementById('stat-result-tot-sellers').textContent = "Total Number of sellers: " + totNumber['tot_sellers']
         dataArr.push(totNumber['counter_sellers_q1'])
         dataArr.push(totNumber['counter_sellers_q2'])
         dataArr.push(totNumber['counter_sellers_q3'])
@@ -687,6 +647,7 @@ const getNumberOfProducts = () => {
         console.log(totNumber)
         const dataArr = []
         //console.log(totNumber)
+        document.getElementById('stat-result-tot-products').textContent = "Total Number of products: " + totNumber['tot_products']
         dataArr.push(totNumber['counter_products_q1'])
         dataArr.push(totNumber['counter_products_q2'])
         dataArr.push(totNumber['counter_products_q3'])
@@ -739,34 +700,3 @@ const getNumberOfProducts = () => {
 }
 
 getNumberOfProducts()
-
-// const totalNbProducts =  new Chart('tot-products', {
-//     type: 'line',
-//     data: totalNumberData,
-//     options: {
-//         scales: {
-//             yAxes: [{ticks: {min: 0, stepSize: 10000}}]
-//         },
-//         title: {
-//             display: true,
-//             text: "Total Number of Products",
-//         },
-//         legend: {
-//             position: 'top',
-//             labels: {
-//                 fontColor: '#000'
-//             },
-//         },
-//         // layout: {
-//         //     padding: {
-//         //         left: 10,
-//         //         right: 0,
-//         //         bottom: 0,
-//         //     }
-//         // },
-//         tooltips: {
-//             //when hovered
-//             enabled: true
-//         }
-//     }
-// })
