@@ -12,4 +12,6 @@
         $response[]=$a;
      }
     //  get products
+    $json=json_encode($response);
+    echo $json;
 ?>
