@@ -1,3 +1,4 @@
+/* Common */
 *{
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -13,15 +14,15 @@
     justify-content: row;
 }
 
+.column{
+    justify-content: column;
+}
+
 .space-between{
     justify-content: space-between;
 }
 
-i{
-    color: black;
-    font-size: 20px;
-}
-
+/* Header */
 header{
     background-color: #a0db8e;
     height: 90px;
@@ -39,6 +40,7 @@ header{
 .whitecart{
     height: 40px;
     cursor: pointer;
+    width: 40px;
 }
 
 h1{
@@ -53,4 +55,44 @@ h1{
     padding: 22px 50px;
     width: 100%;
     
+}
+
+/* Products */
+.image img{
+    height: 150px;
+    width: 170px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+img{
+    width: 100%;
+
+}
+
+.trash-icon{
+    height: 20px;
+    width: 20px;
+}
+
+.product{
+    align-items: center;
+}
+
+.products-container{
+    width: 100%;
+    padding: 50px;
+}
+
+.info{
+    gap: 50px;
+}
+
+.right-part{
+    align-items: flex-start;
+}
+
+.left-part{
+    align-items: center;
+    gap: 50px;
 }
