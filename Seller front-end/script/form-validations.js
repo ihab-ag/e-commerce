@@ -23,7 +23,7 @@ const priceValidation = (price) => {
 // console.log(priceValidation('19222.20'))
 
 const emptyFieldsValidation = (name, price, photo, description, selector) => {
-    if(!name || !price || !photo || !description || (!selector || !selector.value || (selector.value === "addNewCategory"))) {
+    if(!name || !price || photo.files['length'] <= 0 || !description || (!selector || (selector === "addNewCategory"))) {
         return false
     }
     return true

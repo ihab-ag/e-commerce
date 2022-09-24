@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="style/product-form.css">
     <title>Products</title>
+    <script src="script/form-validations.js" defer></script>
     <script src="script/navbar-toggle.js" defer></script>
     <script src="script/navbar-links.js" defer></script>
     <script src="script/add-products.js" defer></script>
-    <script src="script/form-validations.js"></script>
 </head>
 <body>
     <header class="header-container">
@@ -45,8 +45,8 @@
                                 <img src="images/icons/default.png" alt="">
                             </label>
                             
-                            <p>Insert Product Image</p>
-                            <input class="view-none" type="file" name="productImage" id="product-img" enctype="multipart/form-data">
+                            <p>Insert Product Images</p>
+                            <input class="view-none" type="file" name="productImage" id="product-img" enctype="multipart/form-data" multiple>
                         </div>
                         <textarea name="productDescription" id="product-description" cols="30" rows="10" placeholder="Product Description..."></textarea>
                     </div>
@@ -61,16 +61,17 @@
     
                         <div class="view-none add-cat" id="add-category">
                             <input class="form-input form-input-cat" type="text" name="categoryName" id="category-name" placeholder="Category Name...">
-                            <button class="btn btn-add-category">Add Category</button>
+                            <button class="btn btn-add-category" id="add-category-btn">Add Category</button>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-add-product">Add Product</button>
+                <button class="btn btn-add-product" id="add-product-btn">Add Product</button>
             </form>
         </section>
-        <section class="msg-section">
-            <p class="msg-content"></p>
-        </section>
     </main>
+
+    <section class="msg-section">
+        <p class="msg-content"></p>
+    </section>
 </body>
 </html>
