@@ -61,10 +61,31 @@ WHERE joined_date between (now() - interval 96 day) and now()
 GROUP BY joined_date 
 ORDER BY joined_date DESC
 
+------------------------- products
 
+select issue_date, count(id) as products_count
+FROM products
+WHERE issue_date between (now() - interval 366 day) and (now() - interval 276 day)
+GROUP BY issue_date 
+ORDER BY issue_date DESC
 
+select issue_date, count(id) as products_count
+FROM products
+WHERE issue_date between (now() - interval 276 day) and (now() - interval 186 day)
+GROUP BY issue_date 
+ORDER BY issue_date DESC
 
--------------------------
+select issue_date, count(id) as products_count
+FROM products
+WHERE issue_date between (now() - interval 186 day) and (now() - interval 96 day)
+GROUP BY issue_date 
+ORDER BY issue_date DESC
+
+select issue_date, count(id) as products_count
+FROM products
+WHERE issue_date between (now() - interval 96 day) and now()
+GROUP BY issue_date 
+ORDER BY issue_date DESC
 
 -- select r.date, count(s.id)
 -- FROM revenues r, sellers s
