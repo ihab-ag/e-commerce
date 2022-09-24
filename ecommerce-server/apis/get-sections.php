@@ -12,7 +12,20 @@
         $query->execute();
         $array=$query->get_result();
         $category_name=$array->fetch_assoc()['name'];
-        echo $category_name;
+        $category_name;
+        // get fav category products
+        $query=$mysqli->prepare('SELECT products.id, products.name, products.description, products.price, products.image
+        FROM categories, products
+        WHERE products.Categories_id=categories.id AND categories.name= ?');
+        $query->bind_param("s",$category_name);
+        $query->execute();
+        $array=$query->get_result();
+        $response=[];
+        while($a=$array->fetch_assoc()){
+            $response[]=$a;
+        }
+        $json= json_encode($response);
+        echo $json;
     }
     else
     echo 'invalid token';
