@@ -76,7 +76,7 @@ img{
 }
 
 .products-container{
-    width: 100%;
+    width: 100vw;
     padding: 70px;
 }
 
@@ -123,4 +123,8 @@ h3{
     justify-content: center;
     gap: 30px;
     flex-direction: column;
+}
+
+.big-container{
+    width: 100%;
 }
