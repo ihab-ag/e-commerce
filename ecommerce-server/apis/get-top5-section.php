@@ -3,7 +3,7 @@
      header('Content-Type: application/json');
      include('connection.php');
      // connect to db
-     $query= $mysqli->prepare('SELECT products.id, products.name, products.description, products.price, products.image
+     $query= $mysqli->prepare('SELECT products.id, products.name, products.description, products.price, products.image, products.views
      FROM products ORDER BY views DESC LIMIT 5');
      $query->execute();
      $array=$query->get_result();
