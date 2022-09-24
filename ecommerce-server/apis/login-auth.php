@@ -28,7 +28,7 @@
         $base64UrlSignature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($signature));
         // Form JWT
         $jwt = $base64UrlHeader . "." . $base64UrlPayload . "." . $base64UrlSignature;
-        echo json_encode($jwt);
+        echo json_encode($jwt); 
     }
     else
     echo json_encode("Wrong user credentials");
