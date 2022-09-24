@@ -64,7 +64,7 @@ const getBestSellerWeek = () => {
             
         })
         if(weeklyData.length !== 0)
-            document.getElementById('stat-result-seller-week').textContent = "Best Seller: " + labelsArr[0] + ": " + dataArr[0]
+            document.getElementById('stat-result-seller-week').textContent = "Best Seller: " + labelsArr[0] + " " + dataArr[0] + "$"
         else {
             document.getElementById('stat-result-seller-week').textContent = "No data this week"
         }
@@ -140,6 +140,12 @@ const getBestSellerMonth = () => {
             dataArr.push(data['tot_amount'])
             
         })
+        
+        if(monthlyData.length !== 0)
+            document.getElementById('stat-result-seller-month').textContent = "Best Seller: " + labelsArr[0] + " " + dataArr[0] + "$"
+        else {
+            document.getElementById('stat-result-seller-month').textContent = "No data this month"
+        }
         const bestMonthSellerData = {
             labels: labelsArr,
             datasets: [{
@@ -212,6 +218,12 @@ const getBestSellerYear = () => {
             dataArr.push(data['tot_amount'])
             
         })
+        
+        if(yearlyData.length !== 0)
+            document.getElementById('stat-result-seller-year').textContent = "Best Seller: " + labelsArr[0] + " " + dataArr[0] + "$"
+        else {
+            document.getElementById('stat-result-seller-year').textContent = "No data this year"
+        }
         const bestSellerYearData = {
             labels: labelsArr,
             datasets: [{
@@ -286,6 +298,11 @@ const getBestClientWeek = () => {
             dataArr.push(data['tot_amount'])
             
         })
+        if(weeklyData.length !== 0)
+            document.getElementById('stat-result-client-week').textContent = "Best client: " + labelsArr[0] + " " + dataArr[0] + "$"
+        else {
+            document.getElementById('stat-result-client-week').textContent = "No data this week"
+        }
 
         const bestWeekClientData = {
             labels: labelsArr,
@@ -359,6 +376,11 @@ const getBestClientMonth = () => {
             dataArr.push(data['tot_amount'])
             
         })
+        if(monthlyData.length !== 0)
+            document.getElementById('stat-result-client-month').textContent = "Best client: " + labelsArr[0] + " " + dataArr[0] + "$"
+        else {
+            document.getElementById('stat-result-client-month').textContent = "No data this month"
+        }
         const bestMonthClientData = {
             labels: labelsArr,
             datasets: [{
@@ -431,6 +453,11 @@ const getBestClientYear = () => {
             dataArr.push(data['tot_amount'])
             
         })
+        if(yearlyData.length !== 0)
+            document.getElementById('stat-result-client-year').textContent = "Best client: " + labelsArr[0] + " " + dataArr[0] + "$"
+        else {
+            document.getElementById('stat-result-client-year').textContent = "No data this year"
+        }
         const bestClientYearData = {
             labels: labelsArr,
             datasets: [{
