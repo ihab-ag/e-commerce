@@ -12,7 +12,7 @@
     $email = $_POST['email'];
     $date = date('Y-m-d');
     // connect to db
-    $query= $mysqli->prepare('INSERT INTO sellers(name, password, phone, location, email, date) VALUES(?, ?, ?, ?, ?, ?);');
+    $query= $mysqli->prepare('INSERT INTO sellers(name, password, phone, location, email, joined_date) VALUES(?, ?, ?, ?, ?, ?);');
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
     $query->bind_param('ssssss', $name, $hashedPwd, $phone, $location, $email, $date);
     // query to put seller into the banned list
