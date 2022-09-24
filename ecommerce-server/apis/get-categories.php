@@ -9,10 +9,11 @@
     $query->execute();
     $array=$query->get_result();
     // get query
-    $response=[]
+    $response=[];
     while($a=$array->fetch_assoc()){
         $response[]=$a;
     }
     // store results in array
-    
+    $json= json_encode($response);
+    echo $json;
 ?>
