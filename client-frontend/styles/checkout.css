@@ -81,7 +81,7 @@ img{
 
 .products-container{
     width: 100vw;
-    padding: 70px;
+    padding: 7%;
 }
 
 .right-part-container{
@@ -94,6 +94,7 @@ img{
     display: flex;
     flex-direction: row;
     gap: 10px;
+    align-items: center;
 }
 
 .left-part{
@@ -119,7 +120,7 @@ h3{
     border: none;
     width: 50px;
     border-radius: 5px;
-    height: 20px;
+    height: 25px;
 }
 
 .spacing-two{
