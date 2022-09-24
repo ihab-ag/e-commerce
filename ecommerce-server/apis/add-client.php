@@ -10,10 +10,11 @@
     $phone = $_POST['phone'];
     //$location = $_POST['location'];
     $email = $_POST['email'];
+    $date = date('Y-m-d');
     // connect to db
-    $query= $mysqli->prepare('INSERT INTO clients(name, password, phone, email) VALUES(?, ?, ?, ?);');
+    $query= $mysqli->prepare('INSERT INTO clients(name, password, phone, email, joined_date) VALUES(?, ?, ?, ?, ?);');
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-    $query->bind_param('ssss', $name, $hashedPwd, $phone, $email);
+    $query->bind_param('sssss', $name, $hashedPwd, $phone, $email, $date);
     // query to put client into the banned list
     if(!$query->execute()) {
         //statement failed
