@@ -75,24 +75,52 @@ img{
     width: 20px;
 }
 
-.product{
-    align-items: center;
-}
-
 .products-container{
     width: 100%;
-    padding: 50px;
-}
-
-.info{
-    gap: 50px;
+    padding: 70px;
 }
 
 .right-part{
-    align-items: flex-start;
+    align-items: center;
+    gap: 40px;
 }
 
 .left-part{
     align-items: center;
-    gap: 50px;
+    gap: 30px;
+}
+
+.spacing{
+    gap: 300px;
+}
+
+.space-two{ 
+    gap: 10px;
+}
+
+h3{
+    font-size: 27px;
+}
+
+.times{
+    height: 15px;
+}
+
+.counter{
+    background-color: #a0db8e;
+    border: none;
+    width: 50px;
+    border-radius: 5px;
+    height: 20px;
+}
+
+.spacing-two{
+    gap: 400px;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-direction: column;
 }
