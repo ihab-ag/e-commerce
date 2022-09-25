@@ -1,0 +1,38 @@
+<?php
+    include('connection.php');
+    // connect to db
+    header('Access-Control-Allow-Origin: *');//access by anybody with no auth
+    header('Content-Type: application/json');
+    header('Access-Control-Allow-Methods: POST');
+    header('Allow-Control-Allow-Headers: Allow-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
+    $name = $_POST['name'];
+    $pwd = $_POST['pwd'];
+    $phone = $_POST['phone'];
+    //$location = $_POST['location'];
+    $email = $_POST['email'];
+    $date = date('Y-m-d');
+    // connect to db
+    $query= $mysqli->prepare('INSERT INTO clients(name, password, phone, email, joined_date) VALUES(?, ?, ?, ?, ?);');
+    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+    $query->bind_param('sssss', $name, $hashedPwd, $phone, $email, $date);
+    // query to put client into the banned list
+    if(!$query->execute()) {
+        //statement failed
+        // echo json_encode(["success" => false]);
+        die("Error in add-client-api");
+    }
+    //statement succeeded
+    // echo json_encode(["success" => true]);
+    // email is unique
+    $query2 = $mysqli->prepare('SELECT id FROM clients WHERE email=?;');
+    $query2->bind_param('s', $email);
+    if(!$query2->execute()) {
+        die("Error in add-client-api selection part");
+    }
+    $results = $query2->get_result();
+    $result = $results->fetch_assoc();
+    $clientID = $result['id']; //guaranteed one answer
+
+    echo json_encode(["success" => true, "client_id" => $clientID]);
+
+?>

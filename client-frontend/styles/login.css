@@ -256,6 +256,7 @@ h2{
     }
 
     .form{
-        left: 35%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
