@@ -12,12 +12,13 @@
     $query->execute();
     // add category
 
-    $query2 = $mysqli->prepare('SELECT id FROM categories ORDER BY id DESC LIMIT 1');
+    $query2 = $mysqli->prepare('SELECT id, name FROM categories ORDER BY id DESC LIMIT 1');
     if(!$query2->execute()) {
         die("Error in get Categories");
     }
     $results = $query2->get_result();
     $result = $results->fetch_assoc();
     $id = $result['id'];
-    echo json_encode(['id' => $id]);
+    $name = $result['name'];
+    echo json_encode(['id' => $id, 'name' => $name]);
 ?>
