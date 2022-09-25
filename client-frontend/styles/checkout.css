@@ -295,6 +295,7 @@ footer{
 .show{
     display: block;
 }
+
 /* Responsive on mobile */
 @media screen and (max-width: 500px) {
     h1, h3{
