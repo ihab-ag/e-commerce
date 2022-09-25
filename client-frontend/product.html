@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="icon" href="./images/logo.png" type="image/png"/>
+        <script src="./scripts/chat.js"></script>
     </head>
     <body> 
         <!-- Start of header section -->
@@ -132,6 +133,17 @@
                             </div>
                         </div>
                         <p class="price">18$</p>
+                    </div>
+                </div>
+                <div class="chat-container">
+                    <button class="open-button" onclick="openForm()"><img class="chat-img" src="images/chat.png" alt="icon"></button>
+                    <div class="chat-popup" id="myForm">
+                        <form action="/action_page.php" class="form-container">
+                            <h1 class="chat-msg">Chat Message</h1>
+                            <textarea placeholder="Type message.." name="msg" required></textarea>
+                            <button type="submit" class="btn">Send</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                        </form>
                     </div>
                 </div>
             </div>
