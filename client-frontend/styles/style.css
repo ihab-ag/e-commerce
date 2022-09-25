@@ -147,7 +147,7 @@ header{
     margin: auto;
 }
 
-  .mySlides {
+.mySlides {
     display: none;
 }
 
@@ -215,7 +215,7 @@ header{
 /* Profile Popup */
 .profile-modal{
     position: absolute;
-    background: #A1C69C;
+    background: #AAC797;
     display: flex;
     align-items: center;
     justify-content: center;

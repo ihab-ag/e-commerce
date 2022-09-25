@@ -84,6 +84,32 @@
     width: 22px;
 }
 
+.product-container-info{
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+}
+
+.img-div{
+    display: flex;
+    flex-direction: row;
+    align-items:  center;
+    gap: 10px;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.icons-div{
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    gap: 20px;
+}
+
 @media screen and (max-width: 500px) {
     .product-img{
         height: 200px;
