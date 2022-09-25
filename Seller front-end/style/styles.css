@@ -232,18 +232,18 @@ body {
 }
 
 .navbar .navbar-links > li:hover {
-    text-decoration: underline;text-decoration-color: #32C99C;
+    text-decoration: underline;text-decoration-color: #A1C69C;
     text-underline-offset: 5px;
     color: white;
-    background-color: #79949f;
+    background-color: #e2eca8;
 }
 
 /* in which navbar link I am  */
 .current-navbar-link {
-    text-decoration: underline;text-decoration-color: #32C99C;
+    text-decoration: underline;text-decoration-color: #A1C69C;
     text-underline-offset: 5px;
     color: white;
-    background-color: #79949f;
+    background-color: #d3dd98;
 }
 
 .navbar .navbar-links > li:active {
@@ -278,7 +278,7 @@ body {
 }
 
 .main-action-btn-wrapper > input:focus {
-    border: 1px solid #32C99C;
+    border: 1px solid #A0DB8E;
 }
 
 .main-content-wrapper {
@@ -314,7 +314,7 @@ body {
 
 .table-wrapper table tr th {
     text-align: center;
-    background-color: #32C99C;
+    background-color: #A0DB8E;
     color: white;
     padding: 5px;
     font-size: 20px;
@@ -338,7 +338,7 @@ body {
     min-width: 100px;
     width: 100%;
     border: none;
-    border-bottom: 2px solid #32C99C;
+    border-bottom: 2px solid #A0DB8E;
     padding: 5px;
     border-radius: 5px;
     outline: none;
