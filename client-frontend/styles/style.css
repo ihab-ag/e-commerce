@@ -71,6 +71,7 @@ header{
     min-width: 90px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    border-radius: 5px;
 }
   
 .dropdown-content a {
@@ -146,7 +147,7 @@ header{
     margin: auto;
 }
 
-  .mySlides {
+.mySlides {
     display: none;
 }
 
@@ -172,6 +173,7 @@ header{
 .items-title{
     font-size: 25px;
     margin: 40px;
+    text-align: left;
 }
 
 .item-name{
@@ -197,15 +199,97 @@ header{
 
 .small-container{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .evenly{
     justify-content: space-evenly;
 }
 
-.end{
-    margin-left: auto;
-    margin-right: 0;
+/* Profile Popup */
+.profile-modal{
+    position: absolute;
+    background: #AAC797;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    left: 50%;
+    top: 50%;
+    font-size: 1.5rem;
+    border: 1px solid var(--light-gray);
+    width: 800px;
+    padding: 30px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    box-shadow: 0 5px 10px #0001;
+    scale: 1;
+    translate: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease-in-out; 
+}
+
+.profile-container{
+    display: flex;
+}
+
+.profile-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-input{
+    border-radius: 5px;
+    width: 300px;
+    padding: 12px;
+    text-align: left;
+    padding-left: 25px;
+    margin-top: 30px;
+    border: none;
+}
+
+.update-btn{
+    border-radius: 5px;
+    width: 300px;
+    padding: 12px;
+    text-align: center;
+    background-color:  #a0db8e;
+    border: none;
+    margin-top: 30px;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.show-modal {
+    scale: 1;
+    opacity: 1;
+    translate: 0;
+    pointer-events: unset;
+}
+
+#close_profile_modal{
+    cursor: pointer;
+    color: white;
+    float: right;
+}
+
+.myprofile{
+    color: white;
+    text-align: center;
+}
+
+.close-profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    justify-content: space-between;
 }
 
 /*Hamburger Menu */
@@ -222,11 +306,11 @@ header{
     background-color: #a0db8e;
 }
 
-  .closeIcon {
+.closeIcon {
     display: none;
-  }
+}
 
-  .menu {
+.menu {
     position: fixed;
     transform: translateY(-100%);
     transition: transform 0.2s;
@@ -239,9 +323,9 @@ header{
     color: white;
     list-style: none;
     padding-top: 4rem;
-  }
+}
 
-  .showMenu {
+.showMenu {
   transform: translateY(0);
 }
 

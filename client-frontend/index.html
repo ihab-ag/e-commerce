@@ -5,12 +5,15 @@
         <link rel="stylesheet" href="./styles/style.css">
         <script src="./scripts/script.js" defer></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="icon" href="./images/logo.png" type="image/png"/>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="scripts/signup.js"></script>
+        <script src="scripts/profile.js"></script>
         <link rel="stylesheet" href="styles/login.css">
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </head>
@@ -40,7 +43,7 @@
                                 <a href="#">Favourites</a>
                                 <a href="#">Wishlist</a>
                                 <a href="#">Vouchers</a>
-                                <a href="#">Edit</a>
+                                <a href="#" class="edit-profile">Edit profile</a>
                                 <a href="#">Logout</a>
                             </div>
                         </div> 
@@ -91,7 +94,7 @@
                         </div>
                         <div class="small-container">
                             <p class="item-name">Chinese Plant</p>
-                            <div class="end">
+                            <div>
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
                                 <img class="green-icons" src="images/greenheart.png" alt="icon">
                                 <img class="green-icons" src="images/plus.png" alt="icon">
@@ -105,7 +108,7 @@
                         </div>
                         <div class="small-container">
                             <p class="item-name">Silver Dollar Plant</p>
-                            <div class="end">
+                            <div>
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
                                 <img class="green-icons" src="images/greenheart.png" alt="icon">
                                 <img class="green-icons" src="images/plus.png" alt="icon">
@@ -119,7 +122,7 @@
                         </div>
                         <div class="small-container">
                             <p class="item-name">Aloe Vera</p>
-                            <div class="end">
+                            <div>
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
                                 <img class="green-icons" src="images/greenheart.png" alt="icon">
                                 <img class="green-icons" src="images/plus.png" alt="icon">
@@ -135,7 +138,7 @@
                         </div>
                         <div class="small-container">
                             <p class="item-name">Pothos Plant</p>
-                            <div class="end">
+                            <div>
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
                                 <img class="green-icons" src="images/greenheart.png" alt="icon">
                                 <img class="green-icons" src="images/plus.png" alt="icon">
@@ -149,7 +152,7 @@
                         </div>
                         <div class="small-container">
                             <p class="item-name">Prayer Plant</p>
-                            <div class="end">
+                            <div>
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
                                 <img class="green-icons" src="images/greenheart.png" alt="icon">
                                 <img class="green-icons" src="images/plus.png" alt="icon">
@@ -163,7 +166,7 @@
                         </div>
                         <div class="small-container">
                             <p class="item-name">Swiss Cheese Plant</p>
-                            <div class="end">
+                            <div>
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
                                 <img class="green-icons" src="images/greenheart.png" alt="icon">
                                 <img class="green-icons" src="images/plus.png" alt="icon">
@@ -175,21 +178,18 @@
             </div>
         </div>       
         <!-- End of Items Section -->
-        <div class="sign-up-modal">
-            <div class="flex container">
-                <div class="flex column">
-                    <i class="fa-solid fa-xmark" id="close_sign_up_modal"></i>
-                    <h1>Welcome!</h1>
-                    <h2 class="signup-h2">Sign up to our website</h2>
-                    <input class="signup-input" type="text" id="username" name="username" placeholder="Username">
-                    <input class="signup-input" type="text" id="email" name="email" placeholder="Email">
-                    <input class="signup-input" type="text" id="number" name="number" placeholder="Phone number">
-                    <input class="signup-input" type="text" id="password" name="password" placeholder="Password">
-                    <input class="signup-input" type="text" id="confirm" name="confirm" placeholder="Confirm password">
-                    <input class="sign-up-btn" type="submit" value="Sign Up">
-                </div>
-                <div>
-                    <img class="signup-img" src="images/red.jpg" alt="icon"> 
+        <div class="profile-modal">
+            <div class="profile-container">
+                <div class="profile-form">
+                    <div class="close-profile">
+                        <h2 class="myprofile">My Profile</h2>
+                        <i class="fa-solid fa-xmark" id="close_profile_modal"></i>
+                    </div>
+                    <input class="profile-input" type="text" id="username" name="username" placeholder="Username">
+                    <input class="profile-input" type="text" id="email" name="email" placeholder="Email">
+                    <input class="profile-input" type="text" id="address" name="address" placeholder="Add a new address">
+                    <input class="update-btn" type="submit" id="password" name="password" value="Reset password">
+                    <input class="update-btn" type="submit" value="Update">
                 </div>
             </div>   
         </div>

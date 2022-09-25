@@ -6,67 +6,12 @@
     object-fit: cover;
 }
 
-.icon-text-gap{
-    gap: 150px;
-    margin-top: 60px;
-}
-
-.icon-gap{
-    gap: 20px;
-}
-    
-.size{
-    border: #A0DB8E solid 2px;
-    background-color: white;
-    font-size: 20px;
-    border-radius: 5px;
-    padding: 5px 15px;
-    cursor: pointer;
-}
-
-.text-gap{
-    gap: 35px;
+h2{ 
+    margin: 40px;
 }
 
 .green{
     color: #A0DB8E;
-}
-
-.select{
-    margin-top: 30px;
-}
-
-.add{
-    background-color: #A0DB8E;
-    border-radius: 5px;
-    border: none;
-    font-size: 15px;
-    color: white;
-    padding: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: -170px;
-    cursor: pointer;
-}
-
-.arrow{
-    border-right: 2px solid;
-    border-top: 2px solid ;
-    width: 10px;
-    height: 10px;
-    transform: rotate(45deg);
-    margin: 3px;
-}
-
-.seller{
-    cursor: pointer;
-}
-
-.seller:hover{
-    cursor: pointer;
-    color:#A0DB8E;
-    text-decoration: underline;
 }
 
 .views{
@@ -84,6 +29,105 @@
     width: 22px;
 }
 
+.product-container-info{
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+}
+
+.img-div{
+    display: flex;
+    flex-direction: row;
+    align-items:  center;
+    gap: 10px;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.icons-div{
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    gap: 20px;
+}
+
+/* Chat Bubble */
+
+.open-button {
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  left: 28px;
+  width: 28px;
+  height: 28px;
+  border-radius:30px;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 15px;
+  z-index: 9;
+}
+
+.chat-img{
+    height: 50px;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: rgb(219, 219, 219);
+  border-radius: 5px;
+}
+
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: white;
+  resize: none;
+  min-height: 200px;
+  border-radius: 5px;
+}
+
+.chat-msg{
+    font-size: 20px;
+}
+
+.form-container textarea:focus {
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #A0DB8E;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: #7da172;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+/* On mobile sreen */
 @media screen and (max-width: 500px) {
     .product-img{
         height: 200px;
@@ -95,34 +139,6 @@
         font-size: 20px;
     }
 
-    .mobile-column{
-        flex-direction: column;
-        display: flex;
-    }
-
-    .mini-container{
-        margin: 30px;
-    }
-
-    h2{
-        font-size: 15px;
-    }
-
-    .text-gap{
-        gap: 20px;
-    }
-
-    .size{
-        font-size: 10px;
-        padding: 5px 10px;
-    }
-
-    .add{
-        font-size: 10px;
-        padding: 10px;
-        margin-right: -160px;
-    }
-
     p{
         font-size: 15px;
     }
@@ -130,12 +146,6 @@
     .right-side{
         height: 20px;
         width: 20px;
-    }
-
-    .arrow{
-        width: 7px;
-        height: 7px;
-        margin: 5px;
     }
 
     .views{
@@ -151,5 +161,38 @@
     
     .wishlist{
         margin-left: 1px;
+    }
+
+    .img-div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-info{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    h2{
+        font-size:18px ;
+        margin-top: 30px;
+        margin-left: 35px;
+    }
+
+    .product-container-info{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .icons-div{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .chat-img{
+        height: 30px;
     }
 }

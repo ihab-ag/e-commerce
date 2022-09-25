@@ -146,11 +146,24 @@ h2{
     cursor: pointer;
     margin-left: 0px;
     margin-right: auto;
-
 }
 
 .signup-text{
     cursor: pointer;
+}
+
+.wrong-msg{
+    color: white;
+    background-color: rgb(187, 69, 69);
+    font-size: 17px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.wrong-password{
+    display: none;
 }
 
 @media screen and (max-width: 1050px) {
