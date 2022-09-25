@@ -71,6 +71,7 @@ header{
     min-width: 90px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    border-radius: 5px;
 }
   
 .dropdown-content a {
@@ -214,7 +215,7 @@ header{
 /* Profile Popup */
 .profile-modal{
     position: absolute;
-    background: #84a37b;
+    background: #6ab877;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -251,8 +252,8 @@ header{
     padding: 12px;
     text-align: left;
     padding-left: 25px;
-    border: 2px solid #a0db8e;
     margin-top: 30px;
+    border: none;
 }
 
 .update-btn{
@@ -264,7 +265,6 @@ header{
     border: none;
     margin-top: 30px;
     font-size: 15px;
-    font-weight: bold;
     color: white;
     cursor: pointer;
 }
