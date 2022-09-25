@@ -12,6 +12,7 @@
     <script src="script/navbar-toggle.js" defer></script>
     <script src="script/navbar-links.js" defer></script>
     <script src="script/add-products.js" defer></script>
+    <script src="script/edit-form.js" defer></script>
 </head>
 <body>
     <header class="header-container">
@@ -104,11 +105,15 @@
             
                                 <div class="add-cat" id="edit-category">
                                     <input class="form-input form-input-cat" type="text" name="categoryName" id="edit-category-name" placeholder="Category Name...">
-                                    <button class="btn btn-add-category" id="edit-category-btn">Edit Category</button>
+                                        <button class="btn btn-add-category" id="edit-category-btn">Edit Category</button>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-add-product" id="edit-product-btn">Edit Product</button>
+                        <div class="edit-form-btns">
+                            <button class="btn btn-edit-form" id="edit-product-btn">Edit Product</button>
+                            <button class="btn btn-ban" id="edit-category-btn" id="close-edit-form">Close</button>
+
+                        </div>
                     </form>
                 </div>
                 <!--  -->
