@@ -3,7 +3,7 @@
     header('Content-Type: application/json');
     include('connection.php');
  //  connect to db
-    $product_id=$_POST['porduct_id']
+    $product_id=$_POST['product_id']
     $query=$mysqli->prepare("SELECT * FROM `products` WHERE id=$;");
     $query->bind_param("i",$product_id);
     $query->execute();
