@@ -13,8 +13,8 @@
     </head>
     <body>
         <!-- Start of header section -->
-        <header class="flex space-between">
-            <div class="header-container flex">
+        <header class="header-class">
+            <div class="header-container">
                 <div>
                     <h1 class="nav-title">Bulba Shop</h1>
                 </div>
@@ -24,40 +24,42 @@
                         <input class="search-input" type="search" name="search" placeholder="Search" >
                     </div>
                 </div>
-                <div class="flex">
+                <div class="dropdown-container">
                     <div>   
                         <img class="whitecart" src="images/whitecart.png" alt="icon">
                     </div>
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="myFunction()">Account
-                          <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content" id="myDropdown">
-                            <a href="#">Favourites</a>
-                            <a href="#">Wishlist</a>
-                            <a href="#">Vouchers</a>
-                            <a href="#">Edit</a>
-                            <a href="#">Logout</a>
-                        </div>
-                    </div> 
-                    <ul class="menu">
-                        <li><a class="menuItem" href="#">Favourites</a></li>
-                        <li><a class="menuItem" href="#">Wishlist</a></li>
-                        <li><a class="menuItem" href="#">Vouchers</a></li>
-                        <li><a class="menuItem" href="#">Edit</a></li>
-                        <li><a class="menuItem" href="#">Logout</a></li>
-                      </ul>
-                      <button class="hamburger">
-                        <!-- material icons https://material.io/resources/icons/ -->
-                        <i class="menuIcon material-icons">menu</i>
-                        <i class="closeIcon material-icons">close</i>
-                      </button>
+                    <div class="account-container">
+                        <div class="dropdown">
+                            <button class="dropbtn" onclick="myFunction()">Account
+                              <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content" id="myDropdown">
+                                <a href="#">Favourites</a>
+                                <a href="#">Wishlist</a>
+                                <a href="#">Vouchers</a>
+                                <a href="#">Edit</a>
+                                <a href="#">Logout</a>
+                            </div>
+                        </div> 
+                        <ul class="menu">
+                            <li><a class="menuItem" href="#">Favourites</a></li>
+                            <li><a class="menuItem" href="#">Wishlist</a></li>
+                            <li><a class="menuItem" href="#">Vouchers</a></li>
+                            <li><a class="menuItem" href="#">Edit</a></li>
+                            <li><a class="menuItem" href="#">Logout</a></li>
+                          </ul>
+                          <button class="hamburger">
+                            <!-- material icons https://material.io/resources/icons/ -->
+                            <i class="menuIcon material-icons">menu</i>
+                            <i class="closeIcon material-icons">close</i>
+                          </button>
+                    </div>
                 </div>
             </div>
         </header>
         <!-- End of header section -->
         <!-- Start of AD Section -->
-        <section>
+        <div class="body-container">
             <div class="slideshow-container">
                 <div class=" mySlides">
                     <img class="ad-img ad" src="images/slider.jpg" alt="ad">
@@ -75,20 +77,16 @@
                 <span class="dot"></span> 
                 <span class="dot"></span> 
             </div>
-        </section>
-        <!-- End of AD Section -->
-        <!-- Start of Items Setion -->
-        <section>
             <div class="container">
-                <div class="left">
+                <div>
                     <h2 class="items-title">New arrivals:</h2>
                 </div>
-                <div class="flex evenly">
+                <div class="row-container">
                     <div class="products">
                         <div>
                             <img class="item-img" src="images/chinese.jpg" alt="image">
                         </div>
-                        <div class="flex">
+                        <div class="small-container">
                             <p class="item-name">Chinese Plant</p>
                             <div class="end">
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
@@ -102,7 +100,7 @@
                         <div>
                             <img class="item-img" src="images/silver.jpg" alt="image">
                         </div>
-                        <div class="flex">
+                        <div class="small-container">
                             <p class="item-name">Silver Dollar Plant</p>
                             <div class="end">
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
@@ -116,7 +114,7 @@
                         <div>
                             <img class="item-img" src="images/aloe.jpg" alt="image">
                         </div>
-                        <div class="flex">
+                        <div class="small-container">
                             <p class="item-name">Aloe Vera</p>
                             <div class="end">
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
@@ -127,12 +125,12 @@
                         <p class="price">18$</p>
                     </div>
                 </div>
-                <div class="flex evenly">
+                <div class="row-container">
                     <div class="products">
                         <div>
                             <img class="item-img" src="images/pothos.jpg" alt="image">
                         </div>
-                        <div class="flex">
+                        <div class="small-container">
                             <p class="item-name">Pothos Plant</p>
                             <div class="end">
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
@@ -146,7 +144,7 @@
                         <div>
                             <img class="item-img" src="images/prayer.jpg" alt="image">
                         </div>
-                        <div class="flex">
+                        <div class="small-container">
                             <p class="item-name">Prayer Plant</p>
                             <div class="end">
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
@@ -160,7 +158,7 @@
                         <div>
                             <img class="item-img" src="images/swiss.jpg" alt="image">
                         </div>
-                        <div class="flex">
+                        <div class="small-container">
                             <p class="item-name">Swiss Cheese Plant</p>
                             <div class="end">
                                 <img class="green-icons" src="images/wishlist-green.png" alt="icon">
@@ -172,7 +170,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>       
         <!-- End of Items Section -->
     </body>
 </html>
