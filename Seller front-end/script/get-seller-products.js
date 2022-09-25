@@ -1,5 +1,14 @@
 const getSellerProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-products.php"
 const productsTable = document.getElementById('product-table')
+const editProductName = document.getElementById('edit-product-name')
+const editProductPrice = document.getElementById('edit-product-price')
+const editProductImage = document.getElementById('edit-product-img')
+const editProductDescription = document.getElementById('edit-product-description')
+const editCategorySel = document.getElementById('edit-product-category-selector')
+const editCategory = document.getElementById('edit-category')//div
+const editCategoryInput = document.getElementById('edit-category-name')
+const editCategoryBtn = document.getElementById('edit-category-btn')
+const editProductBtn = document.getElementById('edit-product-btn')
 
 const getSellerProducts = () => {
     const dataForm = new FormData()
@@ -13,6 +22,31 @@ const getSellerProducts = () => {
             const editBtn = document.getElementById(`btn-edit-${product.id}`)
             const deleteBtn = document.getElementById(`btn-delete-${product.id}`)
             const deleteConfirmBtn = document.getElementById(`btn-delete-${product.id}-confirm`)
+            const btnCallEditForm = document.getElementById(`btn-edit-${product.id}`)
+            btnCallEditForm.addEventListener('click', () => {
+                const popUpForm = document.querySelector('.popup-form')
+                popUpForm.classList.remove('view-none')
+                editProductName.value = product['name']
+                editProductPrice.value = product['price']
+                // store old photo in case there is no change
+                document.getElementById('old-photo').textContent = product['image']
+                // 
+                //editProductImage.value = product['image']
+                editProductDescription.value = product['description']
+                const optionsOfSelect = editCategorySel.children
+                for(let o of optionsOfSelect) {
+                    if(o.value == parseInt(product['Categories_id'])) {
+                        o.setAttribute('selected', true)
+                        break
+                    }
+                }
+                editCategory.classList.remove('view-none')
+                getEditCategories()
+                // editCategoryInput
+                // editCategoryBtn
+                // editProductBtn
+
+            })
 
             deleteBtn.addEventListener('click', () => {
                 deleteConfirmBtn.classList.remove('view-none')
