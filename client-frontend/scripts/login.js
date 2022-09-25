@@ -1,19 +1,35 @@
 window.onload=()=>{
-    const signUpModal = document.querySelector('.sign-up-modal'),
-    signupText = document.querySelector('.signup-text'),
-    closeSignUpModal = document.getElementById('close_sign_up_modal'); 
-    
-    const hideModal = (modal) => {
-        modal.classList.remove('show-modal');
+    // declarables
+    // elements
+    const email=document.getElementById('login-username');
+    const password=document.getElementById('login-password');
+    const signInBtn=document.getElementById('sign-in-btn');
+    const guestSignIn=document.getElementById('guest-sign-in');
+    // functions
+    const login=()=>{
+        const formData = new FormData();
+        formData.append('email',email.value);
+        formData.append('password',password.value);
+        // place inputs in form
+         axios.post('../ecommerce-server/apis/login-auth.php',formData).then((response)=>{
+            if(response.data=='Wrong user credentials'){
+                // change div here
+            }
+            else{
+                localStorage.setItem('id', response.data);
+                location.replace("index.html");
+            }
+         }).catch(function (error) {
+            console.log(error);
+          });
     }
-        
-    const showModal = (modal, closeModal = null) => {
-        modal.classList.add('show-modal');
+    // main
+    signInBtn.onclick=()=>{
+        login();
     }
-
-    closeSignUpModal.onclick = () => hideModal(signUpModal)
-    
-    signupText.addEventListener('click', () => {
-        showModal(signUpModal)
-    })
+    // guest sign in
+    guestSignIn.onclick=()=>{
+        localStorage.setItem('id', "guest");
+        location.replace("index.html");
+    }
 }

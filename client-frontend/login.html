@@ -9,7 +9,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="icon" href="./images/logo.png" type="image/png" />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="./scripts/login.js" defer></script>
+        <script src="./scripts/signup.js"></script>
     </head>
     <body>
         <section>
@@ -20,12 +22,12 @@
                             <h1 class="login-h1">Welcome!</h1>
                             <h2>Login to your account</h2>
                         </div>
-                        <input class="login-input" type="text" id="username" name="username" placeholder="Username">
-                        <input class="login-input" type="text" id="password" name="password" placeholder="Password">
-                        <button class="sign-in-btn" type="submit">Sign In</button>
+                        <input class="login-input" type="text" id="login-username" name="username" placeholder="Username">
+                        <input class="login-input" type="text" id="login-password" name="password" placeholder="Password">
+                        <button class="sign-in-btn" id='sign-in-btn' type="submit">Sign In</button>
                     </div>
                     <div class="flex row paragraph">
-                        <p>New here?<a class="green signup-text"> Sign up</a></p>
+                        <p>New here?<a class="green signup-text" id="guest-sign-in"> Sign up</a></p>
                         <p class="green guest">Continue as a guest</p>
                     </div>
                 </div>
