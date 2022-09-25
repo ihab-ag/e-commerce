@@ -1,6 +1,7 @@
     
     window.onload=()=>{
       const slider=document.getElementById('slider');
+      const row=document.getElementById('row');
       // get ads
       axios.get("http://localhost/e-commerce/ecommerce-server/apis/get-ads.php")
       .then(function (response) {
@@ -12,8 +13,52 @@
           img.src=item['image'];
           myslide.appendChild(img);
           slider.appendChild(myslide);
-        }
+        }});
+        // get products
+        axios.get("http://localhost/e-commerce/ecommerce-server/apis/get-random-section.php",)
+        .then(function (response) {
+          for(const item of response.data){
+           const products=document.createElement("div");
+           products.classList.add("products");
+           const imgdiv=document.createElement("div");
+           imgdiv.innerHTML='<img class="item-img" src="'+item["image"]+'" alt="image">';
+           products.appendChild(imgdiv);
+           const smallcontainer=document.createElement("div");
+           smallcontainer.classList.add("small-container");
+           smallcontainer.innerHTML='<p class="item-name">'+item['name']+'</p>';
+           const icons=document.createElement("div");
+           const icon1=document.createElement("img");
+           const icon2=document.createElement("img");
+           const icon3=document.createElement("img");
+           icon1.classList="green-icons";
+           icon2.classList="green-icons";
+           icon3.classList="green-icons";
+           icon1.src="images/wishlist-green.png";
+           icon2.src="images/greenheart.png";
+           icon3.src="images/plus.png";
+           icon1.onclick=()=>{
+            addWishlist(item['id']);
+           };
+           icon2.onclick=()=>{
+            addFav(item['id']);
+           };
+           icon3.onclick=()=>{
+            addCart(item['id']);
+           };
+           icons.appendChild(icon1);
+           icons.appendChild(icon2);
+           icons.appendChild(icon3);
+           smallcontainer.appendChild(icons);
+           products.appendChild(smallcontainer);
+           price=document.createElement('p');
+           price.classList="price";
+           price.innerHTML=item['price']+"$";
+           products.append(price);
+           row.appendChild(products);
+          }
       });
+      // add to fav
+      
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
@@ -61,7 +106,8 @@
         menu.classList.remove("showMenu");
         closeIcon.style.display = "none";
         menuIcon.style.display = "block";
-      } else {
+      } 
+      else {
         menu.classList.add("showMenu");
         closeIcon.style.display = "block";
         menuIcon.style.display = "none";
@@ -75,4 +121,5 @@
       function(menuItem) { 
         menuItem.addEventListener("click", toggleMenu);
       }
-    )}
+    )
+    }
