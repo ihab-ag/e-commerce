@@ -8,13 +8,48 @@ const categoryName = document.getElementById('category-name')
 const submitProduct = document.getElementById('add-product-btn')
 const submitCategory = document.getElementById('add-category-btn')
 
+const insertProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/add-product.php"
 submitProduct.addEventListener('click', (e) => {
     e.preventDefault()
-    
+    console.log("click")
     if(!emptyFieldsValidation(productName.value, productPrice.value, productImage, productDescription.value, catSelector.value)) {
         setMessage('All Fields are required', false)
         return
+    }else if(!nameValidation(productName.value)) {
+        setMessage('Name should be more than 5 chars', false)
+        return
+    }else if(!priceValidation(productPrice.value)) {
+        setMessage('Price format is wrong')
+        return
     }
+    const reader = new FileReader();
+      reader.addEventListener('load', () => {
+          const finalImage = reader.result;
+          //console.log(finalImage);
+
+          
+        const formData = new FormData()
+        formData.append('name', productName.value)
+        formData.append('description', productDescription.value)
+        formData.append('price', productPrice.value)
+        formData.append('image', finalImage)
+        formData.append('categories_id', catSelector.value)
+        
+        axios.post(insertProductUrl, formData).then(response => {
+            const data = response.data
+            //console.log(data)
+            setMessage("Product is added", true)
+            productName.value = ""
+            productDescription.value = ""
+            productPrice.value = ""
+            finalImage
+            catSelector.value
+        })
+    })
+    
+    reader.readAsDataURL(productImage.files[0]);
+
+
 })
 
 catSelector.addEventListener('change', () => {
@@ -27,6 +62,7 @@ catSelector.addEventListener('change', () => {
 
 productImage.addEventListener('change', () => {
     console.log(productImage.files)
+    // image = productImage.files[0];
 })
 
 const categoriesUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-categories.php"
@@ -114,6 +150,4 @@ submitCategory.addEventListener('click', (e) => {
             })
         }
     })
-
-
 })
