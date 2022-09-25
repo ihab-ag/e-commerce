@@ -47,7 +47,6 @@ const updateProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-serv
 
 editProductBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    let imgUpdated
     if(!editProductName.value || !editProductPrice.value || !editProductDescription.value || !editSel.value) {
         console.log(editProductName.value,editProductPrice.value,editProductDescription.value,catSelector.value )
         setMessage('All Fields are required', false)
@@ -59,37 +58,49 @@ editProductBtn.addEventListener('click', (e) => {
         setMessage('Price format is wrong')
         return
     }
-    if (editProductImage.files.length == 0) {
-        imgUpdated = false
-    }else {
-        imgUpdated = true
-        console.log("ds")
-    }
-    const reader2 = new FileReader()
-      reader2.addEventListener('load', () => {
-          const finalImage = reader2.result;
-          console.log(finalImage);
+    if (editProductImage.files.length != 0) {
+        // we override the img
+        const reader2 = new FileReader()
+        reader2.addEventListener('load', () => {
+            const finalImage = reader2.result;
+            console.log(finalImage);
 
-          
-        const formData = new FormData()
-        formData.append('name', productName.value)
-        formData.append('description', productDescription.value)
-        formData.append('price', productPrice.value)
-        if(imgUpdated) {
+            
+            const formData = new FormData()
+            formData.append('name', editProductName.value)
+            formData.append('description', editProductDescription.value)
+            formData.append('price', editProductPrice.value)
             formData.append('image', finalImage)
-        }else {
-            formData.append('image', document.getElementById('old-photo').textContent)
-        }
-        formData.append('id', document.getElementById('p-id').textContent)
+            formData.append('id', localStorage.getItem('p-id'))
+            
+            axios.post(updateProductUrl, formData).then(response => {
+                const data = response.data
+                //console.log(data)
+                setMessage("Product is updated", true)
+                editForm.classList.add('view-none')
+                deleteSellerRows()
+                getSellerProducts()
         
-        axios.post(updateProductUrl, formData).then(response => {
-            const data = response.data
-            //console.log(data)
-            setMessage("Product is updated", true)
-            editForm.classList.add('view-none')
-            deleteSellerRows()
-            getSellerProducts()
+            })
+        })
+        reader2.readAsDataURL(editProductImage.files[0])
+    }else {
+        const formData = new FormData()
+            formData.append('name', editProductName.value)
+            formData.append('description', editProductDescription.value)
+            formData.append('price', editProductPrice.value)
+            formData.append('image', localStorage.getItem('old-photo'))
+            formData.append('id', localStorage.getItem('p-id'))
+            
+            axios.post(updateProductUrl, formData).then(response => {
+                const data = response.data
+                //console.log(data)
+                setMessage("Product is updated", true)
+                editForm.classList.add('view-none')
+                deleteSellerRows()
+                getSellerProducts()
+        
+            })
+    }
     
-      })
-    })
 })

@@ -26,8 +26,10 @@ const getSellerProducts = () => {
                 editProductName.value = product['name']
                 editProductPrice.value = product['price']
                 // store old photo in case there is no change
-                document.getElementById('old-photo').textContent = product['image']
-                document.getElementById('p-id').textContent = product.id
+                localStorage.setItem('old-photo', product['image'])
+                localStorage.setItem('p-id', product.id)
+                // document.getElementById('old-photo').textContent = product['image']
+                // document.getElementById('p-id').textContent = product.id
                 // 
                 //editProductImage.value = product['image']
                 editProductDescription.value = product['description']
