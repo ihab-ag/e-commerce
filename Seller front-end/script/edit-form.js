@@ -13,7 +13,7 @@ closeEditForm.addEventListener('click', (e) => {
     editForm.classList.add('view-none')
 })
 
-const getCategoriesUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-categories.php"
+const getCategoriesUrl = "../../ecommerce-server/apis/get-categories.php"
 
 const getEditCategories = () => {
     const formData = new FormData()
@@ -43,7 +43,7 @@ const getEditCategories = () => {
     })
 }
 
-const updateProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/edit-product.php"
+const updateProductUrl = "../../ecommerce-server/apis/edit-product.php"
 
 editProductBtn.addEventListener('click', (e) => {
     e.preventDefault()

@@ -1,4 +1,4 @@
-const getTopUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-top5-section.php"
+const getTopUrl = "../../ecommerce-server/apis/get-top5-section.php"
 const tableView = document.getElementById('view-table')
 
 

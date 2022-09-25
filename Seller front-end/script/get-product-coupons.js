@@ -1,4 +1,4 @@
-const getProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-products.php"
+const getProductUrl = "../../ecommerce-server/apis/get-products.php"
 const selectProduct = document.getElementById('coupon-product-name')
 
 const getProductNames = () => {
@@ -25,7 +25,7 @@ const couponCode = document.getElementById('coupon-code')
 const discountCoupon = document.getElementById('discount')
 const selectVal = document.getElementById('coupon-product-name')
 
-const addDiscountUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/add-discount.php"
+const addDiscountUrl = "../../ecommerce-server/apis/add-discount.php"
 
 submitCoupon.addEventListener('click',(e) => {
     e.preventDefault()
