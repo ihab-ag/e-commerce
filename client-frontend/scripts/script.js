@@ -58,7 +58,16 @@
           }
       });
       // add to fav
-      
+      const addFav=(id)=>{
+        const form=new FormData;
+        form.append("id",localStorage.getItem("id"));
+        form.append('product_id',id)
+        axios.post('http://localhost/e-commerce/ecommerce-server/apis/add-favourite.php', 
+        form
+        ).then(function (response) {
+          console.log(response.data);
+        })
+      };
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
