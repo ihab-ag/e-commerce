@@ -1,7 +1,7 @@
 window.onload=()=>{
-    const signUpModal = document.querySelector('.profile-modal'),
-    signupText = document.querySelector('.edit-profile'),
-    closeSignUpModal = document.getElementById('close_profile_modal'); 
+    const profileModal = document.querySelector('.profile-modal'),
+    editBtn = document.querySelector('.edit-profile'),
+    closeProfileModal= document.getElementById('close_profile_modal'); 
     
     const hideModal = (modal) => {
         modal.classList.remove('show-modal');
@@ -11,11 +11,11 @@ window.onload=()=>{
         modal.classList.add('show-modal');
     }
 
-    closeSignUpModal.onclick = () => hideModal(signUpModal)
+    closeProfileModal.onclick = () => hideModal(profileModal)
     
-    if(signupText){
-        signupText.addEventListener('click', () => {
-            showModal(signUpModal)
+    if(editBtn){
+        editBtn.addEventListener('click', () => {
+            showModal(profileModal)
         })
     }
 }
