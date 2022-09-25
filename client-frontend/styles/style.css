@@ -30,6 +30,8 @@ header{
 
 .dropdown-container{
     display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .dropdown> a {
@@ -54,7 +56,6 @@ header{
     padding: 10px;
     background-color: white;
     border-radius: 5px;
-    margin-top: 22px;
     padding-bottom: 12px;
     font-size: 15px;
 }
@@ -85,6 +86,10 @@ header{
     background-color: #ddd;
 }
   
+.dropdown-container{
+    gap: 20px;
+}
+
 .show {
     display: block;
 }
@@ -96,8 +101,6 @@ header{
 
 .whitecart{
     height: 40px;
-    margin: 22px;
-    margin-right: 30px;
     cursor: pointer;
 }
 
@@ -134,7 +137,6 @@ header{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
     border-radius: 10px;
 }
 
@@ -168,8 +170,8 @@ header{
 }
 
 .items-title{
-    margin: 50px;
     font-size: 25px;
+    margin: 40px;
 }
 
 .item-name{
@@ -180,7 +182,12 @@ header{
 .price{
     color: #a0db8e;
     font-weight: bold;
-    margin-bottom: 30px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .row-container{
@@ -211,7 +218,6 @@ header{
     cursor: pointer;
     border-radius: 5px;
     height: 50px;
-    margin-top: 19px;
     display: none;
     background-color: #a0db8e;
 }
@@ -252,6 +258,10 @@ header{
         text-align: left;
     }
 
+    .closeIcon{
+        display: block;
+    }
+    
     header {
         width: 500px;
    }
@@ -269,11 +279,13 @@ header{
    }
 
    .whitecart{
-        margin-left: -135px;
         height: 30px;
-        margin-top: 30px;
    }
 
+   .dropdown-container{
+        gap:10px;
+   }
+   
    .ad-img{
         max-width: 480px;
    }
