@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bulba Shop-Checkout</title>
+        <link rel="stylesheet" href="./styles/checkout.css">
+        <link rel="icon" href="./images/logo.png" type="image/png"/>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <script src="./scripts/checkout.js" defer></script>
+        <script src="./scripts/address.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <div class="shopping-cart">
+                    <img class="whitecart" src="images/whitecart.png" alt="icon">
+                    <h1>Shopping Cart</h1>
+                </div>
+                <div>
+                    <button class="continue">Continue Shopping</button>
+                </div>
+            </div>
+        </header>
+        <div class="big-container">
+            <div class="products-container">
+                <div class="product">
+                    <div class="left-part">
+                        <div class="image">
+                            <img src="images/chinese.jpg" alt="image">
+                        </div>
+                        <div class="info">
+                            <h3>Chinese Money Plant</h3>
+                            <p>Pilea peperomioides</p>
+                        </div>
+                    </div>
+                    <div class="right-part-container">
+                        <div class="right-part">
+                            <p class="prices">25.00</p>
+                            <img class="times" src="images/times-icon.png" alt="image">
+                            <input type="number" class="counter">
+                        </div>
+                        <div class="trash-icon">
+                            <img src="images/trash-icon.png" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products-container">
+                <div class="product">
+                    <div class="left-part">
+                        <div class="image">
+                            <img src="images/pothos.jpg" alt="image">
+                        </div>
+                        <div class="info">
+                            <h3>Pothos Plant</h3>
+                            <p>Epipremnum aureum</p>
+                        </div>
+                    </div>
+                    <div class="right-part-container">
+                        <div class="right-part">
+                            <p class="prices">38.00</p>
+                            <img class="times" src="images/times-icon.png" alt="image">
+                            <input type="number" class="counter">
+                        </div>
+                        <div class="trash-icon">
+                            <img src="images/trash-icon.png" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="checkout-footer">
+                    <div class="address-btn">
+                        <button class="address" id="address" onclick="myFunction()">Select your address</button>
+                        <div class="address-btn-content" id="myDropdown">
+                            <a href="#">Home address</a>
+                            <a href="#">Work address</a>
+                            <a href="#">Add a new address</a>
+                            <a href="#">Delete an address</a>
+                            <a href="#">Edit</a>
+                        </div>
+                    </div>
+                    <div class="checkout-container">
+                        <div class="total">
+                            <p>Total</p>
+                            <p class="total-price">101$</p>
+                        </div>
+                        <div class="container-button">
+                            <button class="checkout-btn" id="checkout-btn" onclick="checkoutFunction()">Checkout</button>
+                            <div class="checkout-btn-content" id="checkout-popup">
+                                <a href="#">Enter discount code</a>
+                                <a href="#">Vouchers</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html> 

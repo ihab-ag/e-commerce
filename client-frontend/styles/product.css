@@ -1,0 +1,198 @@
+.product-img{
+    height: 300px;
+    width: 450px;
+    border-radius: 10px;
+    margin: 50px;
+    object-fit: cover;
+}
+
+h2{ 
+    margin: 40px;
+}
+
+.green{
+    color: #A0DB8E;
+}
+
+.views{
+    font-size: 12px;
+    padding-left: 2px;
+}
+
+.wishlist{
+    margin-left: 3px;
+}
+
+.eye{
+    cursor: default;
+    height: 22px; 
+    width: 22px;
+}
+
+.product-container-info{
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+}
+
+.img-div{
+    display: flex;
+    flex-direction: row;
+    align-items:  center;
+    gap: 10px;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.icons-div{
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    gap: 20px;
+}
+
+/* Chat Bubble */
+
+.open-button {
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  left: 28px;
+  width: 28px;
+  height: 28px;
+  border-radius:30px;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 15px;
+  z-index: 9;
+}
+
+.chat-img{
+    height: 50px;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: rgb(219, 219, 219);
+  border-radius: 5px;
+}
+
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: white;
+  resize: none;
+  min-height: 200px;
+  border-radius: 5px;
+}
+
+.chat-msg{
+    font-size: 20px;
+}
+
+.form-container textarea:focus {
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #A0DB8E;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: #7da172;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+/* On mobile sreen */
+@media screen and (max-width: 500px) {
+    .product-img{
+        height: 200px;
+        width: 435px;
+        margin: 25px;
+    }
+
+    h1{
+        font-size: 20px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+    .right-side{
+        height: 20px;
+        width: 20px;
+    }
+
+    .views{
+        font-size: 10px;
+        padding: 0;
+        margin-left: -2px;
+    }
+
+    .eye{
+        height: 13px; 
+        width: 13px;
+    }
+    
+    .wishlist{
+        margin-left: 1px;
+    }
+
+    .img-div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-info{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    h2{
+        font-size:18px ;
+        margin-top: 30px;
+        margin-left: 35px;
+    }
+
+    .product-container-info{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .icons-div{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .chat-img{
+        height: 30px;
+    }
+}

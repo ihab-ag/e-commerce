@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bulba Shop-Login</title>
+        <link rel="stylesheet" href="./styles/login.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="icon" href="./images/logo.png" type="image/png" />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="./scripts/signup.js"></script>
+        <script src="./scripts/login.js" defer></script>
+    </head>
+    <body>
+        <section>
+            <div class="sign-in-modal">
+                <div class="form">
+                    <div class="flex column">
+                        <div class="titles">
+                            <h1 class="login-h1">Welcome!</h1>
+                            <h2>Login to your account</h2>
+                        </div>
+                        <input class="login-input" type="text" id="login-username" name="username" placeholder="Username">
+                        <input class="login-input" type="text" id="login-password" name="password" placeholder="Password">
+                        <button class="sign-in-btn" id='sign-in-btn' type="submit">Sign In</button>
+                    </div>
+                    <div class="flex row paragraph">
+                        <p>New here?<a href="#" class="green signup-text" id="guest-sign-up"> Sign up</a></p>
+                        <p class="green guest" id="guest-sign-in">Continue as a guest</p>
+                    </div>
+                    <div class="wrong-password">
+                        <p class="wrong-msg">Wrong password, please try again</p>
+                    </div>
+                </div>
+                <div class="flex end">
+                    <img class="login-img" src="images/swiss.jpg" alt="icon"> 
+                </div>
+            </div>
+            <div class="sign-up-modal">
+                <div class="flex container">
+                    <div class="flex column">
+                        <i class="fa-solid fa-xmark" id="close_sign_up_modal"></i>
+                        <h1>Welcome!</h1>
+                        <h2 class="signup-h2">Sign up to our website</h2>
+                        <input class="signup-input" type="text" id="username" name="username" placeholder="Username">
+                        <input class="signup-input" type="text" id="email" name="email" placeholder="Email">
+                        <input class="signup-input" type="text" id="number" name="number" placeholder="Phone number">
+                        <input class="signup-input" type="text" id="password" name="password" placeholder="Password">
+                        <input class="signup-input" type="text" id="confirm" name="confirm" placeholder="Confirm password">
+                        <input class="sign-up-btn" type="submit" value="Sign Up" id="signup-btn">
+                    </div>
+                    <div>
+                        <img class="signup-img" src="images/red.jpg" alt="icon"> 
+                    </div>
+                </div>   
+            </div>
+        </section>
+        <section class="msg-section">
+            <p class="msg-content"></p>
+        </section>
+    </body>
+</html>

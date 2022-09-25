@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bulba Shop-Product</title>
+        <link rel="stylesheet" href="./styles/product.css">
+        <link rel="stylesheet" href="./styles/style.css">
+        <script src="./scripts/script.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="icon" href="./images/logo.png" type="image/png"/>
+        <script src="./scripts/chat.js"></script>
+        <script src="./scripts/product.js"></script>
+    </head>
+    <body> 
+        <!-- Start of header section -->
+        <header class="header-class">
+            <div class="header-container">
+                <div>
+                    <h1 class="nav-title">Bulba Shop</h1>
+                </div>
+                <div class="search-bar">
+                    <div class="search">
+                        <i class="fa fa-search search-icon"></i>
+                        <input class="search-input" type="search" name="search" placeholder="Search" >
+                    </div>
+                </div>
+                <div class="dropdown-container">
+                    <div>   
+                        <img class="whitecart" src="images/whitecart.png" alt="icon">
+                    </div>
+                    <div class="account-container">
+                        <div class="dropdown">
+                            <button class="dropbtn" onclick="myFunction()">Account
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content" id="myDropdown">
+                                <a href="#">Favourites</a>
+                                <a href="#">Wishlist</a>
+                                <a href="#">Vouchers</a>
+                                <a href="#">Edit</a>
+                                <a href="#">Logout</a>
+                            </div>
+                        </div> 
+                        <ul class="menu">
+                            <li><a class="menuItem" href="#">Favourites</a></li>
+                            <li><a class="menuItem" href="#">Wishlist</a></li>
+                            <li><a class="menuItem" href="#">Vouchers</a></li>
+                            <li><a class="menuItem" href="#">Edit</a></li>
+                            <li><a class="menuItem" href="#">Logout</a></li>
+                        </ul>
+                        <button class="hamburger">
+                            <!-- material icons https://material.io/resources/icons/ -->
+                            <i class="menuIcon material-icons">menu</i>
+                            <i class="closeIcon material-icons">close</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End of header section -->
+        <!-- Start of Product Section-->
+        <section>
+            <div class="product-container">
+                <div class="product-container-info">
+                    <div class="img-div" id="imgDiv">
+                        <img class="product-img" src="images/silver.jpg" alt="image">
+                        <div class="product-info">
+                            <h1 id="nameHeader" class="nameHeader">Silver Dollar Plant</h1>
+                            <p id="price" class="green">$22.00</p>
+                            <p id="description" class="description">Silver plants are actually a climbing succulent so be
+                                prepared<br>to leave a little headroom wherever you display them!<br>
+                                A space with direct sunlight is best.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="icons-div">
+                        <div>
+                            <img class="right-side eye" src="images/light-grey.png" alt="icon">
+                            <p class="views">283</p>
+                        </div>
+                        <img class="right-side green-icons " src="images/greenheart.png" alt="icon">
+                        <img class="right-side green-icons wishlist" src="images/wishlist-green.png" alt="icon">
+                    </div>
+                </div>
+            </div>
+        <!-- End of Product Section-->
+        <!-- Start of items section-->
+            <div class="container">
+                <div>
+                    <h2>More products like this:</h2>
+                </div>
+                <div class="row-container">
+                    <div class="products">
+                        <div>
+                            <img class="item-img" src="images/chinese.jpg" alt="image">
+                        </div>
+                        <div class="small-container">
+                            <p class="item-name">Chinese Plant</p>
+                            <div>
+                                <img class="green-icons" src="images/wishlist-green.png" alt="icon">
+                                <img class="green-icons" src="images/greenheart.png" alt="icon">
+                                <img class="green-icons" src="images/plus.png" alt="icon">
+                            </div>
+                        </div>
+                        <p class="price">25$</p>
+                    </div>
+                    <div class="products">
+                        <div>
+                            <img class="item-img" src="images/silver.jpg" alt="image">
+                        </div>
+                        <div class="small-container">
+                            <p class="item-name">Silver Dollar Plant</p>
+                            <div>
+                                <img class="green-icons" src="images/wishlist-green.png" alt="icon">
+                                <img class="green-icons" src="images/greenheart.png" alt="icon">
+                                <img class="green-icons" src="images/plus.png" alt="icon">
+                            </div>
+                        </div>
+                        <p class="price">22$</p>
+                    </div>
+                    <div class="products">
+                        <div>
+                            <img class="item-img" src="images/aloe.jpg" alt="image">
+                        </div>
+                        <div class="small-container">
+                            <p class="item-name">Aloe Vera</p>
+                            <div>
+                                <img class="green-icons" src="images/wishlist-green.png" alt="icon">
+                                <img class="green-icons" src="images/greenheart.png" alt="icon">
+                                <img class="green-icons" src="images/plus.png" alt="icon">
+                            </div>
+                        </div>
+                        <p class="price">18$</p>
+                    </div>
+                </div>
+                <div class="chat-container">
+                    <button class="open-button" onclick="openForm()"><img class="chat-img" src="images/chat.png" alt="icon"></button>
+                    <div class="chat-popup" id="myForm">
+                        <form action="/action_page.php" class="form-container">
+                            <h1 class="chat-msg">Chat Message</h1>
+                            <textarea placeholder="Type message.." name="msg" required></textarea>
+                            <button type="submit" class="btn">Send</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                        </form>
+                    </div>
+                </div> 
+            </div>
+        <!-- End of items section-->
+        </section>
+    </body>
+</html>
