@@ -6,6 +6,7 @@
         <link rel="icon" href="./images/logo.png" type="image/png"/>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <script src="./scripts/checkout.js" defer></script>
     </head>
     <body>
         <header>
@@ -71,7 +72,14 @@
             <div class="footer-container">
                 <div class="checkout-footer">
                     <div class="address-btn">
-                        <button class="address">Select your address</button>
+                        <button class="address" onclick="myFunction()">Select your address</button>
+                        <div class="address-btn-content" id="myDropdown">
+                            <a href="#">Home address</a>
+                            <a href="#">Work address</a>
+                            <a href="#">Add a new address</a>
+                            <a href="#">Delete an address</a>
+                            <a href="#">Edit</a>
+                        </div>
                     </div>
                     <div class="checkout-container">
                         <div class="total">

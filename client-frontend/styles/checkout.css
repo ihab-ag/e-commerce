@@ -152,6 +152,7 @@ input::-webkit-inner-spin-button {
 
 .checkout-btn{
     width: 150px;
+    font-size: 15px;
 }
 
 .checkout-btn, .address{
@@ -182,7 +183,7 @@ footer{
 .address-btn{
     display: flex;
     flex-direction: row;
-   align-items: center
+    align-items: center
 }
 
 .total{
@@ -194,6 +195,55 @@ footer{
 
 .total-price{
     font-weight: bold;
+}
+
+/* Dropdown */
+.address-btn {
+    overflow: hidden;
+}
+  
+.address-btn .address {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #a0db8e;
+    border-radius: 5px;
+    font-size: 15px;
+}
+  
+.address:hover ,.checkout-btn:hover{
+    background-color: grey;
+}
+  
+.address-btn-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%; 
+}
+  
+.address-btn-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    bottom:100%;
+    transition: all 0.4s linear;
+}
+  
+.address-btn-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
 }
 
 /* Responsive on mobile */
