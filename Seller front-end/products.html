@@ -72,8 +72,7 @@
                 <button class="btn btn-add-product" id="add-product-btn">Add Product</button>
             </form>
         </section>
-        <!-- no view-none temp -->
-        <section class="main-sub-container" id="display-product-table-sec">
+        <section class="main-sub-container view-none" id="display-product-table-sec">
             <div class="main-content-wrapper">
                 <h2 class="main-title">All Your Products</h2>
 
@@ -151,8 +150,46 @@
 
         </section>
 
-        <section class="main-sub-container view-none" id="display-coupons-sec">
+        <!-- no view-none temp -->
+        <section class="main-sub-container" id="display-coupons-sec">
+            <div class="coupon-ad-container">
+                <section class="coupons-sec">
+                    <form class="coupons-form" action="products.html" method="post">
+                        <input class="btn btn-add-product" type="date" id="startDate">
+                        <input class="btn btn-add-product" type="date" id="endDate">
+                        <button class="btn btn-confirm" type="submit">Calculate</button>
+                    </form>
+                    <div class="table-wrapper">
+                        <table id="product-table" class="edit-table">
+                            <tr id="product-headers">
+                                <th>ID</th>
+                                <th>Product</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Views</th>
+                            </tr>
+                            <!-- dummy text -->
+                            <!-- <tr>
+                                <td>1</td>
+                                <td><input class="btn-client-1" type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
+                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, placeat autem vero incidunt doloribus inventore quis? Dolores veritatis eaque vitae. Et, tempore! Officia provident exercitationem qui alias voluptates. Harum, inventore!</td>
+                                <td><img src="images/leaf.jpg" width="50px" alt=""></td>
+                                <td>
+                                    <div class="btn-wrapper">
+                                        <button class="btn btn-edit" id="btn-edit-1">Edit</button>
+                                        <button class="btn btn-ban" id="btn-delete-1">Delete</button>
+                                    </div>
+                                </td>
+                            </tr> -->
+                            <!-- dummy text -->
+                        </table>
+                    </div>
+                </section>
 
+                <section class="ads-sec">
+                    
+                </section>
+            </div>
         </section>
     </main>
 
