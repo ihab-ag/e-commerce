@@ -2,7 +2,7 @@ const uploadAd = document.getElementById('ads-img')
 const submitAd = document.getElementById('ad-submit-btn')
 const adDate = document.getElementById('ad-date')
 
-const getAdUrl = "../../ecommerce-server/apis/add-ad.php"
+const getAdUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/add-ad.php"
 
 adDate.min = new Date().toLocaleDateString('en-ca')
 submitAd.addEventListener('click', () => {

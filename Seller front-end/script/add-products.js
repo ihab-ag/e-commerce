@@ -8,7 +8,7 @@ const categoryName = document.getElementById('category-name')
 const submitProduct = document.getElementById('add-product-btn')
 const submitCategory = document.getElementById('add-category-btn')
 
-const insertProductUrl = "../../ecommerce-server/apis/add-product.php"
+const insertProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/add-product.php"
 submitProduct.addEventListener('click', (e) => {
     e.preventDefault()
     console.log("click")
@@ -67,7 +67,7 @@ productImage.addEventListener('change', () => {
     // image = productImage.files[0];
 })
 
-const categoriesUrl = "../../ecommerce-server/apis/get-categories.php"
+const categoriesUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-categories.php"
 
 const getCategories = () => {
     const formData = new FormData()
@@ -98,7 +98,7 @@ const getCategories = () => {
 }
 
 getCategories()
-const addCategoryUrl = "../../ecommerce-server/apis/add-category.php"
+const addCategoryUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/add-category.php"
 submitCategory.addEventListener('click', (e) => {
     e.preventDefault()
     if(!categoryName.value) {

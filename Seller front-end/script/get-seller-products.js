@@ -1,4 +1,4 @@
-const getSellerProductUrl = "../../ecommerce-server/apis/get-products.php"
+const getSellerProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-products.php"
 const productsTable = document.getElementById('product-table')
 const editProductName = document.getElementById('edit-product-name')
 const editProductPrice = document.getElementById('edit-product-price')
@@ -72,7 +72,7 @@ const getSellerProducts = () => {
 
 getSellerProducts()
 
-const deleteProductUrl = "../../ecommerce-server/apis/delete-product.php"
+const deleteProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/delete-product.php"
 const deleteProduct = (productID) => {
     const formData = new FormData()
     formData.append('id', productID)
