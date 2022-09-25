@@ -46,6 +46,7 @@ submitCoupon.addEventListener('click',(e) => {
         setMessage("Discount code is added", true)
         discountCoupon.value = ""
         couponCode.value = ""
+        selectVal.selectedIndex = 0
     })
 
 })
