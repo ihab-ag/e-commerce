@@ -428,9 +428,22 @@ body {
 }
 
 .ads-title {
-    padding-left: 5px;
-    padding-bottom: 30px;
+    padding: 30px 5px;
     font-size: 32px;
+}
+
+.ads-sec {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.img-ad-wrapper {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    
 }
 /* end styling main */
 
@@ -479,6 +492,8 @@ body {
     .stat-container .stat-result {
         font-size: 26px;
     }
+
+    
     /* end styling main */
     
 }
@@ -575,8 +590,19 @@ body {
     .views-container {
         margin-left: 10px;
     }
-
     
+    .ads-title {
+        text-align: center;
+    }
+
+    .coupons-sec {
+       justify-content: center;
+    }
+    
+    .ads-sec {
+        justify-content: center;
+    
+    }
     /* end styling main */
 }
 

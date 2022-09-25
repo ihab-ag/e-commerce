@@ -52,8 +52,8 @@
                                 <img src="images/icons/default.png" alt="">
                             </label>
                             
-                            <p>Insert Product Images</p>
-                            <input class="view-none" type="file" name="productImage" id="product-img" enctype="multipart/form-data" multiple>
+                            <p>Insert Product Image</p>
+                            <input class="view-none" type="file" name="productImage" id="product-img" enctype="multipart/form-data" >
                         </div>
                         <textarea name="productDescription" id="product-description" cols="30" rows="10" placeholder="Product Description..."></textarea>
                     </div>
@@ -93,7 +93,7 @@
                                     </label>
                                     
                                     <p class="form-edit" id="photo-text">Insert Product Images</p>
-                                    <input class="view-none" type="file" name="productImage" id="edit-product-img" enctype="multipart/form-data" multiple>
+                                    <input class="view-none" type="file" name="productImage" id="edit-product-img" enctype="multipart/form-data" >
                                 </div>
                                 <textarea name="productDescription" id="edit-product-description" cols="30" rows="10" placeholder="Product Description..."></textarea>
                             </div>
@@ -207,7 +207,18 @@
                     <button class="btn btn-edit" id="submit-coupon">Submit</button>
                 </section>
 
+                <h2 class="ads-title">Ads</h2>
                 <section class="ads-sec">
+                    <div class="img-ad-wrapper">
+                        <label for="ads-img">
+                            <img src="images/icons/default.png"alt="">
+                        </label>
+                        
+                        <p>Insert Ad Image</p>
+                        <input class="view-none" type="file" name="productImage" id="ads-img" enctype="multipart/form-data">
+                    </div>
+
+                    <button class="btn btn-edit">Submit</button>
                     
                 </section>
             </div>
