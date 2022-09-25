@@ -1,5 +1,19 @@
     
     window.onload=()=>{
+      const slider=document.getElementById('slider');
+      // get ads
+      axios.get("http://localhost/e-commerce/ecommerce-server/apis/get-ads.php")
+      .then(function (response) {
+        for(const item of response.data){
+          const myslide= document.createElement('div');
+          myslide.classList="mySlides";
+          const img=document.createElement('img');
+          img.classList.add("ad-img","ad");
+          img.src=item['image'];
+          myslide.appendChild(img);
+          slider.appendChild(myslide);
+        }
+      });
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
@@ -19,7 +33,7 @@
 
     function showSlides() {
       let i;
-      let slides = document.getElementsByClassName("mySlides");
+      const slides = document.getElementsByClassName("mySlides");
       let dots = document.getElementsByClassName("dot");
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
