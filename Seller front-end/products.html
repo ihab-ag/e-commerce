@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="style/product-form.css">
     <title>Products</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script/form-validations.js" defer></script>
     <script src="script/navbar-toggle.js" defer></script>
     <script src="script/navbar-links.js" defer></script>
@@ -54,12 +56,12 @@
                     <div class="product-form-category-div">
                         <h2 class="form-title">Add Category</h2>
                         <select name="productCategories" id="product-category-selector">
-                            <option value="addNewCategory">+Add Category</option>
-                            <option value="2">+haha</option>
-                            <option value="3">hehe</option>
+                            <!-- <option value="addNewCategory">+Add Category</option> -->
+                            <!-- <option value="2">+haha</option>
+                            <option value="3">hehe</option> -->
                         </select>
     
-                        <div class="view-none add-cat" id="add-category">
+                        <div class="add-cat" id="add-category">
                             <input class="form-input form-input-cat" type="text" name="categoryName" id="category-name" placeholder="Category Name...">
                             <button class="btn btn-add-category" id="add-category-btn">Add Category</button>
                         </div>
