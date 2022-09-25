@@ -13,7 +13,9 @@ window.onload=()=>{
 
     closeSignUpModal.onclick = () => hideModal(signUpModal)
     
-    signupText.addEventListener('click', () => {
-        showModal(signUpModal)
-    })
+    if(signupText){
+        signupText.addEventListener('click', () => {
+            showModal(signUpModal)
+        })
+    }
 }
