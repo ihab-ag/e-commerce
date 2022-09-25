@@ -1,37 +1,18 @@
 window.onload=()=>{
     const signUpModal = document.querySelector('.sign-up-modal')
-    // signupText = document.querySelector('.signup-text'),
-    closeSignUpModal = document.getElementById('close_sign_up_modal'); 
-    
+    const closeSignUpModal = document.getElementById('close_sign_up_modal')
+
+
     const signupFormCaller = document.getElementById('guest-sign-up')
     signupFormCaller.addEventListener('click', (e) => {
         console.log('click')
         e.preventDefault()
-        modal.classList.add('show-modal')
+        signUpModal.classList.add('show-modal')
     })
-    closeSignUpModal.addEventListener('click', () => {
-        modal.classList.remove('show-modal')
-    })
-
-    // const hideModal = (modal) => {
-    //     modal.classList.remove('show-modal');
-    // }
-        
-    // const showModal = (modal, closeModal = null) => {
-    //     modal.classList.add('show-modal');
-    // }
-
-    // closeSignUpModal.onclick = () => hideModal(signUpModal)
-
-    // if(signupText){
-    //     signupText.addEventListener('click', () => {
-    //         showModal(signUpModal)
-    //     })
-    // }
 
     const userNameSignup = document.getElementById('username')
     const emailSignup = document.getElementById('email')
-    const phoneSignup = document.getElementById('phone')
+    const phoneSignup = document.getElementById('number')
     const pwdSignup = document.getElementById('password')
     const pwdSignupRepeat = document.getElementById('confirm')
     const signupBtn = document.getElementById('signup-btn')
@@ -56,7 +37,7 @@ window.onload=()=>{
             setMessage('Wrong phone format', false)
             return
         }
-        if(pwdSignup.value !== pwdSignupRepeat) {
+        if(pwdSignup.value !== pwdSignupRepeat.value) {
             setMessage('Passwords do not match', false)
             return
         }
@@ -79,7 +60,7 @@ window.onload=()=>{
             axios.post(insertClientUrl, dataForm2).then(resp => {
                 setMessage("Signed up Successfully", true)
                 const getClientId = resp.data
-                localStorage.setItem('clients_id', getClientId['client_id'])
+                localStorage.setItem('id', getClientId['client_id'])
             })
         })
     })
@@ -144,5 +125,7 @@ window.onload=()=>{
     
     }
     
-
+    closeSignUpModal.addEventListener('click', () => {
+        signUpModal.classList.remove('show-modal')
+    })
 }
