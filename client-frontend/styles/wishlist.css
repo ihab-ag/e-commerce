@@ -125,3 +125,25 @@ h1{
     gap: 100px;
 }
 
+/* On Mobile Screen */
+@media screen and (max-width: 500px){
+    .buy{
+        display: none;
+    }
+
+    .wishlist-product{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .small-titles{
+        gap: 150px;
+    }
+
+    .cartimg{
+        display: block;
+        height: 30px;
+    }
+}
