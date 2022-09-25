@@ -148,6 +148,7 @@ body {
     bottom: 30px;
     right: 0;
     transition: all 1s;
+    z-index: 9999;
 }
 
 .msg-success {

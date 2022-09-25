@@ -6,9 +6,6 @@ const editProductImage = document.getElementById('edit-product-img')
 const editProductDescription = document.getElementById('edit-product-description')
 const editCategorySel = document.getElementById('edit-product-category-selector')
 const editCategory = document.getElementById('edit-category')//div
-const editCategoryInput = document.getElementById('edit-category-name')
-const editCategoryBtn = document.getElementById('edit-category-btn')
-const editProductBtn = document.getElementById('edit-product-btn')
 
 const getSellerProducts = () => {
     const dataForm = new FormData()
@@ -30,6 +27,7 @@ const getSellerProducts = () => {
                 editProductPrice.value = product['price']
                 // store old photo in case there is no change
                 document.getElementById('old-photo').textContent = product['image']
+                document.getElementById('p-id').textContent = product.id
                 // 
                 //editProductImage.value = product['image']
                 editProductDescription.value = product['description']
