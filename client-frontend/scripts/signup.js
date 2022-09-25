@@ -61,6 +61,10 @@ window.onload=()=>{
                 setMessage("Signed up Successfully", true)
                 const getClientId = resp.data
                 localStorage.setItem('id', getClientId['client_id'])
+                setTimeout(() => {
+
+                    window.location.replace('http://localhost/9-sefactory/e-commerce-fullstack/client-side/e-commerce/client-frontend/')
+                }, 3000)
             })
         })
     })
