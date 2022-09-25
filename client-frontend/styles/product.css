@@ -6,6 +6,10 @@
     object-fit: cover;
 }
 
+h2{ 
+    margin: 40px;
+}
+
 .green{
     color: #A0DB8E;
 }

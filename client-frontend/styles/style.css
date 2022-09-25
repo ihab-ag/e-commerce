@@ -207,11 +207,6 @@ header{
     justify-content: space-evenly;
 }
 
-.end{
-    margin-left: auto;
-    margin-right: 0;
-}
-
 /* Profile Popup */
 .profile-modal{
     position: absolute;
