@@ -1,6 +1,64 @@
 const getSellerProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-products.php"
+const productsTable = document.getElementById('product-table')
 
-const createProductRow = (id, name, description, phone, location) => {
+const getSellerProducts = () => {
+    const dataForm = new FormData()
+    dataForm.append('seller_id', localStorage.getItem('sellers_id'))
+
+    axios.post(getSellerProductUrl, dataForm).then(response => {
+        const products = response.data
+        products.forEach(product => {
+            createProductRow(product['id'], product['name'], product['description'], product['image'])
+            
+            const editBtn = document.getElementById(`btn-edit-${product.id}`)
+            const deleteBtn = document.getElementById(`btn-delete-${product.id}`)
+            const deleteConfirmBtn = document.getElementById(`btn-delete-${product.id}-confirm`)
+
+            deleteBtn.addEventListener('click', () => {
+                deleteConfirmBtn.classList.remove('view-none')
+                deleteBtn.classList.add('view-none')
+                editBtn.classList.remove('view-none')
+            })
+    
+            deleteConfirmBtn.addEventListener('click', () => {
+                document.getElementById(`product-row-${product.id}`).classList.add('view-none')
+                editBtn.classList.remove('view-none')
+                deleteProduct(product.id)
+                setMessage('product info deleted successfully', true)
+            })
+    
+            deleteConfirmBtn.addEventListener('mouseleave', () => {
+                editBtn.classList.remove('view-none')
+                deleteBtn.classList.remove('view-none')
+                deleteConfirmBtn.classList.add('view-none')
+            })
+        })
+    })
+}
+
+getSellerProducts()
+
+const deleteProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/delete-product.php"
+const deleteProduct = (productID) => {
+    const formData = new FormData()
+    formData.append('id', productID)
+    
+    axios.post(deleteProductUrl, formData).then(response => {
+        const deleteNow = response.data
+        //console.log(deleteNow)
+    })
+}
+
+
+
+const deleteSellerRows = () => {
+    const productRows = document.querySelectorAll('.product-rows')
+    productRows.forEach(row => {
+        row.remove()
+    })
+}
+
+const createProductRow = (id, name, description, image) => {
     const tr = document.createElement('tr')
     tr.setAttribute('id', `product-row-${id}`)
     tr.setAttribute('class', 'product-rows')
@@ -9,44 +67,33 @@ const createProductRow = (id, name, description, phone, location) => {
     productIdTd.textContent = id
 
     const nameTd = document.createElement('td')
-    const nameInput = document.createElement('input')
+    const nameInput = document.createElement('p')
     nameInput.setAttribute('class', `btn-product-${id}`)
-    nameInput.setAttribute('type', 'text')
-    nameInput.setAttribute('name', 'name')
+    // nameInput.setAttribute('type', 'text')
+    // nameInput.setAttribute('name', 'name')
     nameInput.setAttribute('id', `product-name-${id}`)
-    nameInput.setAttribute('disabled', true)
-    nameInput.setAttribute('value', `${name}`)  
+    // nameInput.setAttribute('disabled', true)
+    // nameInput.setAttribute('value', `${name}`)
+    nameInput.textContent = name  
     nameTd.appendChild(nameInput)
 
     const descriptionTd = document.createElement('td')
-    const descriptionInput = document.createElement('input')
+    const descriptionInput = document.createElement('p')
     descriptionInput.setAttribute('class', `btn-product-${id}`)
-    descriptionInput.setAttribute('type', 'text')
-    descriptionInput.setAttribute('name', 'description')
+    // descriptionInput.setAttribute('type', 'text')
+    // descriptionInput.setAttribute('name', 'description')
     descriptionInput.setAttribute('id', `product-description-${id}`)
-    descriptionInput.setAttribute('disabled', true)
-    descriptionInput.setAttribute('value', `${description}`)
+    // descriptionInput.setAttribute('disabled', true)
+    // descriptionInput.setAttribute('value', `${description}`)
+    descriptionInput.textContent = description  
     descriptionTd.appendChild(descriptionInput)
 
-    const phoneTd = document.createElement('td')
-    const phoneInput = document.createElement('input')
-    phoneInput.setAttribute('class', `btn-product-${id}`)
-    phoneInput.setAttribute('type', 'text')
-    phoneInput.setAttribute('name', 'phone')
-    phoneInput.setAttribute('id', `product-phone-${id}`)
-    phoneInput.setAttribute('disabled', true)
-    phoneInput.setAttribute('value', `${phone}`)
-    phoneTd.appendChild(phoneInput)
-
-    const locationTd = document.createElement('td')
-    const locationInput = document.createElement('input')
-    locationInput.setAttribute('class', `btn-product-${id}`)
-    locationInput.setAttribute('type', 'text')
-    locationInput.setAttribute('name', 'location')
-    locationInput.setAttribute('id', `product-location-${id}`)
-    locationInput.setAttribute('disabled', true)
-    locationInput.setAttribute('value', `${location}`)
-    locationTd.appendChild(locationInput)
+    const imageTd = document.createElement('td')
+    const imageProduct = document.createElement('img')
+    imageProduct.setAttribute('id', `product-img-${id}`)
+    imageProduct.setAttribute('width', "50px")
+    imageProduct.setAttribute('src', `${image}`)
+    imageTd.appendChild(imageProduct)
 
     const btnsTd = document.createElement('td')
     const btnDiv = document.createElement('div')
@@ -56,23 +103,17 @@ const createProductRow = (id, name, description, phone, location) => {
     btnEdit.setAttribute('id', `btn-edit-${id}`)
     btnEdit.textContent = "Edit"
 
-    const btnEditConfirm = document.createElement('button')
-    btnEditConfirm.setAttribute('class', 'btn btn-confirm view-none')
-    btnEditConfirm.setAttribute('id', `btn-edit-${id}-confirm`)
-    btnEditConfirm.textContent = "Confirm"
-
     const btnDelete = document.createElement('button')
-    btnDelete.setAttribute('class', 'btn btn-ban') // Moatasem removed the view-none
+    btnDelete.setAttribute('class', 'btn btn-ban')
     btnDelete.setAttribute('id', `btn-delete-${id}`)
     btnDelete.textContent = "Delete"
-    
+
     const btnDeleteConfirm = document.createElement('button')
     btnDeleteConfirm.setAttribute('class', 'btn btn-confirm view-none')
     btnDeleteConfirm.setAttribute('id', `btn-delete-${id}-confirm`)
     btnDeleteConfirm.textContent = "Confirm"
 
     btnDiv.appendChild(btnEdit)
-    btnDiv.appendChild(btnEditConfirm)
     btnDiv.appendChild(btnDelete)
     btnDiv.appendChild(btnDeleteConfirm)
 
@@ -81,8 +122,7 @@ const createProductRow = (id, name, description, phone, location) => {
     tr.appendChild(productIdTd)
     tr.appendChild(nameTd)
     tr.appendChild(descriptionTd)
-    tr.appendChild(phoneTd)
-    tr.appendChild(locationTd)
+    tr.appendChild(imageTd)
     tr.appendChild(btnsTd)
 
     productsTable.appendChild(tr)

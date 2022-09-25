@@ -39,6 +39,8 @@ submitProduct.addEventListener('click', (e) => {
             const data = response.data
             //console.log(data)
             setMessage("Product is added", true)
+            deleteSellerRows()
+            getSellerProducts()
             productName.value = ""
             productDescription.value = ""
             productPrice.value = ""
