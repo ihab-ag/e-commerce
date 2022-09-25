@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="icon" href="./images/logo.png" type="image/png"/>
         <script src="./scripts/chat.js"></script>
+        <script src="./scripts/product.js"></script>
     </head>
     <body> 
         <!-- Start of header section -->
@@ -33,14 +34,14 @@
                     <div class="account-container">
                         <div class="dropdown">
                             <button class="dropbtn" onclick="myFunction()">Account
-                              <i class="fa fa-caret-down"></i>
+                                <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="dropdown-content" id="myDropdown">
-                              <a href="#">Favourites</a>
-                              <a href="#">Wishlist</a>
-                              <a href="#">Vouchers</a>
-                              <a href="#">Edit</a>
-                              <a href="#">Logout</a>
+                                <a href="#">Favourites</a>
+                                <a href="#">Wishlist</a>
+                                <a href="#">Vouchers</a>
+                                <a href="#">Edit</a>
+                                <a href="#">Logout</a>
                             </div>
                         </div> 
                         <ul class="menu">
@@ -49,12 +50,12 @@
                             <li><a class="menuItem" href="#">Vouchers</a></li>
                             <li><a class="menuItem" href="#">Edit</a></li>
                             <li><a class="menuItem" href="#">Logout</a></li>
-                          </ul>
-                          <button class="hamburger">
+                        </ul>
+                        <button class="hamburger">
                             <!-- material icons https://material.io/resources/icons/ -->
                             <i class="menuIcon material-icons">menu</i>
                             <i class="closeIcon material-icons">close</i>
-                          </button>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -64,12 +65,12 @@
         <section>
             <div class="product-container">
                 <div class="product-container-info">
-                    <div class="img-div">
+                    <div class="img-div" id="imgDiv">
                         <img class="product-img" src="images/silver.jpg" alt="image">
                         <div class="product-info">
-                            <h1>Silver Dollar Plant</h1>
-                            <p class="green">$22.00</p>
-                            <p class="description">Silver plants are actually a climbing succulent so be
+                            <h1 id="nameHeader" class="nameHeader">Silver Dollar Plant</h1>
+                            <p id="price" class="green">$22.00</p>
+                            <p id="description" class="description">Silver plants are actually a climbing succulent so be
                                 prepared<br>to leave a little headroom wherever you display them!<br>
                                 A space with direct sunlight is best.
                             </p>
