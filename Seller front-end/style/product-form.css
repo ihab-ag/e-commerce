@@ -140,6 +140,7 @@ img {
     color: white;
 }
 
+
 @media screen and (max-width: 1000px) {
     .form-title {
         text-align: center;
@@ -222,5 +223,9 @@ img {
     }
     .product-form-info-div > textarea {
         height: 100px;
+    }
+
+    .edit-table tr td p{
+        text-overflow: unset;
     }
 }
