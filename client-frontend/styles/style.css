@@ -309,6 +309,12 @@ header{
         display: block;
     }
 
+    .menuItem{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .header-container{
         gap:50px;
     }
