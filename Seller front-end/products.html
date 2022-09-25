@@ -16,6 +16,7 @@
     <script src="script/get-seller-products.js" defer></script>
     <script src="script/get-revenue.js" defer></script>
     <script src="script/get-most-viewed.js" defer></script>
+    <script src="script/get-product-coupons.js" defer></script>
 </head>
 <body>
     <header class="header-container">
@@ -194,15 +195,16 @@
         <!-- no view-none temp -->
         <section class="main-sub-container" id="display-coupons-sec">
             <div class="coupon-ad-container">
+                <h2 class="ads-title">Coupons</h2>
                 <section class="coupons-sec">
-                    <input type="text" name="code" id="coupon-code" placeholder="Code">
-                    <select name="product" id="coupon-product-name">
-
+                    <input class="product-input" type="text" name="code" id="coupon-code" placeholder="Code...">
+                    <select class=" product-input" name="product" id="coupon-product-name">
+                        <!-- <option value="1"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, magnam! </option> -->
                     </select>
                     
-                    <input type="text" id="discount">
+                    <input class="product-input" type="text" id="discount" placeholder="Discount...">
 
-                    <button id="submit-coupon">Submit</button>
+                    <button class="btn btn-edit" id="submit-coupon">Submit</button>
                 </section>
 
                 <section class="ads-sec">

@@ -413,7 +413,24 @@ body {
 }
 
 .coupons-sec {
-    
+    display: flex;
+    gap: 15px;
+    margin-left: 5px;
+    flex-wrap: wrap;
+}
+
+.coupons-sec input, .coupons-sec select {
+    border-radius: 5px;
+    border: 1px solid #09490d;
+    padding: 5px;
+    max-width: 200px !important;
+    width: 150px;
+}
+
+.ads-title {
+    padding-left: 5px;
+    padding-bottom: 30px;
+    font-size: 32px;
 }
 /* end styling main */
 
