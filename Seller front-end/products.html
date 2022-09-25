@@ -34,8 +34,8 @@
                 <li class="navbar-link" id="display-coupons">Coupons|Ads</li>
             </ul>
         </nav>
-
-        <section class="main-sub-container" id="display-product-form-sec">
+        <!-- temp view-none -->
+        <section class="main-sub-container view-none" id="display-product-form-sec">
             <form class="product-form" action="products.html" method="post">
                 <div class="form-container">
                     <div class="product-form-info-div">
@@ -70,8 +70,74 @@
                 <button class="btn btn-add-product" id="add-product-btn">Add Product</button>
             </form>
         </section>
+        <!-- no view-none temp -->
+        <section class="main-sub-container" id="display-product-table-sec">
+            <div class="main-content-wrapper">
+                <h2 class="main-title">Information of Clients</h2>
 
-        <section class="main-sub-container view-none" id="display-product-table-sec">
+                <!-- popup form -->
+                <div class="table-wrapper popup-form">
+                    <form class="product-form" action="products.html" method="post">
+                        <div class="form-container">
+                            <div class="product-form-info-div">
+                                <h2 class="form-title form-title-edit">Edit Your Product</h2>
+                                <input class="form-input" type="text" name="productName" id="edit-product-name" placeholder="Product Name...">
+                                <input class="form-input" type="text" name="productPrice" placeholder="Price($)..." id="edit-product-price">
+                                <div class="img-wrapper">
+                                    <label for="product-img">
+                                        <img src="images/icons/default-w.png" alt="">
+                                    </label>
+                                    
+                                    <p class="form-edit">Insert Product Images</p>
+                                    <input class="view-none" type="file" name="productImage" id="edit-product-img" enctype="multipart/form-data" multiple>
+                                </div>
+                                <textarea name="productDescription" id="edit-product-description" cols="30" rows="10" placeholder="Product Description..."></textarea>
+                            </div>
+                            
+                            <div class="product-form-category-div">
+                                <h2 class="form-title  form-title-edit">Edit Category</h2>
+                                <select name="productCategories" id="edit-product-category-selector">
+                                    <!-- <option value="addNewCategory">+Add Category</option> -->
+                                    <!-- <option value="2">+haha</option>
+                                    <option value="3">hehe</option> -->
+                                </select>
+            
+                                <div class="add-cat" id="edit-category">
+                                    <input class="form-input form-input-cat" type="text" name="categoryName" id="edit-category-name" placeholder="Category Name...">
+                                    <button class="btn btn-add-category" id="edit-category-btn">Edit Category</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-product" id="edit-product-btn">Edit Product</button>
+                    </form>
+                </div>
+                <!--  -->
+                <div class="table-wrapper view-none">
+                    <table id="client-table">
+                        <tr id="client-headers">
+                            <th>ID</th>
+                            <th>Product</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Action</th>
+                        </tr>
+                        <!-- dummy text -->
+                        <tr>
+                            <td>1</td>
+                            <td><input class="btn-client-1" type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, placeat autem vero incidunt doloribus inventore quis? Dolores veritatis eaque vitae. Et, tempore! Officia provident exercitationem qui alias voluptates. Harum, inventore!</td>
+                            <td><p>January, 1, 2022</p></td>
+                            <td>
+                                <div class="btn-wrapper">
+                                    <button class="btn btn-edit" id="btn-edit-1">Edit</button>
+                                    <button class="btn btn-ban" id="btn-delete-1">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- dummy text -->
+                    </table>
+                </div>
+            </div>
 
         </section>
 

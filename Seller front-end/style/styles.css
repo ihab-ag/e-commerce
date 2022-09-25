@@ -172,7 +172,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 100;
     width: 100%;
     height: 60px;
     display: flex;
@@ -213,7 +213,7 @@ body {
     position: fixed;/* for toggle purposes*/
     top: 0;
     left: 0;
-    /*z-index: 9999;*//* it will be -1 when toggled*/
+    /*z-index: 100;*//* it will be -1 when toggled*/
     transition: all 500ms;
 }
 
@@ -487,7 +487,7 @@ body {
     /* will be used in js on navbar */
     .navbar.navbar-toggle {
         /* display: block; */
-        /* z-index: 9999 !important; */
+        /* z-index: 100 !important; */
         width: var(--navbar-width) !important;
         overflow: visible !important;
     }
