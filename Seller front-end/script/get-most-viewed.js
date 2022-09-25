@@ -5,7 +5,7 @@ const tableView = document.getElementById('view-table')
 const getViews = () => {
     axios.get(getTopUrl).then(response => {
         const views = response.data
-        console.log(views)
+        //console.log(views)
         views.forEach(view => {
             createMostViewdRow(view['id'], view['name'], view['description'], view['image'], view['views'])
         });

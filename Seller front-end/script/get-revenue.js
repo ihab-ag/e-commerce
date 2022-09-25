@@ -12,8 +12,8 @@ const getRevenue = () => {
 
     axios.post(getRevenueUrl, dataForm).then(response => {
         const rev = response.data
-        console.log(rev)
-        totRevenue.textContent = rev['revenue']
+        //console.log(rev)
+        totRevenue.textContent = rev['revenue'] + "$"
     })
 }
 

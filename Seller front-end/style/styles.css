@@ -411,6 +411,10 @@ body {
     font-weight: 700;
     font-size: 24px;
 }
+
+.coupons-sec {
+    
+}
 /* end styling main */
 
 
@@ -551,7 +555,7 @@ body {
         font-size: 20px;
     }
 
-    .coupon-ad-container {
+    .views-container {
         margin-left: 10px;
     }
 

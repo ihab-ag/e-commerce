@@ -149,50 +149,60 @@
         </section>
 
         <section class="main-sub-container view-none" id="display-status-sec">
-
+            <div class="views-container">
+                <form class="coupons-form" action="products.html" method="post">
+                    <div>
+                        <label class="date-labels" for="start-date">From:</label>
+                        <input class="btn" type="date" id="start-date">
+                    </div>
+                    <div>
+                        <label class="date-labels" for="end-date">To:</label>
+                        <input class="btn" type="date" id="end-date">
+                    </div>
+                    <button class="btn btn-confirm" type="submit" id="btn-calc-rev">Calculate</button>
+                </form>
+                <p class="revenue-calculator">Revenue: <span class="total-revenue"></span></p>
+                <div class="table-wrapper">
+                    <table id="view-table" class="edit-table">
+                        <tr id="view-headers">
+                            <th>ID</th>
+                            <th>Product</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Views</th>
+                        </tr>
+                        <!-- dummy text -->
+                        <!-- <tr>
+                            <td>1</td>
+                            <td><input class="btn-client-1" type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, placeat autem vero incidunt doloribus inventore quis? Dolores veritatis eaque vitae. Et, tempore! Officia provident exercitationem qui alias voluptates. Harum, inventore!</td>
+                            <td><img src="images/leaf.jpg" width="50px" alt=""></td>
+                            <td>
+                                <div class="btn-wrapper">
+                                    <button class="btn btn-edit" id="btn-edit-1">Edit</button>
+                                    <button class="btn btn-ban" id="btn-delete-1">Delete</button>
+                                </div>
+                            </td>
+                        </tr> -->
+                        <!-- dummy text -->
+                    </table>
+                </div>
+            </div>
+            
         </section>
 
         <!-- no view-none temp -->
         <section class="main-sub-container" id="display-coupons-sec">
             <div class="coupon-ad-container">
                 <section class="coupons-sec">
-                    <form class="coupons-form" action="products.html" method="post">
-                        <div>
-                            <label class="date-labels" for="start-date">From:</label>
-                            <input class="btn" type="date" id="start-date">
-                        </div>
-                        <div>
-                            <label class="date-labels" for="end-date">To:</label>
-                            <input class="btn" type="date" id="end-date">
-                        </div>
-                        <button class="btn btn-confirm" type="submit" id="btn-calc-rev">Calculate</button>
-                    </form>
-                    <p class="revenue-calculator">Revenue: <span class="total-revenue"></span></p>
-                    <div class="table-wrapper">
-                        <table id="view-table" class="edit-table">
-                            <tr id="view-headers">
-                                <th>ID</th>
-                                <th>Product</th>
-                                <th>Description</th>
-                                <th>Image</th>
-                                <th>Views</th>
-                            </tr>
-                            <!-- dummy text -->
-                            <!-- <tr>
-                                <td>1</td>
-                                <td><input class="btn-client-1" type="text" name="name" id="name-idNumber" disabled value="lorem"></td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, placeat autem vero incidunt doloribus inventore quis? Dolores veritatis eaque vitae. Et, tempore! Officia provident exercitationem qui alias voluptates. Harum, inventore!</td>
-                                <td><img src="images/leaf.jpg" width="50px" alt=""></td>
-                                <td>
-                                    <div class="btn-wrapper">
-                                        <button class="btn btn-edit" id="btn-edit-1">Edit</button>
-                                        <button class="btn btn-ban" id="btn-delete-1">Delete</button>
-                                    </div>
-                                </td>
-                            </tr> -->
-                            <!-- dummy text -->
-                        </table>
-                    </div>
+                    <input type="text" name="code" id="coupon-code" placeholder="Code">
+                    <select name="product" id="coupon-product-name">
+
+                    </select>
+                    
+                    <input type="text" id="discount">
+
+                    <button id="submit-coupon">Submit</button>
                 </section>
 
                 <section class="ads-sec">
