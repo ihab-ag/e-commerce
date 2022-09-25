@@ -1,0 +1,234 @@
+/* utilities */
+
+.btn-add-category {
+    font-size: 14px;
+    background-color: white;
+    padding: 0px;
+}
+
+.btn-add-category:hover {
+    background-color: green;
+    color: white;
+}
+.btn-add-product {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+
+ main{ 
+    background-image: url('../images/leaf.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100% !important;
+ }
+img {
+    height: 100%;
+}
+
+.form-input {
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid green;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 22px;
+    max-width: 300px;
+}
+
+.form-input-cat {
+    margin-left: 0px !important;
+}
+
+.form-title {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.product-form {
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    gap: 5vw;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    justify-content: center;
+}
+
+.form-container .product-form-info-div {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.product-form-info-div .img-wrapper {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.product-form-info-div > textarea {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 22px;
+    margin-left: 7px;
+    max-width: 300px;
+}
+
+.form-container .product-form-category-div {
+    order: 1;
+}
+
+.product-form-category-div > select {
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid green;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    font-size: 22px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.product-form-category-div .add-cat {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.popup-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: scroll;
+    margin: 0;
+    padding-top: 30px;
+}
+
+.form-edit {
+    color: white;
+}
+
+.form-title-edit {
+    color: white;
+}
+
+.edit-form-btns {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.btn-edit-form:hover {
+    background-color: green;
+    color: white;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .form-title {
+        margin-bottom: 60px;
+        font-size: 22px;
+    }
+
+    .form-input {
+        max-width: 220px;
+        margin: 0;
+    }
+    
+    .form-container .product-form-info-div {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .product-form-info-div .img-wrapper {
+        height: 70px;
+        width: 100%;
+        font-size: 14px;
+    }
+    
+    .product-form-info-div > textarea {
+        max-width: 220px;
+        margin: 0;
+        resize: none;
+    }
+    .product-form-category-div > select {
+        /* display: block;
+        margin:  0 auto; */
+        max-width: 220px;
+    }
+}
+@media screen and (max-width: 780px) {
+    .form-container {
+        padding: 0;
+    }
+    .product-form-info-div > textarea {
+        height: 150px;
+    }
+    
+    .product-form-category-div {
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5vw;
+        margin: 0 auto;
+        padding-bottom: 0;
+    }
+    .form-container .product-form-info-div {
+        order: 1;
+        align-self: center;
+    }
+    .form-container .product-form-category-div {
+        order: 2;
+        align-self: center;
+    }
+
+    .form-title {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 22px;
+    }
+
+    .form-input {
+        max-width: 220px;
+        margin: 0;
+    }
+    
+    .form-container .product-form-info-div {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    .product-form-info-div > textarea {
+        height: 100px;
+    }
+
+    .edit-table tr td p{
+        text-overflow: unset;
+    }
+}
