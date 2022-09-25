@@ -14,6 +14,7 @@
     <script src="script/add-products.js" defer></script>
     <script src="script/edit-form.js" defer></script>
     <script src="script/get-seller-products.js" defer></script>
+    <script src="script/get-revenue.js" defer></script>
 </head>
 <body>
     <header class="header-container">
@@ -155,10 +156,17 @@
             <div class="coupon-ad-container">
                 <section class="coupons-sec">
                     <form class="coupons-form" action="products.html" method="post">
-                        <input class="btn btn-add-product" type="date" id="startDate">
-                        <input class="btn btn-add-product" type="date" id="endDate">
+                        <div>
+                            <label class="date-labels" for="start-date">From:</label>
+                            <input class="btn" type="date" id="start-date">
+                        </div>
+                        <div>
+                            <label class="date-labels" for="end-date">To:</label>
+                            <input class="btn" type="date" id="endDate">
+                        </div>
                         <button class="btn btn-confirm" type="submit">Calculate</button>
                     </form>
+                    <p class="revenue-calculator">Revenue: <span class="total-revenue"></span></p>
                     <div class="table-wrapper">
                         <table id="product-table" class="edit-table">
                             <tr id="product-headers">
