@@ -62,15 +62,6 @@
         font-size: 20px;
     }
 
-    .mobile-column{
-        flex-direction: column;
-        display: flex;
-    }
-
-    .mini-container{
-        margin: 30px;
-    }
-
     h2{
         font-size: 15px;
     }
@@ -119,4 +110,34 @@
     .wishlist{
         margin-left: 1px;
     }
+
+    .img-div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-info{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    h2{
+        font-size:18px ;
+        margin-top: 30px;
+        margin-left: 35px;
+    }
+
+    .product-container-info{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .icons-div{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    
 }
