@@ -9,7 +9,7 @@
      $query->bind_param('d', $sellerID);
 
      if(!$query->execute()) {
-        die("Error in get product by id");
+        die("Error in get products api");
      }
 
      $results = $query->get_result();
