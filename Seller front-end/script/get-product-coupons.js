@@ -21,8 +21,11 @@ const getProductNames = () => {
 getProductNames()
 
 const submitCoupon = document.getElementById('submit-coupon')
+const couponCode = document.getElementById('coupon-code')
+const discountCoupon = document.getElementById('discount')
+const selectVal = document.getElementById('coupon-product-name')
 
 submitCoupon.addEventListener('click',(e) => {
     e.preventDefault()
-    
+
 })
