@@ -152,6 +152,16 @@ h2{
     cursor: pointer;
 }
 
+.wrong-msg{
+    color: rgb(187, 69, 69);
+    font-size: 20px;
+    text-align: center;
+}
+
+.wrong-password{
+    display: none;
+}
+
 @media screen and (max-width: 1050px) {
     section {
         flex-direction: column-reverse;
