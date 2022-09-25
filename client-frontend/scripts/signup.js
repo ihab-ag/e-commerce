@@ -1,10 +1,12 @@
 window.onload=()=>{
-    const signUpModal = document.querySelector('.sign-up-modal'),
+    const signUpModal = document.querySelector('.sign-up-modal')
     // signupText = document.querySelector('.signup-text'),
     closeSignUpModal = document.getElementById('close_sign_up_modal'); 
     
-    const signupFormCaller = document.getElementById('guest-sign-in')
-    signupFormCaller.addEventListener('click', () => {
+    const signupFormCaller = document.getElementById('guest-sign-up')
+    signupFormCaller.addEventListener('click', (e) => {
+        console.log('click')
+        e.preventDefault()
         modal.classList.add('show-modal')
     })
     closeSignUpModal.addEventListener('click', () => {
