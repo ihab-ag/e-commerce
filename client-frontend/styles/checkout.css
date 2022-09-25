@@ -322,4 +322,17 @@ footer{
     .times{
         height: 10px;
     }
+
+    #address {
+        font-size: 12px;
+    }
+
+    #checkout-btn{
+        font-size: 12px;
+        width: 100px;
+    }
+
+    .checkout-container{
+        gap: 20px;
+    }
 }
