@@ -1,0 +1,127 @@
+/* Common */
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header{
+    background-color: #a0db8e;
+    height: 90px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.continue{
+    padding: 10px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.whitecart{
+    height: 40px;
+    cursor: pointer;
+    width: 40px;
+}
+
+h1{
+    color: white;
+}
+
+.header-container{
+    padding: 22px 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Body */
+.mywishlist{
+    color: black;
+}
+
+.greenheart{
+    margin-top: 100px;
+    height: 40px;
+    width: 40px;
+}
+
+.justify{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.small-titles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-bottom: 1px solid lightgray;
+    padding: 20px;
+    font-weight: bold;
+    gap: 320px;
+}
+
+.space{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.wishlist-product{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 220px;
+}
+
+.cart-btn{
+    border: none;
+    background-color: #a0db8e;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+    color: white;
+    font-weight: bold;
+}
+
+.buy{
+    display: block;
+}
+
+.cartimg{
+    display: block;
+    height: 30px;
+}
+
+.wishlist-container{
+    width: 100vw;
+    padding: 5%;
+}
+
+.big-wishlist-container{
+    width: 100%;
+    margin-top: 90px;
+    gap: 100px;
+}
+
