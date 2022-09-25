@@ -197,7 +197,7 @@ footer{
     font-weight: bold;
 }
 
-/* Dropdown */
+/* Address Popup */
 .address-btn {
     overflow: hidden;
 }
@@ -212,7 +212,7 @@ footer{
     font-size: 15px;
 }
   
-.address:hover ,.checkout-btn:hover{
+.address:hover{
     background-color: grey;
 }
   
@@ -220,10 +220,11 @@ footer{
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    width: 200px;
+    width: 155px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    top: 100%; 
+    top: 94%; 
+    border-radius: 5px;
 }
   
 .address-btn-content a {
@@ -246,6 +247,54 @@ footer{
     display: block;
 }
 
+/* Checkout Popup */
+.container-button {
+    overflow: hidden;
+}
+  
+.container-button .checkout-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #a0db8e;
+    border-radius: 5px;
+    font-size: 15px;
+}
+  
+.checkout-btn-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    top: 112.5%; 
+    border-radius: 5px;
+}
+  
+.checkout-btn-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    bottom:100%;
+    transition: all 0.4s linear;
+}
+  
+.checkout-btn-content a:hover {
+    background-color: #ddd;
+}
+
+.checkout-btn:hover{
+    background-color: grey;
+}
+
+.show{
+    display: block;
+}
 /* Responsive on mobile */
 @media screen and (max-width: 500px) {
     h1, h3{

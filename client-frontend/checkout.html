@@ -7,6 +7,7 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <script src="./scripts/checkout.js" defer></script>
+        <script src="./scripts/address.js" defer></script>
     </head>
     <body>
         <header>
@@ -87,7 +88,11 @@
                             <p class="total-price">101$</p>
                         </div>
                         <div class="container-button">
-                            <button class="checkout-btn">Checkout</button>
+                            <button class="checkout-btn" onclick="checkoutFunction()">Checkout</button>
+                            <div class="checkout-btn-content" id="checkout-popup">
+                                <a href="#">Enter discount code</a>
+                                <a href="#">Vouchers</a>
+                            </div>
                         </div>
                     </div>
                 </div>
