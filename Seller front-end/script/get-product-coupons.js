@@ -25,7 +25,27 @@ const couponCode = document.getElementById('coupon-code')
 const discountCoupon = document.getElementById('discount')
 const selectVal = document.getElementById('coupon-product-name')
 
+const addDiscountUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/add-discount.php"
+
 submitCoupon.addEventListener('click',(e) => {
     e.preventDefault()
+    if(!couponCode.value || !selectVal.value || !discountCoupon.value) {
+        setMessage('All Fields are required', false)
+        return
+    }else if(discountCoupon.value <= 0 || discountCoupon.value > 100) {
+        setMessage("Discount between 0 and 100", false)
+        return
+    } 
+    
+    const dataForm = new FormData()
+    dataForm.append('products_id', selectVal.value)
+    dataForm.append('amount', discountCoupon.value)
+    dataForm.append('code', couponCode.value)
+    axios.post(addDiscountUrl, dataForm).then(response => {
+        console.log(response.data)
+        setMessage("Discount code is added", true)
+        discountCoupon.value = ""
+        couponCode.value = ""
+    })
 
 })
