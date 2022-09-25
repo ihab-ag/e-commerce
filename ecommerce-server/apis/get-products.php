@@ -3,10 +3,10 @@
      header('Content-Type: application/json');
      include('connection.php');
 
-     $productID = $_POST['product_id'];
+     $sellerID = $_POST['seller_id'];
      
-     $query = $mysqli->prepare("SELECT * FROM products WHERE id=?");
-     $query->bind_param('d', $productID);
+     $query = $mysqli->prepare("SELECT p.* FROM products p, categories c WHERE p.categories_id=c.id AND c.sellers_id=?");
+     $query->bind_param('d', $sellerID);
 
      if(!$query->execute()) {
         die("Error in get product by id");
