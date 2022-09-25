@@ -4,6 +4,7 @@ window.onload=()=>{
     const email=document.getElementById('login-username');
     const password=document.getElementById('login-password');
     const signInBtn=document.getElementById('sign-in-btn');
+    const guestSignIn=document.getElementById('guest-sign-in');
     // functions
     const login=()=>{
         const formData = new FormData();
@@ -16,7 +17,7 @@ window.onload=()=>{
             }
             else{
                 localStorage.setItem('id', response.data);
-                location.replace("index.html")
+                location.replace("index.html");
             }
          }).catch(function (error) {
             console.log(error);
@@ -26,5 +27,9 @@ window.onload=()=>{
     signInBtn.onclick=()=>{
         login();
     }
-
+    // guest sign in
+    guestSignIn.onclick=()=>{
+        localStorage.setItem('id', "guest");
+        location.replace("index.html");
+    }
 }
