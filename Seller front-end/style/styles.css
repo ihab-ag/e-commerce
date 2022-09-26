@@ -101,6 +101,15 @@ body {
     background-color: #1b46596c!important;
 }
 
+.btn-seller {
+    color: black !important;
+    background-color: white !important;
+}
+
+.btn-seller:hover {
+    color: white !important;
+    background-color: var(--admin-main-color) !important;
+}
 .hamburger-menu {
     display: none;
     width: 40px;
@@ -112,7 +121,7 @@ body {
 }
 
 .hamburger-menu:hover .hamburger-item{
-    background-color: white;
+    background-color: #d3dd98;
 }
 
 .hamburger-menu:active .hamburger-item{
@@ -138,7 +147,6 @@ body {
     min-height: 50px;
     font-size: 14px;
     font-weight: 600;
-    /* padding: 10px 5px; */
     background-color: white;
     display: flex;
     align-items: center;

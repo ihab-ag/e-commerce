@@ -1,6 +1,5 @@
 const closeEditForm = document.getElementById('close-edit-form')
 const editForm = document.querySelector('.popup-form')
-const editSel = document.getElementById('edit-product-category-selector')
 const editCategoryInput = document.getElementById('edit-category-name')
 const editCategoryBtn = document.getElementById('edit-category-btn')
 const editProductBtn = document.getElementById('edit-product-btn')
@@ -11,39 +10,11 @@ closeEditForm.addEventListener('click', (e) => {
     editForm.classList.add('view-none')
 })
 
-const getCategoriesUrl = "http://localhost/e-commerce/ecommerce-server/apis/get-categories.php"
-
-const getEditCategories = () => {
-    const formData = new FormData()
-    formData.append('sellers_id', localStorage.getItem('sellers_id'))
-
-    axios.post(getCategoriesUrl, formData).then(response => {
-        const categories = response.data
-        document.querySelectorAll('.form-categories').forEach(cat => {
-            cat.remove()
-        })
-        categories.forEach(category => {
-            const option = document.createElement('option')
-            option.setAttribute('class', 'form-categories')
-            option.setAttribute('value', category['id'])
-            option.textContent = category['name']
-            editSel.appendChild(option)
-        })
-
-        const option = document.createElement('option')
-        option.setAttribute('class', 'form-categories')
-        option.setAttribute('value', "addNewCategory")
-        option.setAttribute('selected', true)
-        option.textContent = "+Add Category"
-        editSel.appendChild(option)
-    })
-}
-
 const updateProductUrl = "http://localhost/e-commerce/ecommerce-server/apis/edit-product.php"
 
 editProductBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    if(!editProductName.value || !editProductPrice.value || !editProductDescription.value || !editSel.value) {
+    if(!editProductName.value || !editProductPrice.value || !editProductDescription.value) {
         setMessage('All Fields are required', false)
         return
     }else if(!nameValidation(editProductName.value)) {

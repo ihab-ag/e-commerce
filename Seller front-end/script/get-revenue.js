@@ -12,6 +12,11 @@ const getRevenue = () => {
 
     axios.post(getRevenueUrl, dataForm).then(response => {
         const rev = response.data
+        console.log(rev)
+        if(rev['revenue'] == null) {
+            totRevenue.textContent = "0$"
+            return
+        }
         totRevenue.textContent = rev['revenue'] + "$"
     })
 }
