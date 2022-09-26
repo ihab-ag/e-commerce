@@ -65,6 +65,10 @@
            products.classList.add("products");
            const imgdiv=document.createElement("div");
            imgdiv.innerHTML='<img class="item-img" src="'+item["image"]+'" alt="image">';
+           imgdiv.onclick=()=>{
+            localStorage.setItem('product_id',item['id']);
+            location.replace("product.html");
+           }
            products.appendChild(imgdiv);
            const smallcontainer=document.createElement("div");
            smallcontainer.classList.add("small-container");
