@@ -55,8 +55,9 @@
             myslide.appendChild(img);
             slider.appendChild(myslide);
           }});
-          showSlides();
+          setInterval(showSlides,2000);
         }
+        getImages();
         // get products
         axios.get("http://localhost/e-commerce/ecommerce-server/apis/get-random-section.php",)
         .then(function (response) {
