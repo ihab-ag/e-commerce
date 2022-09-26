@@ -1,8 +1,8 @@
-const getAllClientsUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/view-clients.php"
-const banClientUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/ban-client.php"
-const checkClientBannedUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/check-client-banned.php"
-const unBanClientUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/unban-client.php"
-const searchClientUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/search-client.php"
+const getAllClientsUrl = "http://localhost/e-commerce/ecommerce-server/apis/view-clients.php"
+const banClientUrl = "http://localhost/e-commerce/ecommerce-server/apis/ban-client.php"
+const checkClientBannedUrl = "http://localhost/e-commerce/ecommerce-server/apis/check-client-banned.php"
+const unBanClientUrl = "http://localhost/e-commerce/ecommerce-server/apis/unban-client.php"
+const searchClientUrl = "http://localhost/e-commerce/ecommerce-server/apis/search-client.php"
 const clientTable = document.getElementById('client-table')
 const searchClient = document.getElementById('client-search')
 
@@ -13,7 +13,6 @@ const getAllClients = () => {
         btnClientAction(clients)
     }).catch(error => console.error(error))
 }
-
 getAllClients()
 
 
@@ -44,8 +43,7 @@ searchClient.addEventListener('input', () => {
         getAllClients()
         return
     }
-        searchForClient(searchClient.value)
-    
+    searchForClient(searchClient.value)
 })
 
 const searchForClient = (search) => {
@@ -105,7 +103,7 @@ const btnClientAction = (looper) => {
             unBanClient(client.id) // post api that un-ban user
             setMessage('Client is Unbanned', true)
         })
-    });
+    })
 }
 
 const createClientRow = (id, name, email, phone, joined_date) => {
@@ -163,7 +161,7 @@ const createClientRow = (id, name, email, phone, joined_date) => {
     btnConfirm.textContent = "Confirm"
 
     const btnUnBan = document.createElement('button')
-    btnUnBan.setAttribute('class', 'btn btn-ban') // Moatasem removed the view-none
+    btnUnBan.setAttribute('class', 'btn btn-ban') // removed the view-none
     btnUnBan.setAttribute('id', `unban-client-${id}`)
     btnUnBan.textContent = "unBan"
     
