@@ -28,6 +28,7 @@ window.onload=()=>{
     axios.get("http://localhost/e-commerce/ecommerce-server/apis/get-product-by-id.php")
     .then(function(response){
         for(const item of response.data){
+            localStorage.getItem('product_id',item['id']);
             const productInfo = document.createElement('div');
             productInfo.classList= "imgDiv";
             const img = document.createElement('img');
