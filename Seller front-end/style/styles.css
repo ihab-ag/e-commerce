@@ -112,7 +112,7 @@ body {
 }
 
 .hamburger-menu:hover .hamburger-item{
-    background-color: white;
+    background-color: #d3dd98;
 }
 
 .hamburger-menu:active .hamburger-item{
