@@ -17,6 +17,9 @@
 }
 
  main{ 
+    background-image: url('../images/green.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100% !important;
  }
 img {
