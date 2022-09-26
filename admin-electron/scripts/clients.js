@@ -9,7 +9,6 @@ const searchClient = document.getElementById('client-search')
 const getAllClients = () => {
     axios.get(getAllClientsUrl).then(response => {
         const clients = response.data
-        //console.log(clients)
         btnClientAction(clients)
     }).catch(error => console.error(error))
 }
@@ -22,7 +21,6 @@ const banClient = (clientID) => {
 
     axios.post(banClientUrl, formData).then((response) => {
         const nowBanned = response.data
-        //console.log(nowBanned)
     })
 }
 
@@ -32,7 +30,6 @@ const unBanClient = (clientID) => {
     
     axios.post(unBanClientUrl, formData).then(response => {
         const unBan = response.data
-        //console.log(unBan)
     })
 }
 
@@ -52,7 +49,6 @@ const searchForClient = (search) => {
     
     axios.post(searchClientUrl, formData).then(response => {
         const specificClients = response.data
-        //console.log(specificClients)
         btnClientAction(specificClients)
     })
 }
@@ -77,13 +73,10 @@ const btnClientAction = (looper) => {
         })
 
         banClientConfirmBtn.addEventListener('mouseleave', () => {
-            // console.log('mouse-leave')
             if(unBanClientBtn.classList.contains('view-none')) {
-                // console.log("if")
                 banClientBtn.classList.remove('view-none')
                 banClientConfirmBtn.classList.add('view-none')
             }else {
-                // console.log('else')
                 banClientBtn.classList.add('view-none')
             }
         })
@@ -171,7 +164,6 @@ const createClientRow = (id, name, email, phone, joined_date) => {
     
         axios.post(checkClientBannedUrl, formData).then(response => {
             const isBanned = response.data
-            //console.log(isBanned.banned)
             if(isBanned.banned) {// if client is banned
                 //we should have the option to un-ban him
                 btnBan.classList.add('view-none')

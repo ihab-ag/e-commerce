@@ -2,26 +2,17 @@ Chart.defaults.global.defaultFontSize = 36;
 Chart.defaults.global.defaultFontStyle = 'Bold'
 
 window.addEventListener('resize', () => {
-    //console.log(window.outerWidth)
     // media queries
     if(window.outerWidth <= 480) {
-        // console.log("<480")
         Chart.defaults.global.defaultFontSize = 14;
-        // console.log(Chart.defaults.global.defaultFontSize)
     } else if (window.outerWidth <= 780) {
-        // console.log("<780")
         Chart.defaults.global.defaultFontSize = 22;
-        // console.log(Chart.defaults.global.defaultFontSize)
 
     }else if (window.outerWidth <= 1000) {
-        // console.log("<1000")
         Chart.defaults.global.defaultFontSize = 28;
-        // console.log(Chart.defaults.global.defaultFontSize)
 
     }else {
-        // console.log(">1000")
         Chart.defaults.global.defaultFontSize = 36;
-        // console.log(Chart.defaults.global.defaultFontSize)
 
     }
 })
@@ -32,7 +23,6 @@ const getBestSellerWeek = () => {
         const weeklyData = response.data
         const labelsArr = []
         const dataArr = []
-        // console.log(weeklyData.length === 0)
         weeklyData.forEach(data => {
             labelsArr.push(data['name'])
             dataArr.push(data['tot_amount'])
@@ -101,7 +91,6 @@ const getBestSellerMonth = () => {
         const monthlyData = response.data
         const labelsArr = []
         const dataArr = []
-        //console.log(monthlyData)
         monthlyData.forEach(data => {
             labelsArr.push(data['name'])
             dataArr.push(data['tot_amount'])

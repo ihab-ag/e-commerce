@@ -12,7 +12,6 @@ const addClientContainer = document.getElementById('insert-client-container')
 const insertClientInputs = document.querySelectorAll('.client-insert-inputs')
 
 addClientCaller.addEventListener('click', () => {
-    console.log("client click")
     addClientContainer.classList.remove('view-none')
     addClientCanceler.classList.remove('view-none')
     addClientCaller.classList.add('view-none')
@@ -51,7 +50,6 @@ const emailClientChecker = (name, email, phone, pwd) => {
     
     axios.post(emailClientCheckerUrl, formData).then(response => {
         const checkEmail = response.data
-        console.log(checkEmail)
         if(checkEmail.emailTaken) {
             setMessage('Email is taken', false)
             return
@@ -66,7 +64,6 @@ const emailClientChecker = (name, email, phone, pwd) => {
 }
 
 const insertClient = (name, email, phone, pwd) => {
-    console.log("call insert function")
     const formData = new FormData()
     formData.append('name', name)
     formData.append('pwd', pwd)
@@ -75,7 +72,6 @@ const insertClient = (name, email, phone, pwd) => {
 
     axios.post(addClientUrl, formData).then((response) => {
         const nowInsert = response.data
-        console.log("now insert", nowInsert)
         deleteClientRows()
         getAllClients()
     })

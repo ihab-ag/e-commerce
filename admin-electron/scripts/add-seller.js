@@ -54,7 +54,6 @@ const emailSellerChecker = (name, email, phone, location, pwd) => {
     
     axios.post(emailSellerCheckerNoUserUrl, formData).then(response => {
         const checkEmail = response.data
-        console.log(checkEmail)
         if(checkEmail.emailTaken) {
             setMessage('Email is taken', false)
             return
@@ -69,7 +68,6 @@ const emailSellerChecker = (name, email, phone, location, pwd) => {
 }
 
 const insertSeller = (name, email, phone, location, pwd) => {
-    console.log("call insert function")
     const formData = new FormData()
     formData.append('name', name)
     formData.append('pwd', pwd)
@@ -79,7 +77,6 @@ const insertSeller = (name, email, phone, location, pwd) => {
 
     axios.post(addSellerUrl, formData).then((response) => {
         const nowInsert = response.data
-        console.log("now insert", nowInsert)
         deleteSellerRows()
         getAllSellers()
     })
