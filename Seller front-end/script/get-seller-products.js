@@ -28,7 +28,6 @@ const getSellerProducts = () => {
                 // store old photo in case there is no change
                 localStorage.setItem('old-photo', product['image'])
                 localStorage.setItem('p-id', product.id)
-                document.getElementById('current-edit-img').src = localStorage.getItem('old-photo')
                 editProductDescription.value = product['description']
                 const optionsOfSelect = editCategorySel.children
                 for(let o of optionsOfSelect) {
