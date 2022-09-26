@@ -5,6 +5,7 @@
       const signUpContent= document.querySelector(".sign-up-modal > .flex");
       const slider=document.getElementById('slider');
       const row=document.getElementById('row');
+      const cart = document.querySelector('.whitecart');
       // give flex to signup modal
       signUpContent.style.display="flex";
       signUpContent.style.flexDirection="row";
@@ -48,6 +49,9 @@
       checkOut=()=>{
         signUpModal.classList.add('show-modal');
       }
+    }
+    cart.onclick=()=>{
+      checkOut();
     }
       // get ads
       const getImages= async()=>{
