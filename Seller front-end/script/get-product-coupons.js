@@ -1,4 +1,4 @@
-const getProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-products.php"
+const getProductUrl = "http://localhost/e-commerce/ecommerce-server/apis/get-products.php"
 const selectProduct = document.getElementById('coupon-product-name')
 
 const getProductNames = () => {
@@ -7,7 +7,6 @@ const getProductNames = () => {
 
     axios.post(getProductUrl, dataForm).then(response => {
         const products = response.data
-        //console.log(products)
         products.forEach(product => {
             const option = document.createElement('option')
             option.setAttribute('class', 'coupon-categories')
@@ -25,7 +24,7 @@ const couponCode = document.getElementById('coupon-code')
 const discountCoupon = document.getElementById('discount')
 const selectVal = document.getElementById('coupon-product-name')
 
-const addDiscountUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/add-discount.php"
+const addDiscountUrl = "http://localhost/e-commerce/ecommerce-server/apis/add-discount.php"
 
 submitCoupon.addEventListener('click',(e) => {
     e.preventDefault()
@@ -42,7 +41,6 @@ submitCoupon.addEventListener('click',(e) => {
     dataForm.append('amount', discountCoupon.value)
     dataForm.append('code', couponCode.value)
     axios.post(addDiscountUrl, dataForm).then(response => {
-        console.log(response.data)
         setMessage("Discount code is added", true)
         discountCoupon.value = ""
         couponCode.value = ""

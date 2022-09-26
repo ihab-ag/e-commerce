@@ -2,7 +2,7 @@ const startDate = document.getElementById('start-date')
 const endDate = document.getElementById('end-date')
 const totRevenue = document.querySelector('.total-revenue')
 const btnCalcRevenue = document.getElementById('btn-calc-rev')
-const getRevenueUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-revenue.php"
+const getRevenueUrl = "http://localhost/e-commerce/ecommerce-server/apis/get-revenue.php"
 
 const getRevenue = () => {
     const dataForm = new FormData()
@@ -12,7 +12,11 @@ const getRevenue = () => {
 
     axios.post(getRevenueUrl, dataForm).then(response => {
         const rev = response.data
-        //console.log(rev)
+        console.log(rev)
+        if(rev['revenue'] == null) {
+            totRevenue.textContent = "0$"
+            return
+        }
         totRevenue.textContent = rev['revenue'] + "$"
     })
 }

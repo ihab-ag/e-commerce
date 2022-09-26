@@ -149,6 +149,10 @@ header{
 
 .mySlides {
     display: none;
+    height:15vh;
+}
+.mySlides img{
+    height:100%;
 }
 
 /* Items Section */
