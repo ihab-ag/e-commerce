@@ -5,12 +5,14 @@
       const signUpContent= document.querySelector(".sign-up-modal > .flex");
       const slider=document.getElementById('slider');
       const row=document.getElementById('row');
+      const cart = document.querySelector('.whitecart');
       // give flex to signup modal
       signUpContent.style.display="flex";
       signUpContent.style.flexDirection="row";
       // check user
       let addCart;
       let addFav;
+      let checkOut;
       if(localStorage.getItem('id')!="guest"){
         // add to fav
        addFav=(id)=>{
@@ -33,6 +35,9 @@
         cartArray.push(id);
         localStorage.setItem('cart',cartArray);
       }
+      checkOut=()=>{
+        location.replace('checkout.html');
+      }
     }
     else{
       addCart=(id)=>{
@@ -41,6 +46,12 @@
        addFav=(id)=>{
         signUpModal.classList.add('show-modal');
       }
+      checkOut=()=>{
+        signUpModal.classList.add('show-modal');
+      }
+    }
+    cart.onclick=()=>{
+      checkOut();
     }
       // get ads
       const getImages= async()=>{
@@ -165,4 +176,6 @@
         menuItem.addEventListener("click", toggleMenu);
       }
     )
+
+
     }
