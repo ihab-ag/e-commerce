@@ -19,7 +19,7 @@ window.onload=()=>{
             }
             else{
                 localStorage.setItem('id', response.data);
-                location.replace("index.html");
+                location.replace("home.html");
             }
          }).catch(function (error) {
             console.log(error);
@@ -32,6 +32,6 @@ window.onload=()=>{
     // guest sign in
     guestSignIn.onclick=()=>{
         localStorage.setItem('id', "guest");
-        location.replace("index.html");
+        location.replace("home.html");
     }
 }
