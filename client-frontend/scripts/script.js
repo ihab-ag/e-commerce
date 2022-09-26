@@ -11,6 +11,7 @@
       // check user
       let addCart;
       let addFav;
+      let checkOut;
       if(localStorage.getItem('id')!="guest"){
         // add to fav
        addFav=(id)=>{
@@ -33,12 +34,18 @@
         cartArray.push(id);
         localStorage.setItem('cart',cartArray);
       }
+      checkOut=()=>{
+        location.replace('checkout.html');
+      }
     }
     else{
       addCart=(id)=>{
         signUpModal.classList.add('show-modal');
       }
        addFav=(id)=>{
+        signUpModal.classList.add('show-modal');
+      }
+      checkOut=()=>{
         signUpModal.classList.add('show-modal');
       }
     }
@@ -165,4 +172,6 @@
         menuItem.addEventListener("click", toggleMenu);
       }
     )
+
+
     }
