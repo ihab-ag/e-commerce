@@ -255,6 +255,7 @@ body {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .main-action-btn-wrapper > button {
@@ -279,9 +280,7 @@ body {
 
 
 
-.main-title {
-    text-align: center;
-}
+
 
 .table-wrapper {
     width: 100%;
@@ -378,6 +377,13 @@ body {
     width: 100% !important;
     height: 300px !important;
 }
+
+.search-bar {
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+}
 /* end styling main */
 
 
@@ -449,9 +455,7 @@ body {
 
 
     /* start styling main */
-    .main-title {
-        font-size: 16px;
-    }
+    
 
     .main-container {
         width: 100%;
@@ -463,9 +467,7 @@ body {
         overflow: hidden;
     }
     /* will be used in js on navbar */
-    .main-title {
-        font-size: 16px;
-    }
+    
 
     .main-container {
         width: 100%;
