@@ -1,18 +1,18 @@
 Chart.defaults.global.defaultFontSize = 36;
 Chart.defaults.global.defaultFontStyle = 'Bold'
 
+// media queries
 window.addEventListener('resize', () => {
-    // media queries
     if(window.outerWidth <= 480) {
         Chart.defaults.global.defaultFontSize = 14;
     } else if (window.outerWidth <= 780) {
-        Chart.defaults.global.defaultFontSize = 22;
+        Chart.defaults.global.defaultFontSize = 18;
 
     }else if (window.outerWidth <= 1000) {
-        Chart.defaults.global.defaultFontSize = 28;
+        Chart.defaults.global.defaultFontSize = 20;
 
     }else {
-        Chart.defaults.global.defaultFontSize = 36;
+        Chart.defaults.global.defaultFontSize = 28;
 
     }
 })
@@ -161,7 +161,6 @@ const getBestSellerYear = () => {
         const yearlyData = response.data
         const labelsArr = []
         const dataArr = []
-        //console.log(yearlyData)
         yearlyData.forEach(data => {
             labelsArr.push(data['name'])
             dataArr.push(data['tot_amount'])
@@ -227,14 +226,13 @@ getBestSellerYear()
 
 //client graphs
 
-const bestClientWeekUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/best-client-week.php"
+const bestClientWeekUrl = "http://localhost/e-commerce/ecommerce-server/apis/best-client-week.php"
 
 const getBestClientWeek = () => {
     axios.get(bestClientWeekUrl).then(response => {
         const weeklyData = response.data
         const labelsArr = []
         const dataArr = []
-        // console.log(weeklyData.length === 0)
         weeklyData.forEach(data => {
             labelsArr.push(data['name'])
             dataArr.push(data['tot_amount'])
@@ -304,7 +302,6 @@ const getBestClientMonth = () => {
         const monthlyData = response.data
         const labelsArr = []
         const dataArr = []
-        //console.log(monthlyData)
         monthlyData.forEach(data => {
             labelsArr.push(data['name'])
             dataArr.push(data['tot_amount'])
@@ -374,7 +371,6 @@ const getBestClientYear = () => {
         const yearlyData = response.data
         const labelsArr = []
         const dataArr = []
-        //console.log(yearlyData)
         yearlyData.forEach(data => {
             labelsArr.push(data['name'])
             dataArr.push(data['tot_amount'])
@@ -442,10 +438,8 @@ const nbOfClientsUrl = "http://localhost/e-commerce/ecommerce-server/apis/latest
 const getNumberOfClients = () => {
     axios.get(nbOfClientsUrl).then(response => {
         const totNumber = response.data
-        console.log(totNumber)
         document.getElementById('stat-result-tot-clients').textContent = "Total Number of clients: " + totNumber['tot_clients']
         const dataArr = []
-        //console.log(totNumber)
         dataArr.push(totNumber['counter_clients_q1'])
         dataArr.push(totNumber['counter_clients_q2'])
         dataArr.push(totNumber['counter_clients_q3'])
@@ -496,9 +490,7 @@ const nbOfSellersUrl = "http://localhost/e-commerce/ecommerce-server/apis/latest
 const getNumberOfSellers = () => {
     axios.get(nbOfSellersUrl).then(response => {
         const totNumber = response.data
-        console.log(totNumber)
         const dataArr = []
-        //console.log(totNumber)
         document.getElementById('stat-result-tot-sellers').textContent = "Total Number of sellers: " + totNumber['tot_sellers']
         dataArr.push(totNumber['counter_sellers_q1'])
         dataArr.push(totNumber['counter_sellers_q2'])
@@ -550,9 +542,7 @@ const nbOfProductsUrl = "http://localhost/e-commerce/ecommerce-server/apis/lates
 const getNumberOfProducts = () => {
     axios.get(nbOfProductsUrl).then(response => {
         const totNumber = response.data
-        console.log(totNumber)
         const dataArr = []
-        //console.log(totNumber)
         document.getElementById('stat-result-tot-products').textContent = "Total Number of products: " + totNumber['tot_products']
         dataArr.push(totNumber['counter_products_q1'])
         dataArr.push(totNumber['counter_products_q2'])
