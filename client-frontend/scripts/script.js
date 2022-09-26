@@ -1,7 +1,47 @@
     
     window.onload=()=>{
+      const signUpModal = document.querySelector('.sign-up-modal');
+      const closeSignUpModal = document.getElementById('close_sign_up_modal');
+      const signUpContent= document.querySelector(".sign-up-modal > .flex");
       const slider=document.getElementById('slider');
       const row=document.getElementById('row');
+      // give flex to signup modal
+      signUpContent.style.display="flex";
+      signUpContent.style.flexDirection="row";
+      // check user
+      let addCart;
+      let addFav;
+      if(localStorage.getItem('id')!="guest"){
+        // add to fav
+       addFav=(id)=>{
+        const form=new FormData;
+        form.append("id",localStorage.getItem("id"));
+        form.append('product_id',id)
+        axios.post('http://localhost/e-commerce/ecommerce-server/apis/add-favourite.php', 
+        form
+        ).then(function (response) {
+          console.log(response.data);
+        })
+      };
+      // create cart
+      localStorage.setItem('cart',[]);
+      // add to cart
+       addCart=(id) =>{
+        let cartArray=[];
+        if(localStorage.getItem('cart')!="")
+        cartArray=localStorage.getItem('cart').split(",");
+        cartArray.push(id);
+        localStorage.setItem('cart',cartArray);
+      }
+    }
+    else{
+      addCart=(id)=>{
+        signUpModal.classList.add('show-modal');
+      }
+       addFav=(id)=>{
+        signUpModal.classList.add('show-modal');
+      }
+    }
       // get ads
       const getImages= async()=>{
         await axios.get("http://localhost/e-commerce/ecommerce-server/apis/get-ads.php")
@@ -53,27 +93,7 @@
            row.appendChild(products);
           }
       });
-      // add to fav
-      const addFav=(id)=>{
-        const form=new FormData;
-        form.append("id",localStorage.getItem("id"));
-        form.append('product_id',id)
-        axios.post('http://localhost/e-commerce/ecommerce-server/apis/add-favourite.php', 
-        form
-        ).then(function (response) {
-          console.log(response.data);
-        })
-      };
-      // create cart
-      localStorage.setItem('cart',[]);
-      // add to cart
-      function addCart(id) {
-        let cartArray=[];
-        if(localStorage.getItem('cart')!="")
-        cartArray=localStorage.getItem('cart').split(",");
-        cartArray.push(id);
-        localStorage.setItem('cart',cartArray);
-      }
+      
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
@@ -107,6 +127,10 @@
       setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
 
+    // close signup
+    closeSignUpModal.addEventListener('click', () => {
+      signUpModal.classList.remove('show-modal')
+  })
     //Hamburger Menu
 
     const menu = document.querySelector(".menu");
