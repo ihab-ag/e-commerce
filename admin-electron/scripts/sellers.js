@@ -1,15 +1,14 @@
-const getAllSellersUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/view-sellers.php"
-const deleteSellerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/delete-seller.php"
-const editSellerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/update-seller.php"
-const emailSellerCheckUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/check-email.php"
-const searchSellerUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/search-seller.php"
+const getAllSellersUrl = "http://localhost/e-commerce/ecommerce-server/apis/view-sellers.php"
+const deleteSellerUrl = "http://localhost/e-commerce/ecommerce-server/apis/delete-seller.php"
+const editSellerUrl = "http://localhost/e-commerce/ecommerce-server/apis/update-seller.php"
+const emailSellerCheckUrl = "http://localhost/e-commerce/ecommerce-server/apis/check-email.php"
+const searchSellerUrl = "http://localhost/e-commerce/ecommerce-server/apis/search-seller.php"
 const sellersTable= document.getElementById('seller-table')
 const searchSeller = document.getElementById('seller-search')
 
 const getAllSellers = () => {
     axios.get(getAllSellersUrl).then(response => {
         const sellers = response.data
-        //console.log(sellers)
         btnActions(sellers)
     })
 }
@@ -37,7 +36,6 @@ const updateSellerInfo = (sellerID, name, email, phone, location) => {
 
     axios.post(editSellerUrl, formData).then((response) => {
         const nowUpdate = response.data
-        //console.log(nowUpdate)
     })
 }
 
@@ -47,7 +45,6 @@ const deleteSeller = (sellerID) => {
     
     axios.post(deleteSellerUrl, formData).then(response => {
         const deleteNow = response.data
-        //console.log(deleteNow)
     })
 }
 
@@ -83,27 +80,18 @@ const btnActions = (sellers) => {
             const phoneRow = document.getElementById(`seller-phone-${seller.id}`).value
             const locationRow = document.getElementById(`seller-location-${seller.id}`).value
             if(!emptyFieldsValidation(nameRow, emailRow, phoneRow, locationRow)) {
-                //console.log("empty field")
                 setMessage('All fields are required', false)
                 return
             }else if(!nameValidation(nameRow)) {
-                //console.log(nameRow)
-                //console.log("name field")
                 setMessage(`${nameRow} has wrong format`, false)
                 return
             }else if(!emailValidation(emailRow)) {
-                //console.log(emailRow)
-                //console.log("email field")
                 setMessage(`${emailRow} is not an email`, false)
                 return
             }else if(!phoneValidation(phoneRow)) {
-                //console.log(phoneRow)
-                //console.log("phone field")
                 setMessage(`${phoneRow} has wrong format`, false)
                 return
             }else if(!locationValidation(locationRow)) {
-                //console.log(locationRow)
-                //console.log("location field")
                 setMessage(`${locationRow} has wrong format`, false)
                 return
             }
@@ -115,7 +103,6 @@ const btnActions = (sellers) => {
                 
                 axios.post(emailSellerCheckUrl, formData).then(response => {
                     const checkEmail = response.data
-                    //console.log(checkEmail)
                     if(checkEmail.emailTaken) {
                         setMessage('Email is taken', false)
                         return
@@ -124,8 +111,6 @@ const btnActions = (sellers) => {
                     info.forEach(box => box.setAttribute('disabled', true))
                     editConfirmBtn.classList.add('view-none')
                     editBtn.classList.remove('view-none')
-                    //const arr = []
-                    //document.querySelectorAll(`.btn-seller-${seller.id}`).forEach(seller => arr.push(seller.value))
                     updateSellerInfo(seller.id, nameRow, emailRow, phoneRow, locationRow)
                     setMessage('Seller info updated successfully', true)
                 })
@@ -230,7 +215,7 @@ const createSellerRow = (id, name, email, phone, location) => {
     btnEditConfirm.textContent = "Confirm"
 
     const btnDelete = document.createElement('button')
-    btnDelete.setAttribute('class', 'btn btn-ban') // Moatasem removed the view-none
+    btnDelete.setAttribute('class', 'btn btn-ban') // removed the view-none
     btnDelete.setAttribute('id', `btn-delete-${id}`)
     btnDelete.textContent = "Delete"
     

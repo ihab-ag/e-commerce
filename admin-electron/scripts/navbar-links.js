@@ -24,9 +24,3 @@ statPage.addEventListener('click', () => {
     navbarLinks.forEach(navbarLink => navbarLink.classList.remove('current-navbar-link'))
     statPage.classList.add('current-navbar-link')
 })
-
-// clientPage.addEventListener('click', () => {
-//     document.getElementById('client-section').classList.remove('view-none')
-//     document.getElementById('seller-section').classList.add('view-none')
-//     document.getElementById('stat-section').classList.add('view-none')
-// })

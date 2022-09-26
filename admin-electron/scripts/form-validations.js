@@ -5,7 +5,6 @@ const nameValidation = (name) => {
     }else if (name.length > 255) {
         return false
     }else if(!name.match(exp)) {
-        console.log("match")
         return false
     }
 
