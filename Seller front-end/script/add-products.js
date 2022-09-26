@@ -8,10 +8,9 @@ const categoryName = document.getElementById('category-name')
 const submitProduct = document.getElementById('add-product-btn')
 const submitCategory = document.getElementById('add-category-btn')
 
-const insertProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/add-product.php"
+const insertProductUrl = "http://localhost/e-commerce/ecommerce-server/apis/add-product.php"
 submitProduct.addEventListener('click', (e) => {
     e.preventDefault()
-    console.log("click")
     if(!emptyFieldsValidation(productName.value, productPrice.value, productImage, productDescription.value, catSelector.value)) {
         setMessage('All Fields are required', false)
         return
@@ -24,10 +23,7 @@ submitProduct.addEventListener('click', (e) => {
     }
     const reader = new FileReader();
       reader.addEventListener('load', () => {
-          const finalImage = reader.result;
-          //console.log(finalImage);
-
-          
+        const finalImage = reader.result
         const formData = new FormData()
         formData.append('name', productName.value)
         formData.append('description', productDescription.value)
@@ -37,21 +33,17 @@ submitProduct.addEventListener('click', (e) => {
         
         axios.post(insertProductUrl, formData).then(response => {
             const data = response.data
-            //console.log(data)
             setMessage("Product is added", true)
             deleteSellerRows()
             getSellerProducts()
             productName.value = ""
             productDescription.value = ""
             productPrice.value = ""
-            finalImage
             catSelector.value
         })
     })
     
     reader.readAsDataURL(productImage.files[0]);
-
-
 })
 
 catSelector.addEventListener('change', () => {
@@ -64,18 +56,15 @@ catSelector.addEventListener('change', () => {
 
 productImage.addEventListener('change', () => {
     console.log(productImage.files)
-    // image = productImage.files[0];
 })
 
-const categoriesUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-categories.php"
+const categoriesUrl = "http://localhost/e-commerce/ecommerce-server/apis/get-categories.php"
 
 const getCategories = () => {
     const formData = new FormData()
     formData.append('sellers_id', localStorage.getItem('sellers_id'))
-
     axios.post(categoriesUrl, formData).then(response => {
         const categories = response.data
-        // console.log(categories)
         document.querySelectorAll('.form-categories').forEach(cat => {
             cat.remove()
         })
@@ -83,7 +72,6 @@ const getCategories = () => {
             const option = document.createElement('option')
             option.setAttribute('class', 'form-categories')
             option.setAttribute('value', category['id'])
-            // option.setAttribute('id', category['name']+category['id'])
             option.textContent = category['name']
             catSelector.appendChild(option)
         })
@@ -98,7 +86,7 @@ const getCategories = () => {
 }
 
 getCategories()
-const addCategoryUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/add-category.php"
+const addCategoryUrl = "http://localhost/e-commerce/ecommerce-server/apis/add-category.php"
 submitCategory.addEventListener('click', (e) => {
     e.preventDefault()
     if(!categoryName.value) {
@@ -110,10 +98,8 @@ submitCategory.addEventListener('click', (e) => {
 
     axios.post(categoriesUrl, formData).then(response => {
         const categories = response.data
-        // console.log(categories)
         let exist = false
         for(const category of categories) {
-            // console.log(category)
             if(category['name'] === categoryName.value) {
                 exist = true
                 break
@@ -130,7 +116,6 @@ submitCategory.addEventListener('click', (e) => {
                 const cat = response.data
                 console.log("newCat: ", cat)
                 setMessage('category is added', true)
-                //getCategories()
                 catSelector.remove(catSelector.selectedIndex)
 
                 const option = document.createElement('option')
