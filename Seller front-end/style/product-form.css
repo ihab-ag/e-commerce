@@ -172,8 +172,6 @@ img {
         resize: none;
     }
     .product-form-category-div > select {
-        /* display: block;
-        margin:  0 auto; */
         max-width: 220px;
     }
 }
