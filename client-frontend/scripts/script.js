@@ -80,8 +80,6 @@
         cartArray=localStorage.getItem('cart').split(",");
         cartArray.push(id);
         localStorage.setItem('cart',cartArray);
-        console.log(localStorage.getItem('cart'));
-        console.log(cartArray);
       }
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
