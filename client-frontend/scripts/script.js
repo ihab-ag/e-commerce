@@ -3,17 +3,20 @@
       const slider=document.getElementById('slider');
       const row=document.getElementById('row');
       // get ads
-      axios.get("http://localhost/e-commerce/ecommerce-server/apis/get-ads.php")
-      .then(function (response) {
-        for(const item of response.data){
-          const myslide= document.createElement('div');
-          myslide.classList="mySlides";
-          const img=document.createElement('img');
-          img.classList.add("ad-img","ad");
-          img.src=item['image'];
-          myslide.appendChild(img);
-          slider.appendChild(myslide);
-        }});
+      const getImages= async()=>{
+        await axios.get("http://localhost/e-commerce/ecommerce-server/apis/get-ads.php")
+        .then(function (response) {
+          for(const item of response.data){
+            const myslide= document.createElement('div');
+            myslide.classList="mySlides";
+            const img=document.createElement('img');
+            img.classList.add("ad-img","ad");
+            img.src=item['image'];
+            myslide.appendChild(img);
+            slider.appendChild(myslide);
+          }});
+          showSlides();
+        }
         // get products
         axios.get("http://localhost/e-commerce/ecommerce-server/apis/get-random-section.php",)
         .then(function (response) {
@@ -68,6 +71,16 @@
           console.log(response.data);
         })
       };
+      // create cart
+      localStorage.setItem('cart',[]);
+      // add to cart
+      function addCart(id) {
+        let cartArray=[];
+        cartArray= [...localStorage.getItem('cart')];
+        cartArray.push(id);
+        localStorage.setItem('cart',cartArray);
+        console.log(localStorage.getItem('cart'));
+      }
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
@@ -83,7 +96,6 @@
       }
 
       let slideIndex = 0;
-    showSlides();
 
     function showSlides() {
       let i;
