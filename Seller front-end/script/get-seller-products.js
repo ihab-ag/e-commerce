@@ -1,4 +1,4 @@
-const getSellerProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/get-products.php"
+const getSellerProductUrl = "http://localhost/e-commerce/ecommerce-server/apis/get-products.php"
 const productsTable = document.getElementById('product-table')
 const editProductName = document.getElementById('edit-product-name')
 const editProductPrice = document.getElementById('edit-product-price')
@@ -28,10 +28,6 @@ const getSellerProducts = () => {
                 // store old photo in case there is no change
                 localStorage.setItem('old-photo', product['image'])
                 localStorage.setItem('p-id', product.id)
-                // document.getElementById('old-photo').textContent = product['image']
-                // document.getElementById('p-id').textContent = product.id
-                // 
-                //editProductImage.value = product['image']
                 editProductDescription.value = product['description']
                 const optionsOfSelect = editCategorySel.children
                 for(let o of optionsOfSelect) {
@@ -42,10 +38,6 @@ const getSellerProducts = () => {
                 }
                 editCategory.classList.remove('view-none')
                 getEditCategories()
-                // editCategoryInput
-                // editCategoryBtn
-                // editProductBtn
-
             })
 
             deleteBtn.addEventListener('click', () => {
@@ -72,14 +64,13 @@ const getSellerProducts = () => {
 
 getSellerProducts()
 
-const deleteProductUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/delete-product.php"
+const deleteProductUrl = "http://localhost/e-commerce/ecommerce-server/apis/delete-product.php"
 const deleteProduct = (productID) => {
     const formData = new FormData()
     formData.append('id', productID)
     
     axios.post(deleteProductUrl, formData).then(response => {
         const deleteNow = response.data
-        //console.log(deleteNow)
     })
 }
 
@@ -103,22 +94,14 @@ const createProductRow = (id, name, description, image) => {
     const nameTd = document.createElement('td')
     const nameInput = document.createElement('p')
     nameInput.setAttribute('class', `btn-product-${id}`)
-    // nameInput.setAttribute('type', 'text')
-    // nameInput.setAttribute('name', 'name')
     nameInput.setAttribute('id', `product-name-${id}`)
-    // nameInput.setAttribute('disabled', true)
-    // nameInput.setAttribute('value', `${name}`)
     nameInput.textContent = name  
     nameTd.appendChild(nameInput)
 
     const descriptionTd = document.createElement('td')
     const descriptionInput = document.createElement('p')
     descriptionInput.setAttribute('class', `btn-product-${id}`)
-    // descriptionInput.setAttribute('type', 'text')
-    // descriptionInput.setAttribute('name', 'description')
     descriptionInput.setAttribute('id', `product-description-${id}`)
-    // descriptionInput.setAttribute('disabled', true)
-    // descriptionInput.setAttribute('value', `${description}`)
     descriptionInput.textContent = description  
     descriptionTd.appendChild(descriptionInput)
 

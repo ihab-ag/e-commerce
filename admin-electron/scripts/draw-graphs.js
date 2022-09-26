@@ -1,63 +1,28 @@
-const bestSellerData = {
-    labels: ['Guy1', 'Guy2', 'Guy3'],
-    datasets: [{
-        label: 'Amount (in $)',
-        data: [50000, 40000, 30000],
-        backgroundColor: [
-            'rgba(27, 70, 89, 0.2)',
-            'rgba(50, 201, 156, 0.2)',
-            'rgba(255, 215, 0, 0.2)',
-        ],
-        borderColor: [
-            'rgba(27, 70, 89, 1)',
-            'rgba(50, 201, 156, 1)',
-            'rgba(255, 215, 0, 1)',
-        ],
-        borderWidth: 1,
-        hoverBorderWidth: 3,
-        hoverBackgroundColor: [
-            'rgba(27, 70, 89, 0.6)',
-            'rgba(50, 201, 156, 0.6)',
-            'rgba(255, 215, 0, 0.6)',
-        ]
-    }],
-}
 Chart.defaults.global.defaultFontSize = 36;
 Chart.defaults.global.defaultFontStyle = 'Bold'
+
 window.addEventListener('resize', () => {
-    //console.log(window.outerWidth)
     // media queries
     if(window.outerWidth <= 480) {
-        // console.log("<480")
         Chart.defaults.global.defaultFontSize = 14;
-        // console.log(Chart.defaults.global.defaultFontSize)
     } else if (window.outerWidth <= 780) {
-        // console.log("<780")
         Chart.defaults.global.defaultFontSize = 22;
-        // console.log(Chart.defaults.global.defaultFontSize)
 
     }else if (window.outerWidth <= 1000) {
-        // console.log("<1000")
         Chart.defaults.global.defaultFontSize = 28;
-        // console.log(Chart.defaults.global.defaultFontSize)
 
     }else {
-        // console.log(">1000")
         Chart.defaults.global.defaultFontSize = 36;
-        // console.log(Chart.defaults.global.defaultFontSize)
 
     }
-    
 })
 
-const bestWeekUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/best-seller-week.php"
-
+const bestWeekUrl = "http://localhost/e-commerce/ecommerce-server/apis/best-seller-week.php"
 const getBestSellerWeek = () => {
     axios.get(bestWeekUrl).then(response => {
         const weeklyData = response.data
         const labelsArr = []
         const dataArr = []
-        // console.log(weeklyData.length === 0)
         weeklyData.forEach(data => {
             labelsArr.push(data['name'])
             dataArr.push(data['tot_amount'])
@@ -109,13 +74,6 @@ const getBestSellerWeek = () => {
                         fontColor: '#000'
                     },
                 },
-                // layout: {
-                //     padding: {
-                //         left: 10,
-                //         right: 0,
-                //         bottom: 0,
-                //     }
-                // },
                 tooltips: {
                     //when hovered
                     enabled: true
@@ -124,17 +82,15 @@ const getBestSellerWeek = () => {
         })
     })
 }
-//console.log(bestSellerData['datasets'][0]['data'])
 getBestSellerWeek()
 
-const bestMonthUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/best-seller-month.php"
+const bestMonthUrl = "http://localhost/e-commerce/ecommerce-server/apis/best-seller-month.php"
 
 const getBestSellerMonth = () => {
     axios.get(bestMonthUrl).then(response => {
         const monthlyData = response.data
         const labelsArr = []
         const dataArr = []
-        //console.log(monthlyData)
         monthlyData.forEach(data => {
             labelsArr.push(data['name'])
             dataArr.push(data['tot_amount'])
@@ -187,13 +143,6 @@ const getBestSellerMonth = () => {
                         fontColor: '#000'
                     },
                 },
-                // layout: {
-                //     padding: {
-                //         left: 10,
-                //         right: 0,
-                //         bottom: 0,
-                //     }
-                // },
                 tooltips: {
                     //when hovered
                     enabled: true
@@ -205,7 +154,7 @@ const getBestSellerMonth = () => {
 
 getBestSellerMonth()
 
-const bestYearUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/best-seller-year.php"
+const bestYearUrl = "http://localhost/e-commerce/ecommerce-server/apis/best-seller-year.php"
 
 const getBestSellerYear = () => {
     axios.get(bestYearUrl).then(response => {
@@ -265,13 +214,6 @@ const getBestSellerYear = () => {
                         fontColor: '#000'
                     },
                 },
-                // layout: {
-                //     padding: {
-                //         left: 10,
-                //         right: 0,
-                //         bottom: 0,
-                //     }
-                // },
                 tooltips: {
                     //when hovered
                     enabled: true
@@ -345,13 +287,6 @@ const getBestClientWeek = () => {
                         fontColor: '#000'
                     },
                 },
-                // layout: {
-                //     padding: {
-                //         left: 10,
-                //         right: 0,
-                //         bottom: 0,
-                //     }
-                // },
                 tooltips: {
                     //when hovered
                     enabled: true
@@ -360,10 +295,9 @@ const getBestClientWeek = () => {
         })
     })
 }
-//console.log(bestSellerData['datasets'][0]['data'])
 getBestClientWeek()
 
-const bestClientMonthUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/best-client-month.php"
+const bestClientMonthUrl = "http://localhost/e-commerce/ecommerce-server/apis/best-client-month.php"
 
 const getBestClientMonth = () => {
     axios.get(bestClientMonthUrl).then(response => {
@@ -422,13 +356,6 @@ const getBestClientMonth = () => {
                         fontColor: '#000'
                     },
                 },
-                // layout: {
-                //     padding: {
-                //         left: 10,
-                //         right: 0,
-                //         bottom: 0,
-                //     }
-                // },
                 tooltips: {
                     //when hovered
                     enabled: true
@@ -440,7 +367,7 @@ const getBestClientMonth = () => {
 
 getBestClientMonth()
 
-const bestClientYearUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/best-client-year.php"
+const bestClientYearUrl = "http://localhost/e-commerce/ecommerce-server/apis/best-client-year.php"
 
 const getBestClientYear = () => {
     axios.get(bestClientYearUrl).then(response => {
@@ -499,13 +426,6 @@ const getBestClientYear = () => {
                         fontColor: '#000'
                     },
                 },
-                // layout: {
-                //     padding: {
-                //         left: 10,
-                //         right: 0,
-                //         bottom: 0,
-                //     }
-                // },
                 tooltips: {
                     //when hovered
                     enabled: true
@@ -518,7 +438,7 @@ const getBestClientYear = () => {
 getBestClientYear()
 
 // general stats
-const nbOfClientsUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/latest-signed-clients.php"
+const nbOfClientsUrl = "http://localhost/e-commerce/ecommerce-server/apis/latest-signed-clients.php"
 const getNumberOfClients = () => {
     axios.get(nbOfClientsUrl).then(response => {
         const totNumber = response.data
@@ -561,13 +481,6 @@ const getNumberOfClients = () => {
                         fontColor: '#000'
                     },
                 },
-                // layout: {
-                //     padding: {
-                //         left: 10,
-                //         right: 0,
-                //         bottom: 0,
-                //     }
-                // },
                 tooltips: {
                     //when hovered
                     enabled: true
@@ -579,7 +492,7 @@ const getNumberOfClients = () => {
 
 getNumberOfClients()
 
-const nbOfSellersUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/latest-signed-sellers.php"
+const nbOfSellersUrl = "http://localhost/e-commerce/ecommerce-server/apis/latest-signed-sellers.php"
 const getNumberOfSellers = () => {
     axios.get(nbOfSellersUrl).then(response => {
         const totNumber = response.data
@@ -622,13 +535,6 @@ const getNumberOfSellers = () => {
                         fontColor: '#000'
                     },
                 },
-                // layout: {
-                //     padding: {
-                //         left: 10,
-                //         right: 0,
-                //         bottom: 0,
-                //     }
-                // },
                 tooltips: {
                     //when hovered
                     enabled: true
@@ -640,7 +546,7 @@ const getNumberOfSellers = () => {
 
 getNumberOfSellers()
 
-const nbOfProductsUrl = "http://localhost/9-sefactory/e-commerce/ecommerce-server/apis/latest-signed-products.php"
+const nbOfProductsUrl = "http://localhost/e-commerce/ecommerce-server/apis/latest-signed-products.php"
 const getNumberOfProducts = () => {
     axios.get(nbOfProductsUrl).then(response => {
         const totNumber = response.data
@@ -683,13 +589,6 @@ const getNumberOfProducts = () => {
                         fontColor: '#000'
                     },
                 },
-                // layout: {
-                //     padding: {
-                //         left: 10,
-                //         right: 0,
-                //         bottom: 0,
-                //     }
-                // },
                 tooltips: {
                     //when hovered
                     enabled: true
