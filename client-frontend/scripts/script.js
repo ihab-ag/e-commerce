@@ -30,25 +30,18 @@
            smallcontainer.classList.add("small-container");
            smallcontainer.innerHTML='<p class="item-name">'+item['name']+'</p>';
            const icons=document.createElement("div");
-           const icon1=document.createElement("img");
            const icon2=document.createElement("img");
            const icon3=document.createElement("img");
-           icon1.classList="green-icons";
            icon2.classList="green-icons";
            icon3.classList="green-icons";
-           icon1.src="images/wishlist-green.png";
            icon2.src="images/greenheart.png";
            icon3.src="images/plus.png";
-           icon1.onclick=()=>{
-            addWishlist(item['id']);
-           };
            icon2.onclick=()=>{
             addFav(item['id']);
            };
            icon3.onclick=()=>{
             addCart(item['id']);
            };
-           icons.appendChild(icon1);
            icons.appendChild(icon2);
            icons.appendChild(icon3);
            smallcontainer.appendChild(icons);
